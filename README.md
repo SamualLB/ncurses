@@ -1,6 +1,6 @@
 # ncurses
 
-TODO: Write a description here
+NCurses Bindings for Crystal
 
 ## Installation
 
@@ -10,7 +10,7 @@ Add this to your application's `shard.yml`:
 ```yaml
 dependencies:
   ncurses:
-    github: [your-github-name]/ncurses
+    github: jreinert/ncurses
 ```
 
 
@@ -24,13 +24,10 @@ require "ncurses"
 
 TODO: Write usage instructions here
 
-## Development
-
-TODO: Write development instructions here
 
 ## Contributing
 
-1. Fork it ( https://github.com/[your-github-name]/ncurses/fork )
+1. Fork it ( https://github.com/jreinert/ncurses/fork )
 2. Create your feature branch (git checkout -b my-new-feature)
 3. Commit your changes (git commit -am 'Add some feature')
 4. Push to the branch (git push origin my-new-feature)
@@ -38,4 +35,4 @@ TODO: Write development instructions here
 
 ## Contributors
 
-- [your-github-name](https://github.com/[your-github-name]) Joakim Reinert - creator, maintainer
+- [jreinert](https://github.com/jreinert) Joakim Reinert - creator, maintainer
