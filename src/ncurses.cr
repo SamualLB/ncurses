@@ -1,7 +1,7 @@
 require "./lib_ncurses"
 require "./ncurses/*"
 
-module Ncurses
+module NCurses
   alias Key = LibNCurses::Key
 
   class Window
