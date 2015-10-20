@@ -10,7 +10,7 @@ Add this to your application's `shard.yml`:
 ```yaml
 dependencies:
   ncurses:
-    github: jreinert/ncurses
+    github: jreinert/ncurses-crystal
 ```
 
 
