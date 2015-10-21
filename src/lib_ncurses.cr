@@ -69,4 +69,10 @@ lib LibNCurses
   fun nodelay(window : Window, value : Bool)
   fun wclear(window : Window)
   fun newwin(height : Int32, width : Int32, row : Int32, col : Int32) : Window
+  fun start_color : Int32
+  fun has_colors : Bool
+  fun can_change_color : Bool
+  fun init_color(slot : Int16, red : Int16, green : Int16, blue : Int16) : Int32
+  fun init_pair(slot : Int16, foreground : Int16, background : Int16) : Int32
+  fun wcolor_set(window : Window, slot : Int16, unused : Void*) : Int32
 end
