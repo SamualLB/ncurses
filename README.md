@@ -1,4 +1,4 @@
-# ncurses
+# ncurses [![Build Status](https://travis-ci.org/jreinert/ncurses-crystal.svg?branch=master)](https://travis-ci.org/jreinert/ncurses-crystal)
 
 NCurses Bindings for Crystal
 
@@ -35,4 +35,4 @@ TODO: Write usage instructions here
 
 ## Contributors
 
-- [jreinert](https://github.com/jreinert) Joakim Reinert - creator, maintainer
+- (https://github.com/jreinert) Joakim Reinert - creator, maintainer
