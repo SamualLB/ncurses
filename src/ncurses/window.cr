@@ -50,6 +50,23 @@ module NCurses
       end
     end
 
+    def current_color
+      @current_color ||= 0
+    end
+
+    def set_color(slot)
+      LibNCurses.wcolor_set(self, slot.to_i16, nil)
+      @current_color = slot
+    end
+
+    def with_color(slot)
+      old_color = current_color
+      set_color(slot)
+      yield
+    ensure
+      set_color(old_color || 0)
+    end
+
     def get_char
       LibNCurses.wgetch(self)
     end
