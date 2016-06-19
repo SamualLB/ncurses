@@ -18,6 +18,7 @@ module NCurses
     end
 
     private macro def attr_mask(*attributes) : LibNCurses::Attribute
+      {% begin %}
       mask = LibNCurses::Attribute::NORMAL
 
       attributes.each do |attribute|
@@ -31,6 +32,7 @@ module NCurses
       end
 
       mask
+      {% end %}
     end
 
     def attr_on(*attributes)
