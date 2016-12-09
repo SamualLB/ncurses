@@ -27,6 +27,18 @@ module NCurses
     end
   end
 
+  def lines
+    if stdscr = @@stdscr
+      LibNCurses.getmaxy(stdscr.to_unsafe)
+    end
+  end
+
+  def cols
+    if stdscr = @@stdscr
+      LibNCurses.getmaxx(stdscr.to_unsafe)
+    end
+  end
+
   def no_echo
     LibNCurses.noecho
   end
