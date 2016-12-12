@@ -47,8 +47,58 @@ module NCurses
     LibNCurses.raw
   end
 
+  def crmode
+    if ERR == LibNCurses.nocbreak
+      raise "Unable to switch to crmode"
+    end
+  end
+
+  def nocrmode
+    if ERR == LibNCurses.cbreak
+      raise "Unable to switch out of crmode"
+    end
+  end
+
   def cbreak
-    LibNCurses.cbreak
+    if ERR == LibNCurses.cbreak
+      raise "Unable to switch to cbreak"
+    end
+  end
+
+  def nocbreak
+    if ERR == LibNCurses.nocbreak
+      raise "Unable to switch out of cbreak"
+    end
+  end
+
+  def curs_set(visibility)
+    if ERR == LibNCurses.curs_set(visibility)
+      raise "Unable to set cursor visibility"
+    end
+  end
+
+  def setpos(x, y)
+    move(x, y)
+  end
+
+  def move(x, y)
+    if ERR == LibNCurses.move(x, y)
+      raise "Unable to set cursor position"
+    end
+  end
+
+  def addstr(str)
+    if ERR == LibNCurses.addstr(str)
+      raise "Unable to add string"
+    end
+  end
+
+  def refresh
+    LibNCurses.refresh
+  end
+
+  def clear
+    LibNCurses.clear
   end
 
   def has_colors?
