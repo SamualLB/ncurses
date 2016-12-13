@@ -76,9 +76,7 @@ lib LibNCurses
   fun init_pair(slot : Int16, foreground : Int16, background : Int16) : Int32
   fun wcolor_set(window : Window, slot : Int16, unused : Void*) : Int32
   fun cbreak
-  fun crmode
   fun nocbreak
-  fun nocrmode
   fun curs_set(visibility : Int32) : Int32
   fun move(x : Int32, y : Int32)
   fun addstr(str : LibC::Char*)

@@ -1,6 +1,13 @@
 require "./lib_ncurses"
 require "./ncurses/*"
 
+lib Locale
+  # LC_CTYPE is probably 0 (at least in glibc)
+  LC_CTYPE = 0
+  fun setlocale(category : Int32, locale : LibC::Char*) : LibC::Char*
+end
+Locale.setlocale(Locale::LC_CTYPE, "")
+
 module NCurses
   alias Key = LibNCurses::Key
 
