@@ -35,6 +35,10 @@ module NCurses
     LibNCurses.raw
   end
 
+  def cbreak
+    LibNCurses.cbreak
+  end
+
   def has_colors?
     LibNCurses.has_colors
   end

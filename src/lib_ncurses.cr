@@ -54,6 +54,7 @@ lib LibNCurses
   fun initscr : Window
   fun endwin
   fun raw
+  fun cbreak
   fun noecho
   fun wtimeout(window : Window, timeout : Int32)
   fun wprintw(window : Window, format : UInt8*, ...)
