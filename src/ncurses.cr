@@ -1,6 +1,13 @@
 require "./lib_ncurses"
 require "./ncurses/*"
 
+lib Locale
+  # LC_CTYPE is probably 0 (at least in glibc)
+  LC_CTYPE = 0
+  fun setlocale(category : Int32, locale : LibC::Char*) : LibC::Char*
+end
+Locale.setlocale(Locale::LC_CTYPE, "")
+
 module NCurses
   alias Key = LibNCurses::Key
 
@@ -27,6 +34,18 @@ module NCurses
     end
   end
 
+  def lines
+    if stdscr = @@stdscr
+      LibNCurses.getmaxy(stdscr.to_unsafe)
+    end
+  end
+
+  def cols
+    if stdscr = @@stdscr
+      LibNCurses.getmaxx(stdscr.to_unsafe)
+    end
+  end
+
   def no_echo
     LibNCurses.noecho
   end
@@ -35,8 +54,58 @@ module NCurses
     LibNCurses.raw
   end
 
+  def crmode
+    if ERR == LibNCurses.nocbreak
+      raise "Unable to switch to crmode"
+    end
+  end
+
+  def nocrmode
+    if ERR == LibNCurses.cbreak
+      raise "Unable to switch out of crmode"
+    end
+  end
+
   def cbreak
-    LibNCurses.cbreak
+    if ERR == LibNCurses.cbreak
+      raise "Unable to switch to cbreak"
+    end
+  end
+
+  def nocbreak
+    if ERR == LibNCurses.nocbreak
+      raise "Unable to switch out of cbreak"
+    end
+  end
+
+  def curs_set(visibility)
+    if ERR == LibNCurses.curs_set(visibility)
+      raise "Unable to set cursor visibility"
+    end
+  end
+
+  def setpos(x, y)
+    move(x, y)
+  end
+
+  def move(x, y)
+    if ERR == LibNCurses.move(x, y)
+      raise "Unable to set cursor position"
+    end
+  end
+
+  def addstr(str)
+    if ERR == LibNCurses.addstr(str)
+      raise "Unable to add string"
+    end
+  end
+
+  def refresh
+    LibNCurses.refresh
+  end
+
+  def clear
+    LibNCurses.clear
   end
 
   def has_colors?
