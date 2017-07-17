@@ -5,6 +5,7 @@ lib LibNCurses
   alias FileDescriptor = Int32
 
   ATTR_SHIFT = 8_u32
+  $color_pairs = COLOR_PAIRS : Int32
 
   enum Attribute
     NORMAL     = 1_u32 - 1_u32
