@@ -25,6 +25,12 @@ module NCurses
   CYAN    = 6
   WHITE   = 7
 
+  enum Cursor
+    INVISIBLE = 0
+    VISIBLE   = 1
+    HI_VIZ    = 2
+  end
+
   class Window
     def initialize(@window : LibNCurses::Window)
     end
