@@ -6,6 +6,7 @@ lib LibNCurses
 
   ATTR_SHIFT = 8_u32
   $color_pairs = COLOR_PAIRS : Int32
+  $colors = COLORS : Int32
 
   enum Attribute
     NORMAL     = 1_u32 - 1_u32

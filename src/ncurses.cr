@@ -120,6 +120,10 @@ module NCurses
     LibNCurses.color_pairs
   end
 
+  def colors
+    LibNCurses.colors
+  end
+
   def start_color
     if ERR == LibNCurses.start_color
       raise "Unable to start color mode"
