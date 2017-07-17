@@ -66,6 +66,7 @@ lib LibNCurses
   fun getmaxy(window : Window) : Int32
   fun getmaxx(window : Window) : Int32
   fun notimeout(window : Window, value : Bool)
+  fun wmove(window : Window, row : Int32, col : Int32)
   fun nodelay(window : Window, value : Bool)
   fun wclear(window : Window)
   fun newwin(height : Int32, width : Int32, row : Int32, col : Int32) : Window
