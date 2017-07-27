@@ -96,6 +96,12 @@ module NCurses
       end
     end
 
+    def move(x, y)
+      if ERR == LibNCurses.wmove(self, x, y)
+        raise "Unable to set cursor position"
+      end
+    end
+
     def clear
       LibNCurses.wclear(self);
     end

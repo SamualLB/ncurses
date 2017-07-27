@@ -5,6 +5,8 @@ lib LibNCurses
   alias FileDescriptor = Int32
 
   ATTR_SHIFT = 8_u32
+  $color_pairs = COLOR_PAIRS : Int32
+  $colors = COLORS : Int32
 
   enum Attribute
     NORMAL     = 1_u32 - 1_u32
@@ -66,6 +68,7 @@ lib LibNCurses
   fun getmaxy(window : Window) : Int32
   fun getmaxx(window : Window) : Int32
   fun notimeout(window : Window, value : Bool)
+  fun wmove(window : Window, row : Int32, col : Int32) : Int32
   fun nodelay(window : Window, value : Bool)
   fun wclear(window : Window)
   fun newwin(height : Int32, width : Int32, row : Int32, col : Int32) : Window
@@ -75,11 +78,11 @@ lib LibNCurses
   fun init_color(slot : Int16, red : Int16, green : Int16, blue : Int16) : Int32
   fun init_pair(slot : Int16, foreground : Int16, background : Int16) : Int32
   fun wcolor_set(window : Window, slot : Int16, unused : Void*) : Int32
-  fun cbreak
-  fun nocbreak
+  fun cbreak : Int32
+  fun nocbreak : Int32
   fun curs_set(visibility : Int32) : Int32
-  fun move(x : Int32, y : Int32)
-  fun addstr(str : LibC::Char*)
+  fun move(x : Int32, y : Int32) : Int32
+  fun addstr(str : LibC::Char*) : Int32
   fun addch(chr : LibC::Char)
   fun refresh
   fun clear
