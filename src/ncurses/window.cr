@@ -5,7 +5,7 @@ module NCurses
     ATTRIBUTES = [
       :normal, :attributes, :chartext, :color, :standout, :underline, :reverse,
       :blink, :dim, :bold, :altcharset, :invis, :protect, :horizontal, :left,
-      :low, :right, :top, :vertical, :italic
+      :low, :right, :top, :vertical, :italic,
     ]
 
     def initialize(height = nil, width = nil, y = 0, x = 0)
@@ -14,7 +14,7 @@ module NCurses
     end
 
     def max_dimensions
-      { LibNCurses.getmaxy(self), LibNCurses.getmaxx(self) }
+      {LibNCurses.getmaxy(self), LibNCurses.getmaxx(self)}
     end
 
     private macro def attr_mask(*attributes) : LibNCurses::Attribute
@@ -39,7 +39,7 @@ module NCurses
       LibNCurses.wattr_on(self, attr_mask(*attributes), Pointer(Void).null)
     end
 
-    def attr_off(*attributes) 
+    def attr_off(*attributes)
       LibNCurses.wattr_off(self, attr_mask(*attributes), Pointer(Void).null)
     end
 
@@ -103,7 +103,7 @@ module NCurses
     end
 
     def clear
-      LibNCurses.wclear(self);
+      LibNCurses.wclear(self)
     end
 
     def refresh
@@ -113,7 +113,7 @@ module NCurses
     def on_input
       no_timeout
       char = get_char
-      case(char)
+      case (char)
       when 27
         on_special_input { |key, mod| yield(key, mod) }
       when 10
@@ -129,7 +129,7 @@ module NCurses
       if char == -1
         yield(:escape, nil)
       elsif char == 91
-        case(get_char)
+        case (get_char)
         when 65 then yield(:up, nil)
         when 66 then yield(:down, nil)
         end
