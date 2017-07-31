@@ -6,6 +6,7 @@ lib Locale
   LC_CTYPE = 0
   fun setlocale(category : Int32, locale : LibC::Char*) : LibC::Char*
 end
+
 Locale.setlocale(Locale::LC_CTYPE, "")
 
 module NCurses
@@ -13,7 +14,7 @@ module NCurses
 
   # Possible integer result values
   ERR = -1
-  OK  = 0
+  OK  =  0
 
   # Default colors
   BLACK   = 0
