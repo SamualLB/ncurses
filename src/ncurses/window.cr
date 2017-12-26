@@ -18,22 +18,20 @@ module NCurses
     end
 
     private macro attr_mask(*attributes)
-      {% begin %}
-        mask = LibNCurses::Attribute::NORMAL
+      mask = LibNCurses::Attribute::NORMAL
 
-        attributes.each do |attribute|
-          mask = case(attribute)
-          {% for attribute in ATTRIBUTES %}
-            when {{attribute}}
-              LibNCurses::Attribute::{{attribute.upcase.id}}
-          {% end %}
-          else
-            raise "unknown attribute #{attribute}"
-          end
+      attributes.each do |attribute|
+        mask = case(attribute)
+        {% for attribute in ATTRIBUTES %}
+          when {{attribute}}
+            LibNCurses::Attribute::{{attribute.upcase.id}}
+        {% end %}
+        else
+          raise "unknown attribute #{attribute}"
         end
+      end
 
-        mask
-      {% end %}
+      mask
     end
 
     def attr_on(*attributes)
