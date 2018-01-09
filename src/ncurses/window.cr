@@ -17,14 +17,14 @@ module NCurses
       {LibNCurses.getmaxy(self), LibNCurses.getmaxx(self)}
     end
 
-    private macro def attr_mask(*attributes) : LibNCurses::Attribute
-      {% begin %}
+    private macro attr_mask(*attributes)
       mask = LibNCurses::Attribute::NORMAL
 
       attributes.each do |attribute|
-        mask |= case(attribute)
+        mask = case(attribute)
         {% for attribute in ATTRIBUTES %}
-        when {{attribute}} then LibNCurses::Attribute::{{attribute.upcase.id}}
+          when {{attribute}}
+            LibNCurses::Attribute::{{attribute.upcase.id}}
         {% end %}
         else
           raise "unknown attribute #{attribute}"
@@ -32,7 +32,6 @@ module NCurses
       end
 
       mask
-      {% end %}
     end
 
     def attr_on(*attributes)
