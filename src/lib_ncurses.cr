@@ -71,6 +71,7 @@ lib LibNCurses
   fun wmove(window : Window, row : Int32, col : Int32) : Int32
   fun nodelay(window : Window, value : Bool)
   fun wclear(window : Window)
+  fun wbkgd(window : Window, chtype : UInt32)
   fun newwin(height : Int32, width : Int32, row : Int32, col : Int32) : Window
   fun start_color : Int32
   fun has_colors : Bool

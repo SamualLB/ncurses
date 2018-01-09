@@ -26,6 +26,8 @@ module NCurses
   CYAN    = 6
   WHITE   = 7
 
+  NCURSES_ATTR_SHIFT = 8
+
   enum Cursor
     INVISIBLE = 0
     VISIBLE   = 1
@@ -179,6 +181,18 @@ module NCurses
     return unless @@initialized
     LibNCurses.endwin
     @@initialized = false
+  end
+
+  def color_pair(n)
+    ncurses_bits(n, 0) & a_color
+  end
+
+  private def ncurses_bits(mask, shift)
+    mask << (shift + NCURSES_ATTR_SHIFT)
+  end
+
+  private def a_color
+    ncurses_bits((1_u32 << 8) - 1, 0)
   end
 
   extend self

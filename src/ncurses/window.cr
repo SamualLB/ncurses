@@ -68,6 +68,16 @@ module NCurses
       set_color(old_color || 0)
     end
 
+    def current_background
+      @current_background ||= 0
+    end
+
+    def set_background(color_pair : Int32)
+      background = NCurses.color_pair(color_pair)
+      LibNCurses.wbkgd(self, background)
+      @current_background = background
+    end
+
     def get_char
       LibNCurses.wgetch(self)
     end
