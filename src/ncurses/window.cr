@@ -17,7 +17,7 @@ module NCurses
       {LibNCurses.getmaxy(self), LibNCurses.getmaxx(self)}
     end
 
-    private macro attr_mask(*attributes)
+    private macro attr_mask(attributes)
       mask = LibNCurses::Attribute::NORMAL
 
       attributes.each do |attribute|
@@ -35,19 +35,31 @@ module NCurses
     end
 
     def attr_on(*attributes)
-      LibNCurses.wattr_on(self, attr_mask(*attributes), Pointer(Void).null)
+      attr_on(attributes.to_a)
+    end
+
+    def attr_on(attributes : Array(Symbol?))
+      LibNCurses.wattr_on(self, attr_mask(attributes), Pointer(Void).null)
     end
 
     def attr_off(*attributes)
-      LibNCurses.wattr_off(self, attr_mask(*attributes), Pointer(Void).null)
+      attr_off(attributes.to_a)
     end
 
-    def with_attr(*attributes)
-      attr_on(*attributes)
+    def attr_off(attributes : Array(Symbol?))
+      LibNCurses.wattr_off(self, attr_mask(attributes), Pointer(Void).null)
+    end
+
+    def with_attr(*attributes, &block)
+      with_attr(attributes.to_a, &block)
+    end
+
+    def with_attr(attributes : Array(Symbol?))
+      attr_on(attributes)
       begin
         yield
       ensure
-        attr_off(*attributes)
+        attr_off(attributes)
       end
     end
 
