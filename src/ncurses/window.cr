@@ -21,7 +21,7 @@ module NCurses
       mask = LibNCurses::Attribute::NORMAL
 
       attributes.each do |attribute|
-        mask = case(attribute)
+        mask |= case(attribute)
         {% for attribute in ATTRIBUTES %}
           when {{attribute}}
             LibNCurses::Attribute::{{attribute.upcase.id}}
