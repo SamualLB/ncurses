@@ -87,6 +87,10 @@ module NCurses
     end
   end
 
+  def flush_input
+    LibNCurses.flushinp
+  end
+
   def curs_set(visibility)
     if ERR == LibNCurses.curs_set(visibility)
       raise "Unable to set cursor visibility"

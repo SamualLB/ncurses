@@ -13,8 +13,16 @@ module NCurses
       initialize(LibNCurses.newwin(height || max_height, width || max_width, y, x))
     end
 
+    def max_x
+      LibNCurses.getmaxx(self)
+    end
+
+    def max_y
+      LibNCurses.getmaxy(self)
+    end
+
     def max_dimensions
-      {LibNCurses.getmaxy(self), LibNCurses.getmaxx(self)}
+      {x: max_x, y: max_y}
     end
 
     private macro attr_mask(attributes)
@@ -107,6 +115,14 @@ module NCurses
     def timeout=(value)
       LibNCurses.notimeout(self, false)
       LibNCurses.wtimeout(self, value)
+    end
+
+    def add_char(chr, position = nil)
+      if position
+        LibNCurses.mvwaddch(self, position[0], position[1], chr)
+      else
+        LibNCurses.waddch(self, chr)
+      end
     end
 
     def print(message, position = nil)

@@ -58,6 +58,8 @@ lib LibNCurses
   fun raw
   fun noecho
   fun wtimeout(window : Window, timeout : Int32)
+  fun waddch(window : Window, chr : LibC::Char)
+  fun mvwaddch(window : Window, row : Int32, col : Int32, chr : LibC::Char)
   fun wprintw(window : Window, format : UInt8*, ...)
   fun wgetch(window : Window) : Int32
   fun mvwprintw(window : Window, row : Int32, col : Int32, format : UInt8*, ...)
@@ -81,6 +83,7 @@ lib LibNCurses
   fun wcolor_set(window : Window, slot : Int16, unused : Void*) : Int32
   fun cbreak : Int32
   fun nocbreak : Int32
+  fun flushinp
   fun curs_set(visibility : Int32) : Int32
   fun move(x : Int32, y : Int32) : Int32
   fun addstr(str : LibC::Char*) : Int32
