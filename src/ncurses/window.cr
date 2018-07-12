@@ -99,7 +99,12 @@ module NCurses
     end
 
     def get_char
-      LibNCurses.wgetch(self)
+      key = LibNCurses.wgetch self
+      return Key.from_value?(key) || key
+    end
+
+    def keypad(enable)
+      LibNCurses.keypad(self, enable)
     end
 
     def no_timeout
@@ -125,12 +130,20 @@ module NCurses
       end
     end
 
+    def add_char(chr, pos_y, pos_x)
+      LibNCurses.waddch(self, pos_y, pos_x, chr)
+    end
+
     def print(message, position = nil)
       if position
         LibNCurses.mvwprintw(self, position[0], position[1], message)
       else
         LibNCurses.wprintw(self, message)
       end
+    end
+
+    def print(message, pos_y, pos_x)
+      LibNCurses.mvwprint(self, pos_y, pos_x, message)
     end
 
     def move(x, y)
@@ -146,35 +159,4 @@ module NCurses
     def refresh
       LibNCurses.wrefresh(self)
     end
-
-    def on_input
-      no_timeout
-      char = get_char
-      case (char)
-      when 27
-        on_special_input { |key, mod| yield(key, mod) }
-      when 10
-        yield(:return, nil)
-      when 32..127
-        yield(char.chr, nil)
-      end
-    end
-
-    private def on_special_input
-      no_delay
-      char = get_char
-      if char == -1
-        yield(:escape, nil)
-      elsif char == 91
-        case (get_char)
-        when 65 then yield(:up, nil)
-        when 66 then yield(:down, nil)
-        when 67 then yield(:right, nil)
-        when 68 then yield(:left, nil)
-        end
-      else
-        yield(char.chr, :alt)
-      end
-    end
-  end
 end

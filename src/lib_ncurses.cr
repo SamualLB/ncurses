@@ -31,7 +31,10 @@ lib LibNCurses
     ITALIC     = 1_u32 << (23_u32 + ATTR_SHIFT)
   end
 
-  enum Key
+  enum Key : LibC::Int
+    ESC       = 27
+    MIN       = 0o401
+
     DOWN      = 0o402
     UP        = 0o403
     LEFT      = 0o404
@@ -50,7 +53,13 @@ lib LibNCurses
     F10       = 0o410 + 10
     F11       = 0o410 + 11
     F12       = 0o410 + 12
+    NPAGE     = 0o522
+    PPAGE     = 0o523
     ENTER     = 0o527
+    MOUSE     = 0o631
+    RESIZE    = 0o632
+
+    MAX       = 0o777
   end
 
   fun initscr : Window
