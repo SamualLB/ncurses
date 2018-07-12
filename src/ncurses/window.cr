@@ -103,6 +103,14 @@ module NCurses
       return Key.from_value?(key) || key
     end
 
+    def get_char(&block)
+      no_timeout
+      loop do
+        ch = get_char
+        yield ch
+      end
+    end
+
     def keypad(enable)
       LibNCurses.keypad(self, enable)
     end
@@ -159,4 +167,5 @@ module NCurses
     def refresh
       LibNCurses.wrefresh(self)
     end
+  end
 end
