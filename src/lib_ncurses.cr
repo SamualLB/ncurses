@@ -41,6 +41,14 @@ lib LibNCurses
     RIGHT     = 0o405
     HOME      = 0o406
     BACKSPACE = 0o407
+
+
+    #macro finished
+    #  {% for n in (0...1) %}
+    #    F{{n}} = 0o410 + {{n}}
+    #  {% end %}
+    #end
+  
     F1        = 0o410 + 1
     F2        = 0o410 + 2
     F3        = 0o410 + 3
@@ -56,6 +64,7 @@ lib LibNCurses
     NPAGE     = 0o522
     PPAGE     = 0o523
     ENTER     = 0o527
+    END       = 0o550
     MOUSE     = 0o631
     RESIZE    = 0o632
 

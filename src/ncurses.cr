@@ -44,15 +44,11 @@ module NCurses
   end
 
   def lines
-    if stdscr = @@stdscr
-      LibNCurses.getmaxy(stdscr.to_unsafe)
-    end
+    max_x
   end
 
   def cols
-    if stdscr = @@stdscr
-      LibNCurses.getmaxx(stdscr.to_unsafe)
-    end
+    max_y
   end
 
   def no_echo
@@ -198,6 +194,8 @@ module NCurses
   private def a_color
     ncurses_bits((1_u32 << 8) - 1, 0)
   end
+
+  delegate no_timeout, keypad, get_char, print, max_y, max_x, to: stdscr
 
   extend self
 end

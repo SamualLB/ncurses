@@ -9,7 +9,7 @@ module NCurses
     ]
 
     def initialize(height = nil, width = nil, y = 0, x = 0)
-      max_height, max_width = NCurses.stdscr.max_x, NCurses.stdscr.max_y
+      max_height, max_width = NCurses.max_x, NCurses.max_y
       initialize(LibNCurses.newwin(height || max_height, width || max_width, y, x))
     end
 
@@ -139,7 +139,7 @@ module NCurses
     end
 
     def add_char(chr, pos_y, pos_x)
-      LibNCurses.waddch(self, pos_y, pos_x, chr)
+      LibNCurses.mvwaddch(self, pos_y, pos_x, chr)
     end
 
     def print(message, position = nil)
@@ -151,7 +151,7 @@ module NCurses
     end
 
     def print(message, pos_y, pos_x)
-      LibNCurses.mvwprint(self, pos_y, pos_x, message)
+      LibNCurses.mvwprintw(self, pos_y, pos_x, message)
     end
 
     def move(x, y)
