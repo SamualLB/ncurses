@@ -1,6 +1,6 @@
-# ncurses [![Build Status](https://travis-ci.org/jreinert/ncurses-crystal.svg?branch=master)](https://travis-ci.org/jreinert/ncurses-crystal)
+# ncurses
 
-NCurses Bindings for Crystal
+Ncurses Bindings for Crystal
 
 ## Installation
 
@@ -10,7 +10,7 @@ Add this to your application's `shard.yml`:
 ```yaml
 dependencies:
   ncurses:
-    github: jreinert/ncurses-crystal
+    bitbucket: SamualLB/ncurses
 ```
 
 
@@ -21,13 +21,19 @@ dependencies:
 require "ncurses"
 ```
 
+Basic Printing
 
-TODO: Write usage instructions here
+```crystal
+NCurses.init
 
+NCurses.stdscr.print "Hello world!"
+
+NCurses.end_win
+```
 
 ## Contributing
 
-1. Fork it ( https://github.com/jreinert/ncurses/fork )
+1. Fork it ( https://bitbucket.org/SamualLB/ncurses.git )
 2. Create your feature branch (git checkout -b my-new-feature)
 3. Commit your changes (git commit -am 'Add some feature')
 4. Push to the branch (git push origin my-new-feature)
@@ -36,3 +42,4 @@ TODO: Write usage instructions here
 ## Contributors
 
 - (https://github.com/jreinert) Joakim Reinert - creator, maintainer
+- (https://bitbucket.org/SamualLB) Samual Black - maintainer
