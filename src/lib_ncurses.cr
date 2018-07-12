@@ -31,46 +31,6 @@ lib LibNCurses
     ITALIC     = 1_u32 << (23_u32 + ATTR_SHIFT)
   end
 
-  enum Key : LibC::Int
-    ESC       = 27
-    MIN       = 0o401
-
-    DOWN      = 0o402
-    UP        = 0o403
-    LEFT      = 0o404
-    RIGHT     = 0o405
-    HOME      = 0o406
-    BACKSPACE = 0o407
-
-
-    #macro finished
-    #  {% for n in (0...1) %}
-    #    F{{n}} = 0o410 + {{n}}
-    #  {% end %}
-    #end
-  
-    F1        = 0o410 + 1
-    F2        = 0o410 + 2
-    F3        = 0o410 + 3
-    F4        = 0o410 + 4
-    F5        = 0o410 + 5
-    F6        = 0o410 + 6
-    F7        = 0o410 + 7
-    F8        = 0o410 + 8
-    F9        = 0o410 + 9
-    F10       = 0o410 + 10
-    F11       = 0o410 + 11
-    F12       = 0o410 + 12
-    NPAGE     = 0o522
-    PPAGE     = 0o523
-    ENTER     = 0o527
-    END       = 0o550
-    MOUSE     = 0o631
-    RESIZE    = 0o632
-
-    MAX       = 0o777
-  end
-
   fun initscr : Window
   fun endwin
   fun raw
@@ -108,4 +68,32 @@ lib LibNCurses
   fun addch(chr : LibC::Char)
   fun refresh
   fun clear
+end
+
+macro finished
+  lib LibNCurses
+    enum Key : LibC::Int
+      ESC       = 27
+      MIN       = 0o401
+
+      DOWN      = 0o402
+      UP        = 0o403
+      LEFT      = 0o404
+      RIGHT     = 0o405
+      HOME      = 0o406
+      BACKSPACE = 0o407
+
+      {% for n in (0...64) %}
+        F{{n}} = 0o410 + {{n}}
+      {% end %}
+
+      NPAGE     = 0o522
+      PPAGE     = 0o523
+      ENTER     = 0o527
+      END       = 0o550
+      MOUSE     = 0o631
+      RESIZE    = 0o632
+      MAX       = 0o777
+    end
+  end
 end
