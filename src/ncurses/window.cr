@@ -14,11 +14,12 @@ module NCurses
     end
 
     def max_x
-      LibNCurses.getmaxx(self)
+      raise "getmaxx error" if (out = LibNCurses.getmaxx(self)) == ERR
+      out
     end
 
     def max_y
-      LibNCurses.getmaxy(self)
+      raise "getmaxy error" if (out = LibNCurses.getmaxy(self)) == ERR
     end
 
     def max_dimensions
@@ -76,7 +77,7 @@ module NCurses
     end
 
     def set_color(slot)
-      LibNCurses.wcolor_set(self, slot.to_i16, nil)
+      raise "wcolor_set error" if LibNCurses.wcolor_set(self, slot.to_i16, nil) == ERR
       @current_color = slot
     end
 
@@ -99,7 +100,7 @@ module NCurses
     end
 
     def get_char
-      key = LibNCurses.wgetch self
+      raise "wgetch error" if (key = LibNCurses.wgetch(self)) == ERR
       return Key.from_value?(key) || key
     end
 
@@ -144,28 +145,26 @@ module NCurses
 
     def print(message, position = nil)
       if position
-        LibNCurses.mvwprintw(self, position[0], position[1], message)
+        raise "mvwprintw error" if LibNCurses.mvwprintw(self, position[0], position[1], message) == ERR
       else
-        LibNCurses.wprintw(self, message)
+        raise "wprintw error" if LibNCurses.wprintw(self, message) == ERR
       end
     end
 
     def print(message, pos_y, pos_x)
-      LibNCurses.mvwprintw(self, pos_y, pos_x, message)
+      raise "mvwprintw error" if LibNCurses.mvwprintw(self, pos_y, pos_x, message) == ERR
     end
 
     def move(x, y)
-      if ERR == LibNCurses.wmove(self, x, y)
-        raise "Unable to set cursor position"
-      end
+      raise "wmove error" if LibNCurses.wmove(self, x, y) == ERR
     end
 
     def clear
-      LibNCurses.wclear(self)
+      raise "wclear error" if LibNCurses.wclear(self) == ERR
     end
 
     def refresh
-      LibNCurses.wrefresh(self)
+      raise "wrefresh error" if LibNCurses.wrefresh(self) == ERR
     end
   end
 end

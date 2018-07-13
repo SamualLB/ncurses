@@ -11,6 +11,7 @@ Locale.setlocale(Locale::LC_CTYPE, "")
 
 module NCurses
   alias Key = LibNCurses::Key
+  alias Mouse = LibNCurses::Mouse
 
   # Possible integer result values
   ERR = -1
@@ -34,6 +35,27 @@ module NCurses
     HI_VIZ    = 2
   end
 
+  struct MouseEvent
+    @device_id : LibC::Short
+    @coordinates : NamedTuple(y: LibC::Int, x: LibC::Int, z: LibC::Int)
+    @state = [] of Mouse
+
+    def initialize(event : LibNCurses::MEVENT)
+      @device_id = event.id
+      @coordinates = {y: event.y, x: event.x, z: event.z}
+      parse_state(event.bstate) do |new|
+        @state << new
+      end
+    end
+
+    private def parse_state(state : LibC::ULong, &block)
+      state = Mouse.new(state)
+      Mouse.each do |member, value|
+        yield member if state.includes?(member) unless member == Mouse::AllEvents
+      end
+    end
+  end
+
   class Window
     def initialize(@window : LibNCurses::Window)
     end
@@ -51,46 +73,47 @@ module NCurses
     max_y
   end
 
+  @@current_mask : LibC::ULong = 0
+
+  def mouse_mask(new_mask : Mouse)
+    @@current_mask = LibNCurses.mousemask(new_mask, pointerof(@@current_mask))
+  end
+
+  def get_mouse
+    raise "getmouse error" if LibNCurses.getmouse(out event) == ERR
+    return MouseEvent.new(event)
+  end
+
   def no_echo
-    LibNCurses.noecho
+    raise "noecho error" if LibNCurses.noecho == ERR
   end
 
   def raw
-    LibNCurses.raw
+    raise "raw error" if LibNCurses.raw == ERR
   end
 
   def crmode
-    if ERR == LibNCurses.nocbreak
-      raise "Unable to switch to crmode"
-    end
+    raise "crmode error" if LibNCurses.nocbreak == ERR
   end
 
   def nocrmode
-    if ERR == LibNCurses.cbreak
-      raise "Unable to switch out of crmode"
-    end
+    raise "nocrmode error" if LibNCurses.cbreak == ERR
   end
 
   def cbreak
-    if ERR == LibNCurses.cbreak
-      raise "Unable to switch to cbreak"
-    end
+    raise "cbreak error" if LibNCurses.cbreak == ERR
   end
 
   def nocbreak
-    if ERR == LibNCurses.nocbreak
-      raise "Unable to switch out of cbreak"
-    end
+    raise "nocbreak error" if LibNCurses.nocbreak == ERR
   end
 
   def flush_input
-    LibNCurses.flushinp
+    raise "flushinp error" if LibNCurses.flushinp == ERR
   end
 
   def curs_set(visibility)
-    if ERR == LibNCurses.curs_set(visibility)
-      raise "Unable to set cursor visibility"
-    end
+    raise "curs_set error" if LibNCurses.curs_set(visibility) == ERR
   end
 
   def setpos(x, y)
@@ -98,23 +121,19 @@ module NCurses
   end
 
   def move(x, y)
-    if ERR == LibNCurses.move(x, y)
-      raise "Unable to set cursor position"
-    end
+    raise "move error" if LibNCurses.move(x, y) == ERR
   end
 
-  def addstr(str)
-    if ERR == LibNCurses.addstr(str)
-      raise "Unable to add string"
-    end
+  def add_string(str)
+    raise "addstr error" if LibNCurses.addstr(str) == ERR
   end
 
   def refresh
-    LibNCurses.refresh
+    raise "refresh error" if LibNCurses.refresh == ERR
   end
 
   def clear
-    LibNCurses.clear
+    raise "clear error" if LibNCurses.clear == ERR
   end
 
   def has_colors?
@@ -134,52 +153,44 @@ module NCurses
   end
 
   def start_color
-    if ERR == LibNCurses.start_color
-      raise "Unable to start color mode"
-    end
+    raise "start_color error" if LibNCurses.start_color == ERR
   end
 
   def init_color(slot, red, green, blue)
-    if ERR == LibNCurses.init_color(slot.to_i16, red.to_i16, green.to_i16, blue.to_i16)
-      raise "Unable to init color"
-    end
+    raise "init_color error" if LibNCurses.init_color(slot.to_i16, red.to_i16, green.to_i16, blue.to_i16) == ERR
   end
 
   def init_color_pair(slot, foreground, background)
-    if ERR == LibNCurses.init_pair(slot.to_i16, foreground.to_i16, background.to_i16)
-      raise "Unable to init color pair"
-    end
+    raise "init_pair error" if LibNCurses.init_pair(slot.to_i16, foreground.to_i16, background.to_i16) == ERR
   end
 
   def init
     return if @@initialized
-    scr = LibNCurses.initscr
-    raise "couldn't initialize ncurses" unless scr
+    raise "ncurses init error" unless scr = LibNCurses.initscr
     @@initialized = true
     @@stdscr = Window.new(scr)
   end
 
   def stdscr
-    scr = @@stdscr
-    raise "ncurses not yet initialized" unless scr
+    raise "ncurses not yet initialized" unless scr = @@stdscr
     scr
   end
 
   def new_term(terminal, out_io, in_io)
-    screen = LibNCurses.newterm(terminal, out_io.fd, in_io.fd)
+    raise "newterm error" unless screen = LibNCurses.newterm(terminal, out_io.fd, in_io.fd)
     puts "foo"
     @@initialized = true
     @@stdscr = Window.new(screen)
   end
 
   def term=(screen)
-    LibNCurses.set_term(screen)
+    raise "set_term error" unless LibNCurses.set_term(screen)
     @@stdscr = Window.new(screen)
   end
 
   def end_win
     return unless @@initialized
-    LibNCurses.endwin
+    raise "endwin error" if LibNCurses.endwin == ERR
     @@initialized = false
   end
 
