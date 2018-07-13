@@ -134,26 +134,26 @@ module NCurses
 
     def add_char(chr, position = nil)
       if position
-        LibNCurses.mvwaddch(self, position[0], position[1], chr)
+        return LibNCurses.mvwaddch(self, position[0], position[1], chr) == OK
       else
-        LibNCurses.waddch(self, chr)
+        return LibNCurses.waddch(self, chr) == OK
       end
     end
 
     def add_char(chr, pos_y, pos_x)
-      LibNCurses.mvwaddch(self, pos_y, pos_x, chr)
+      LibNCurses.mvwaddch(self, pos_y, pos_x, chr) == OK
     end
 
     def print(message, position = nil)
       if position
-        raise "mvwprintw error" if LibNCurses.mvwprintw(self, position[0], position[1], message) == ERR
+        return LibNCurses.mvwprintw(self, position[0], position[1], message) == OK
       else
-        raise "wprintw error" if LibNCurses.wprintw(self, message) == ERR
+        return "wprintw error" if LibNCurses.wprintw(self, message) == OK
       end
     end
 
     def print(message, pos_y, pos_x)
-      raise "mvwprintw error" if LibNCurses.mvwprintw(self, pos_y, pos_x, message) == ERR
+       LibNCurses.mvwprintw(self, pos_y, pos_x, message) == OK
     end
 
     def move(x, y)
