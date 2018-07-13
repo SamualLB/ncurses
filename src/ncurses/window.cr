@@ -20,6 +20,7 @@ module NCurses
 
     def max_y
       raise "getmaxy error" if (out = LibNCurses.getmaxy(self)) == ERR
+      out
     end
 
     def max_dimensions
