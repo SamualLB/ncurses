@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.com/SamualLB/ncurses.svg?branch=master)](https://travis-ci.com/SamualLB/ncurses)
 # ncurses
 
 Ncurses Bindings for Crystal
@@ -21,7 +22,7 @@ dependencies:
 require "ncurses"
 ```
 
-####Basic Printing####
+#### Basic Printing ####
 
 ```crystal
 NCurses.init
@@ -31,7 +32,7 @@ NCurses.stdscr.print "Hello world!"
 NCurses.end_win
 ```
 
-####Run Examples####
+#### Run Examples ####
 
 ```
 $ crystal run examples/input.cr
