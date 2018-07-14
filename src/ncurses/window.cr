@@ -8,23 +8,37 @@ module NCurses
       :low, :right, :top, :vertical, :italic,
     ]
 
+    # Create a new window with given size
     def initialize(height = nil, width = nil, y = 0, x = 0)
       max_height, max_width = NCurses.max_x, NCurses.max_y
       initialize(LibNCurses.newwin(height || max_height, width || max_width, y, x))
     end
 
+    # Return width
     def max_x
       raise "getmaxx error" if (out = LibNCurses.getmaxx(self)) == ERR
       out
     end
 
+    # Return height
     def max_y
       raise "getmaxy error" if (out = LibNCurses.getmaxy(self)) == ERR
       out
     end
 
+    # Alias for `#max_x`
+    def cols
+      max_x
+    end
+
+    # Alias for `#max_y`
+    def lines
+      max_y
+    end
+
+    # Max height and width
     def max_dimensions
-      {x: max_x, y: max_y}
+      {y: max_y, x: max_x}
     end
 
     private macro attr_mask(attributes)
@@ -100,11 +114,13 @@ module NCurses
       @current_background = background
     end
 
+    # Get a character input
     def get_char
       raise "wgetch error" if (key = LibNCurses.wgetch(self)) == ERR
       return Key.from_value?(key) || key
     end
 
+    # Get a character input for main loop
     def get_char(&block)
       no_timeout
       loop do
@@ -113,25 +129,30 @@ module NCurses
       end
     end
 
+    # Enable or disable capturing function keys
     def keypad(enable)
       LibNCurses.keypad(self, enable)
     end
 
+    # Wait for input
     def no_timeout
       LibNCurses.nodelay(self, false)
       LibNCurses.notimeout(self, true)
     end
 
+    # Do not wait for input, return ERR
     def no_delay
       LibNCurses.notimeout(self, false)
       LibNCurses.nodelay(self, true)
     end
 
+    # Set input timeout
     def timeout=(value)
       LibNCurses.notimeout(self, false)
       LibNCurses.wtimeout(self, value)
     end
 
+    # Draw a character
     def add_char(chr, position = nil)
       if position
         return LibNCurses.mvwaddch(self, position[0], position[1], chr) == OK
@@ -140,10 +161,12 @@ module NCurses
       end
     end
 
+    # ditto
     def add_char(chr, pos_y, pos_x)
       LibNCurses.mvwaddch(self, pos_y, pos_x, chr) == OK
     end
 
+    # Write a string
     def print(message, position = nil)
       if position
         return LibNCurses.mvwprintw(self, position[0], position[1], message) == OK
@@ -152,18 +175,22 @@ module NCurses
       end
     end
 
+    # ditto
     def print(message, pos_y, pos_x)
-       LibNCurses.mvwprintw(self, pos_y, pos_x, message) == OK
+      LibNCurses.mvwprintw(self, pos_y, pos_x, message) == OK
     end
 
-    def move(x, y)
-      raise "wmove error" if LibNCurses.wmove(self, x, y) == ERR
+    # Move cursor to new position
+    def move(y, x)
+      raise "wmove error" if LibNCurses.wmove(self, y, x) == ERR
     end
 
+    # Clear window
     def clear
       raise "wclear error" if LibNCurses.wclear(self) == ERR
     end
 
+    # Refresh window
     def refresh
       raise "wrefresh error" if LibNCurses.wrefresh(self) == ERR
     end

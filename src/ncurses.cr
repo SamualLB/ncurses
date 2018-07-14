@@ -29,23 +29,23 @@ module NCurses
 
   NCURSES_ATTR_SHIFT = 8
 
-  enum Cursor
-    INVISIBLE = 0
-    VISIBLE   = 1
-    HI_VIZ    = 2
+  enum Cursor : LibC::Int
+    Invisible      = 0
+    Visible        = 1
+    HighVisibility = 2
   end
 
+  # Returned by `#get_mouse` after `Key::Mouse` has been returned
   struct MouseEvent
-    @device_id : LibC::Short
-    @coordinates : NamedTuple(y: LibC::Int, x: LibC::Int, z: LibC::Int)
-    @state = [] of Mouse
+    getter device_id : Int16
+    getter coordinates : NamedTuple(y: Int32, x: Int32, z: Int32)
+    getter state : Mouse
 
+    # Converts fields from LibC ints to specific types
     def initialize(event : LibNCurses::MEVENT)
-      @device_id = event.id
-      @coordinates = {y: event.y, x: event.x, z: event.z}
-      parse_state(event.bstate) do |new|
-        @state << new
-      end
+      @device_id = event.id.to_i16
+      @coordinates = {y: event.y.to_i32, x: event.x.to_i32, z: event.z.to_i32}
+      @state = Mouse.new(event.bstate)
     end
 
     private def parse_state(state : LibC::ULong, &block)
@@ -65,105 +65,126 @@ module NCurses
     end
   end
 
-  def lines
-    max_x
-  end
-
-  def cols
-    max_y
-  end
-
+  # Default mouse mask
   @@current_mask : LibC::ULong = 0
 
+  # Sets the mouse events that should be returned
+  # Should be given a `Mouse` enum
   def mouse_mask(new_mask : Mouse)
     @@current_mask = LibNCurses.mousemask(new_mask, pointerof(@@current_mask))
   end
 
+  # Should only be called if `#get_char` returned `Key::Mouse`
+  # 
+  # Returns a `MouseEvent` containing the mouse state and coordinates
   def get_mouse
     raise "getmouse error" if LibNCurses.getmouse(out event) == ERR
     return MouseEvent.new(event)
   end
 
+  # Do not echo back to the console
   def no_echo
     raise "noecho error" if LibNCurses.noecho == ERR
   end
 
+  # `#cbreak` but also passes signals
+  # TODO: Implement signals?
   def raw
     raise "raw error" if LibNCurses.raw == ERR
   end
 
-  def crmode
+  # Alias for `#nocbreak`
+  def enable_line_buffer
     raise "crmode error" if LibNCurses.nocbreak == ERR
   end
 
-  def nocrmode
+  # Alias for `#cbreak`
+  def disable_line_buffer
     raise "nocrmode error" if LibNCurses.cbreak == ERR
   end
 
+  # Disable buffering until new line
   def cbreak
     raise "cbreak error" if LibNCurses.cbreak == ERR
   end
 
+  # Re-enable buffering until new line
   def nocbreak
     raise "nocbreak error" if LibNCurses.nocbreak == ERR
   end
 
+  # Wraps flushinp() to clear the input buffer
   def flush_input
     raise "flushinp error" if LibNCurses.flushinp == ERR
   end
 
+  # Set the cursor state
+  # Use `Cursor` enum
   def curs_set(visibility)
-    raise "curs_set error" if LibNCurses.curs_set(visibility) == ERR
+    LibNCurses.curs_set(visibility) == OK
   end
 
-  def setpos(x, y)
-    move(x, y)
+  # Alias for `#move`
+  def set_pos(y, x)
+    move(y, x)
   end
 
-  def move(x, y)
-    raise "move error" if LibNCurses.move(x, y) == ERR
+  # Move the cursor to the coordinates
+  def move(y, x)
+    raise "move error" if LibNCurses.move(y, x) == ERR
   end
 
+  # Wrapper for addstr
+  # Writes each character until end of the terminal line or string
   def add_string(str)
     raise "addstr error" if LibNCurses.addstr(str) == ERR
   end
 
+  # Refresh the window
   def refresh
     raise "refresh error" if LibNCurses.refresh == ERR
   end
 
+  # Clear the window
   def clear
     raise "clear error" if LibNCurses.clear == ERR
   end
 
+  # Terminal supports colors
   def has_colors?
     LibNCurses.has_colors
   end
 
+  # Terminal allows setting RGB color values
   def can_change_color?
     LibNCurses.can_change_color
   end
+ 
+  #def color_pairs
+  #  LibNCurses.color_pairs
+  #end
 
-  def color_pairs
-    LibNCurses.color_pairs
-  end
 
-  def colors
-    LibNCurses.colors
-  end
+  #def colors
+  #  LibNCurses.colors
+  #end
 
+  # Start color support
   def start_color
     raise "start_color error" if LibNCurses.start_color == ERR
   end
 
+  # Change the RGB values of the color
   def init_color(slot, red, green, blue)
     raise "init_color error" if LibNCurses.init_color(slot.to_i16, red.to_i16, green.to_i16, blue.to_i16) == ERR
   end
 
+  # Create a color pair to use
   def init_color_pair(slot, foreground, background)
     raise "init_pair error" if LibNCurses.init_pair(slot.to_i16, foreground.to_i16, background.to_i16) == ERR
   end
 
+  # Start curses mode
   def init
     return if @@initialized
     raise "ncurses init error" unless scr = LibNCurses.initscr
@@ -171,6 +192,7 @@ module NCurses
     @@stdscr = Window.new(scr)
   end
 
+  # Get stdscr
   def stdscr
     raise "ncurses not yet initialized" unless scr = @@stdscr
     scr
@@ -188,12 +210,14 @@ module NCurses
     @@stdscr = Window.new(screen)
   end
 
+  # End curses mode
   def end_win
     return unless @@initialized
     raise "endwin error" if LibNCurses.endwin == ERR
     @@initialized = false
   end
 
+  # Get a color pair
   def color_pair(n)
     ncurses_bits(n, 0) & a_color
   end
@@ -206,6 +230,7 @@ module NCurses
     ncurses_bits((1_u32 << 8) - 1, 0)
   end
 
+  # Send `Window` methods to stdscr
   delegate no_timeout, keypad, get_char, print, max_y, max_x, to: stdscr
 
   extend self
