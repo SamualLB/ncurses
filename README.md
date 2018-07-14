@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.com/SamualLB/ncurses.svg?branch=master)](https://travis-ci.com/SamualLB/ncurses)
 # ncurses
 
 Ncurses Bindings for Crystal
