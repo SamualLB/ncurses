@@ -22,7 +22,7 @@ dependencies:
 require "ncurses"
 ```
 
-#### Basic Printing ####
+#### Basic Printing
 
 ```crystal
 NCurses.init
@@ -32,9 +32,9 @@ NCurses.stdscr.print "Hello world!"
 NCurses.end_win
 ```
 
-#### Run Examples ####
+#### Run Examples
 
-```
+```text
 $ crystal run examples/input.cr
 ```
 
