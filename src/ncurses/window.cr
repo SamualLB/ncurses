@@ -35,52 +35,55 @@ module NCurses
       {y: max_y, x: max_x}
     end
 
-    # Turn on attribute(s)
-    def attr_on(attr : Attribute)
-      LibNCurses.wattron(self, attr)
+    # Set this window's default color pair
+    def set_color(color_pair)
+      LibNCurses.wcolor_set(self, color_pair.to_i16, nil)
+    end
+
+    # Get the current attributes and color pair
+    # As a named tuple with *attr* and *color*
+    def get_attribute
+      LibNCurses.wattr_get(self, out attr, out color_pair, nil)
+      return {attr: attr, color: color_pair}
     end
 
     # Turn off attribute(s)
-    def attr_off(attr : Attribute)
-      LibNCurses.wattroff(self, attr)
+    def attribute_off(attr : Attribute)
+      LibNCurses.wattr_off(self, attr, nil)
+    end
+
+    # Turn on attribute(s)
+    def attribute_on(attr : Attribute)
+      LibNCurses.wattr_on(self, attr, nil)
     end
 
     # Block with attribute(s) turned on
-    def with_attr(attrs : Attribute, &block)
-      attr_on(attrs)
+    def with_attribute(attrs : Attribute, &block)
+      attribute_on(attrs)
       begin
         yield
       ensure
-        attr_off(attrs)
+        attribute_off(attrs)
       end
     end
 
-    #def current_color
-    #  @current_color ||= 0
-    #end
+    # Replace attribute(s) and color with these
+    def set_attribute(attr : Attribute = Attribute::Normal, color_pair = 0)
+      LibNCurses.wattrset(self, attr, color_pair.to_i16, nil)
+    end
 
-    #def set_color(slot)
-    #  raise "wcolor_set error" if LibNCurses.wcolor_set(self, slot.to_i16, nil) == ERR
-    #  @current_color = slot
-    #end
-
-    #def with_color(slot)
-    #  old_color = current_color
-    #  set_color(slot)
-    #  yield
-    #ensure
-    #  set_color(old_color || 0)
-    #end
-
-    #def current_background
-    #  @current_background ||= 0
-    #end
-
-    #def set_background(color_pair : Int32)
-    #  background = NCurses.color_pair(color_pair)
-    #  LibNCurses.wbkgd(self, background)
-    #  @current_background = background
-    #end
+    # chgat wrapper
+    # *attr* is the `Attribute` enum
+    # *color_pair* is the color pair number (0 is the default white on black)
+    # *length* defaults to -1, but represents the number of characters to change, up to EOL
+    # If *y* and *x* are set, the cursor location is moved before changing attributes
+    def change_attribute(attr : Attribute = Attribute::Normal, color_pair = 0, length = -1, y = nil, x = nil)
+      if y.nil? || x.nil?
+        LibNCurses.wchgat(self, length, attr, color_pair.to_i16, nil)
+      else
+        LibNCurses.mvwchgat(self, y, x, length, attr, color_pair.to_i16, nil)
+      end
+    end
 
     # Get a character input
     def get_char
@@ -148,9 +151,29 @@ module NCurses
       LibNCurses.mvwprintw(self, pos_y, pos_x, message) == OK
     end
 
+    # Change the background
+    def change_background(char)
+      LibNCurses.wbkgdset(self, char.to_u32)
+    end
+
+    # Sets a new background and applies it everywhere
+    def set_background(char)
+      LibNCurses.wbkgd(self, char.to_u32)
+    end
+
+    # Get the character and attributes from the current background
+    def get_background
+      LibNCurses.getbkgd(self)
+    end
+
     # Move cursor to new position
     def move(y, x)
       raise "wmove error" if LibNCurses.wmove(self, y, x) == ERR
+    end
+
+    # Alias for `#move`
+    def set_pos(y, x)
+      move y, x
     end
 
     # Clear window

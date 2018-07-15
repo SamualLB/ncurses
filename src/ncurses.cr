@@ -116,32 +116,6 @@ module NCurses
     LibNCurses.curs_set(visibility) == OK
   end
 
-  # Alias for `#move`
-  def set_pos(y, x)
-    move(y, x)
-  end
-
-  # Move the cursor to the coordinates
-  def move(y, x)
-    raise "move error" if LibNCurses.move(y, x) == ERR
-  end
-
-  # Wrapper for addstr
-  # Writes each character until end of the terminal line or string
-  def add_string(str)
-    raise "addstr error" if LibNCurses.addstr(str) == ERR
-  end
-
-  # Refresh the window
-  def refresh
-    raise "refresh error" if LibNCurses.refresh == ERR
-  end
-
-  # Clear the window
-  def clear
-    raise "clear error" if LibNCurses.clear == ERR
-  end
-
   # Terminal supports colors
   def has_colors?
     LibNCurses.has_colors
@@ -152,15 +126,6 @@ module NCurses
     LibNCurses.can_change_color
   end
  
-  #def color_pairs
-  #  LibNCurses.color_pairs
-  #end
-
-
-  #def colors
-  #  LibNCurses.colors
-  #end
-
   # Start color support
   def start_color
     raise "start_color error" if LibNCurses.start_color == ERR
@@ -214,21 +179,21 @@ module NCurses
     @@initialized = false
   end
 
+  # Alias for `#end_win`
+  def end
+    end_win
+  end
+
   # Get a color pair
   def color_pair(n)
     ncurses_bits(n, 0) & a_color
   end
 
-  private def ncurses_bits(mask, shift)
-    mask << (shift + NCURSES_ATTR_SHIFT)
-  end
-
-  private def a_color
-    ncurses_bits((1_u32 << 8) - 1, 0)
-  end
-
   # Send `Window` methods to stdscr
-  delegate no_timeout, keypad, get_char, print, max_y, max_x, attr_on, attr_off, with_attr, to: stdscr
+  delegate no_timeout, keypad, get_char, print, max_y, max_x, move, set_pos, clear, refresh, addstr, to: stdscr
+
+  # Attribute functions
+  delegate attribute_on, attribute_off, with_attribute, attribute_set, to: stdscr
 
   extend self
 end

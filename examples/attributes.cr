@@ -1,7 +1,7 @@
 require "../ncurses"
 
 def print_attr(attr : NCurses::Attribute, y_pos = 0, text = "")
-  NCurses.with_attr(attr) do
+  NCurses.with_attribute(attr) do
     NCurses.print("#{text}\n", y_pos, 0)
   end
 end
