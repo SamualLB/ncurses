@@ -122,8 +122,9 @@ lib LibNCurses
   fun mvwprintw(window : Window, row : LibC::Int, col : LibC::Int, format : LibC::Char*, ...) : LibC::Int
   fun wrefresh(window : Window) : LibC::Int
   fun keypad(window : Window, value : Bool)
-  fun wattr_on(window : Window, attribute : Attribute, unused : Void*) : LibC::Int
-  fun wattr_off(window : Window, attribute : Attribute, unused : Void*) : LibC::Int
+  fun wattron(window : Window, attribute : Attribute) : LibC::Int
+  fun wattroff(window : Window, attribute : Attribute) : LibC::Int
+  fun wattrset(window : Window, attribute : Attribute) : LibC::Int
   fun getmaxy(window : Window) : LibC::Int
   fun getmaxx(window : Window) : LibC::Int
   fun notimeout(window : Window, value : Bool) : LibC::Int

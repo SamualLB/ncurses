@@ -2,12 +2,6 @@ require "../ncurses"
 
 module NCurses
   class Window
-    ATTRIBUTES = [
-      :normal, :attributes, :chartext, :color, :standout, :underline, :reverse,
-      :blink, :dim, :bold, :altcharset, :invis, :protect, :horizontal, :left,
-      :low, :right, :top, :vertical, :italic,
-    ]
-
     # Create a new window with given size
     def initialize(height = nil, width = nil, y = 0, x = 0)
       max_height, max_width = NCurses.max_x, NCurses.max_y
@@ -41,78 +35,52 @@ module NCurses
       {y: max_y, x: max_x}
     end
 
-    private macro attr_mask(attributes)
-      mask = LibNCurses::Attribute::NORMAL
-
-      attributes.each do |attribute|
-        mask |= case(attribute)
-        {% for attribute in ATTRIBUTES %}
-          when {{attribute}}
-            LibNCurses::Attribute::{{attribute.upcase.id}}
-        {% end %}
-        else
-          raise "unknown attribute #{attribute}"
-        end
-      end
-
-      mask
+    # Turn on attribute(s)
+    def attr_on(attr : Attribute)
+      LibNCurses.wattron(self, attr)
     end
 
-    def attr_on(*attributes)
-      attr_on(attributes.to_a)
+    # Turn off attribute(s)
+    def attr_off(attr : Attribute)
+      LibNCurses.wattroff(self, attr)
     end
 
-    def attr_on(attributes : Array(Symbol?))
-      LibNCurses.wattr_on(self, attr_mask(attributes), Pointer(Void).null)
-    end
-
-    def attr_off(*attributes)
-      attr_off(attributes.to_a)
-    end
-
-    def attr_off(attributes : Array(Symbol?))
-      LibNCurses.wattr_off(self, attr_mask(attributes), Pointer(Void).null)
-    end
-
-    def with_attr(*attributes, &block)
-      with_attr(attributes.to_a, &block)
-    end
-
-    def with_attr(attributes : Array(Symbol?))
-      attr_on(attributes)
+    # Block with attribute(s) turned on
+    def with_attr(attrs : Attribute, &block)
+      attr_on(attrs)
       begin
         yield
       ensure
-        attr_off(attributes)
+        attr_off(attrs)
       end
     end
 
-    def current_color
-      @current_color ||= 0
-    end
+    #def current_color
+    #  @current_color ||= 0
+    #end
 
-    def set_color(slot)
-      raise "wcolor_set error" if LibNCurses.wcolor_set(self, slot.to_i16, nil) == ERR
-      @current_color = slot
-    end
+    #def set_color(slot)
+    #  raise "wcolor_set error" if LibNCurses.wcolor_set(self, slot.to_i16, nil) == ERR
+    #  @current_color = slot
+    #end
 
-    def with_color(slot)
-      old_color = current_color
-      set_color(slot)
-      yield
-    ensure
-      set_color(old_color || 0)
-    end
+    #def with_color(slot)
+    #  old_color = current_color
+    #  set_color(slot)
+    #  yield
+    #ensure
+    #  set_color(old_color || 0)
+    #end
 
-    def current_background
-      @current_background ||= 0
-    end
+    #def current_background
+    #  @current_background ||= 0
+    #end
 
-    def set_background(color_pair : Int32)
-      background = NCurses.color_pair(color_pair)
-      LibNCurses.wbkgd(self, background)
-      @current_background = background
-    end
+    #def set_background(color_pair : Int32)
+    #  background = NCurses.color_pair(color_pair)
+    #  LibNCurses.wbkgd(self, background)
+    #  @current_background = background
+    #end
 
     # Get a character input
     def get_char

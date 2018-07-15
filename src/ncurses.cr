@@ -13,6 +13,7 @@ module NCurses
   alias Key = LibNCurses::Key
   alias Mouse = LibNCurses::Mouse
   alias Attribute = LibNCurses::Attribute
+  alias Color = LibNCurses::Color
 
   # Possible integer result values
   ERR = -1
@@ -170,8 +171,13 @@ module NCurses
     raise "init_color error" if LibNCurses.init_color(slot.to_i16, red.to_i16, green.to_i16, blue.to_i16) == ERR
   end
 
+  # ditto
+  def change_color(slot, red, green, blue)
+    init_color slot, red, green, blue
+  end
+
   # Create a color pair to use
-  def init_color_pair(slot, foreground, background)
+  def init_color_pair(slot, foreground : Color, background : Color)
     raise "init_pair error" if LibNCurses.init_pair(slot.to_i16, foreground.to_i16, background.to_i16) == ERR
   end
 
@@ -222,7 +228,7 @@ module NCurses
   end
 
   # Send `Window` methods to stdscr
-  delegate no_timeout, keypad, get_char, print, max_y, max_x, to: stdscr
+  delegate no_timeout, keypad, get_char, print, max_y, max_x, attr_on, attr_off, with_attr, to: stdscr
 
   extend self
 end

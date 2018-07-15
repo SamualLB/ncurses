@@ -1,8 +1,18 @@
 lib LibNCurses
+
   # Attributes that can be added to change text appearence
   enum Attribute : LibC::UInt
     # Reset all attributes
     Normal     =              0o0
+
+    # Color pairs
+    #
+    # Named as ColorPair1 to ColorPair255
+    #
+    # ColorPair0 is 0, so Normal can be used if needed
+    {% for n in (1...256) %}
+      ColorPair{{n}} = {{n << 8}}
+    {% end %}
 
     # Extract color pair
     Color      =        0o177_400
