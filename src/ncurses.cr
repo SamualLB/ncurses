@@ -12,7 +12,7 @@ Locale.setlocale(Locale::LC_CTYPE, "")
 module NCurses
   alias Key = LibNCurses::Key
   alias Mouse = LibNCurses::Mouse
-  alias Attribute = LibNCurses::Attributeq
+  alias Attribute = LibNCurses::Attribute
 
   # Possible integer result values
   ERR = -1
