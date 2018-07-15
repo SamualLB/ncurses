@@ -12,20 +12,11 @@ Locale.setlocale(Locale::LC_CTYPE, "")
 module NCurses
   alias Key = LibNCurses::Key
   alias Mouse = LibNCurses::Mouse
+  alias Attribute = LibNCurses::Attributeq
 
   # Possible integer result values
   ERR = -1
   OK  =  0
-
-  # Default colors
-  BLACK   = 0
-  RED     = 1
-  GREEN   = 2
-  YELLOW  = 3
-  BLUE    = 4
-  MAGENTA = 5
-  CYAN    = 6
-  WHITE   = 7
 
   NCURSES_ATTR_SHIFT = 8
 
