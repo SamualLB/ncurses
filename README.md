@@ -37,6 +37,9 @@ NCurses.end_win
 ```text
 $ crystal run examples/input.cr
 ```
+```text
+$ crystal run examples/attributes.cr
+```
 
 ## Contributing
 
