@@ -25,11 +25,11 @@ require "ncurses"
 #### Basic Printing
 
 ```crystal
-NCurses.init
+NCurses.start
 
-NCurses.stdscr.print "Hello world!"
+NCurses.print "Hello world!"
 
-NCurses.end_win
+NCurses.end
 ```
 
 #### Run Examples

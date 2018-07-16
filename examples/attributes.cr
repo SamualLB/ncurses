@@ -6,7 +6,7 @@ def print_attr(attr : NCurses::Attribute, y_pos = 0, text = "")
   end
 end
 
-NCurses.init
+NCurses.start
 NCurses.cbreak
 NCurses.no_echo
 NCurses.start_color
@@ -41,4 +41,4 @@ NCurses.get_char do |ch|
   break if ch == 113
 end
 
-NCurses.end_win
+NCurses.end

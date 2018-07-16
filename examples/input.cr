@@ -1,6 +1,6 @@
 require "../ncurses"
 
-NCurses.init
+NCurses.start
 NCurses.cbreak
 NCurses.no_echo
 NCurses.no_timeout
@@ -24,4 +24,4 @@ NCurses.get_char do |ch|
   end
 end
 
-NCurses.end_win
+NCurses.end

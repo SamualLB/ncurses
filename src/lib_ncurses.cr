@@ -30,31 +30,43 @@ lib LibNCurses
 
   # General functions
   fun initscr : Window
-  fun newwin(height : LibC::Int, width : LibC::Int, row : LibC::Int, col : LibC::Int) : Window
-
-  fun mousemask(new_mask : LibC::ULong, old_mask : LibC::ULong*) : LibC::ULong
-  fun getmouse(event : MEVENT*)
   fun endwin : LibC::Int
-  fun raw : LibC::Int
-  fun noraw : LibC::Int
-  fun noecho : LibC::Int
-  fun wtimeout(window : Window, timeout : LibC::Int)
-  fun wgetch(window : Window) : LibC::Int
-  fun wrefresh(window : Window) : LibC::Int
-  fun keypad(window : Window, value : Bool)
+  fun curs_set(visibility : LibC::Int) : LibC::Int
+
+  # General window functions
+  fun newwin(height : LibC::Int, width : LibC::Int, row : LibC::Int, col : LibC::Int) : Window
+  fun delwin(window : Window) : LibC::Int
+  fun mvwin(window : Window, y : LibC::Int, x : LibC::Int) : LibC::Int
   fun getmaxy(window : Window) : LibC::Int
   fun getmaxx(window : Window) : LibC::Int
-  fun notimeout(window : Window, value : Bool) : LibC::Int
   fun wmove(window : Window, row : LibC::Int, col : LibC::Int) : LibC::Int
-  fun nodelay(window : Window, value : Bool)
+  fun wrefresh(window : Window) : LibC::Int
   fun wclear(window : Window) : LibC::Int
-  fun wcolor_set(window : Window, slot : LibC::Short, unused : Void*) : LibC::Int
+
+  # Input option functions
   fun cbreak : LibC::Int
   fun nocbreak : LibC::Int
+  fun echo : LibC::Int
+  fun noecho : LibC::Int
+  fun raw : LibC::Int
+  fun noraw : LibC::Int
+
+  # Window input option function
+  fun keypad(window : Window, value : Bool)
+  fun nodelay(window : Window, value : Bool)
+  fun notimeout(window : Window, value : Bool) : LibC::Int
+  fun wtimeout(window : Window, timeout : LibC::Int)
+
+  # Input functions
+  fun wgetch(window : Window) : LibC::Int
   fun flushinp : LibC::Int
-  fun curs_set(visibility : LibC::Int) : LibC::Int
-  fun refresh : LibC::Int
-  fun clear : LibC::Int
+
+  # Mouse functions
+  fun has_mouse : Bool
+  fun getmouse(event : MEVENT*) : LibC::Int
+  fun mousemask(new_mask : LibC::ULong, old_mask : LibC::ULong*) : LibC::ULong
+  fun wenclose(window : Window, y : LibC::Int, x : LibC::Int) : Bool
+  fun wmouse_trafo(window : Window, y : LibC::Int*, x : LibC::Int*, to_screen : Bool) : Bool
 
   # Window output
   fun waddstr(window : Window, str : LibC::Char*) : LibC::Int
@@ -90,5 +102,5 @@ lib LibNCurses
   fun has_colors : Bool
   fun can_change_color : Bool
   fun init_color(slot : LibC::Short, red : LibC::Short, green : LibC::Short, blue : LibC::Short) : LibC::Int
-  fun init_pair(slot : LibC::Short, foreground : LibC::Short, background : LibC::Short) : LibC::Int  
+  fun init_pair(slot : LibC::Short, foreground : LibC::Short, background : LibC::Short) : LibC::Int
 end

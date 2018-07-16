@@ -56,11 +56,11 @@ lib LibNCurses
     # BUTTON3_TRIPLE_CLICKED
     B3TripleClicked = 0o40_000
 
-    # B4: ???
-    # TODO: Description for Button 4 on mouse
+    # B4: Mouse Wheel Up
     # BUTTON4_RELEASED
     B4Released = 0o100_000
 
+    # When scrolling up
     # BUTTON4_PRESSED
     B4Pressed = 0o200_000
 
@@ -73,11 +73,11 @@ lib LibNCurses
     # BUTTON4_TRIPLE_CLICKED
     B4TripleClicked = 0o2_000_000
 
-    # B5: ???
-    # TODO: Description for Button 5 on mouse
+    # B5: Mouse Wheel Down
     # BUTTON5_RELEASED
     B5Released = 0o4_000_000
 
+    # When scrolling down
     # BUTTON5_PRESSED
     B5Pressed = 0o10_000_000
 
