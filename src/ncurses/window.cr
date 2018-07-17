@@ -231,7 +231,7 @@ module NCurses
 
     # Set this window's default color pair
     # Wrapper for `wcolor_set()` (`color_set()`)
-    def set_color(color_pair)
+    def set_color(color_pair = 0)
       LibNCurses.wcolor_set(self, color_pair.to_i16, nil)
     end
 
@@ -261,7 +261,7 @@ module NCurses
 
     # Turn on attribute(s)
     # Wrapper for `wattr_on()` (`attr_on()`)
-    def attribute_on(attr : Attribute)
+    def attr_on(attr : Attribute)
       LibNCurses.wattr_on(self, attr, nil)
     end
 
@@ -282,7 +282,7 @@ module NCurses
 
     # Alias for `#with_attr`
     def with_attribute(attrs : Attribute, &block)
-      with_attribute(attrs) do
+      with_attr(attrs) do
         yield
       end
     end

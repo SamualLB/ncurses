@@ -40,6 +40,12 @@ $ crystal run examples/input.cr
 ```text
 $ crystal run examples/attributes.cr
 ```
+```text
+$ crystal run examples/colors.cr
+```
+```text
+$ crystal run examples/windows.cr
+```
 
 ## Contributing
 

@@ -256,10 +256,25 @@ module NCurses
   # Allows use of namespace to access stdscr
   #
 
-  delegate no_timeout, keypad, get_char, print, max_y, max_x, move, set_pos, clear, refresh, addstr, to: stdscr
+  # General
+  delegate max_y, height, lines, max_x, width, cols, to: stdscr
+  delegate max_dimensions, max_dimensions_named, to: stdscr
+  delegate move, set_pos, refresh, clear, to: stdscr
 
-  # Attribute functions
-  delegate attribute_on, attribute_off, with_attribute, set_attribute, set_color, get_attribute, change_attribute, to: stdscr
+  # Input
+  delegate keypad, no_timeout, no_delay, timeout, to: stdscr
+  delegate get_char, to: stdscr
+
+  # Output
+  delegate add_char, print, to: stdscr
+
+  # Background
+  delegate change_background, set_background, get_background, to: stdscr
+
+  # Attribute
+  delegate set_color, attr_get, get_attribute, attr_off, attribute_off, to: stdscr
+  delegate attr_on, attribute_on, with_attr, with_attribute, to: stdscr
+  delegate set_attr, set_attribute, change_attribute, to: stdscr
 
   extend self
 end
