@@ -190,9 +190,9 @@ module NCurses
   # Wrapper for `start_color()`
   def start_color
     raise "start_color error" if LibNCurses.start_color == ERR
-  en
+  end
 
-   # Terminal supports colors
+  # Terminal supports colors
   # Wrapper for `has_colors()`
   def has_colors?
     LibNCurses.has_colors
