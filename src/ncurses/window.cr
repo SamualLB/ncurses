@@ -76,7 +76,8 @@ module NCurses
       {y: max_y, x: max_x}
     end
 
-    # Move cursor to new positio#
+    # Move cursor to new position
+    #
     # Wrapper for `wmove()` (`move()`)
     def move(y, x)
       raise "wmove error" if LibNCurses.wmove(self, y, x) == ERR
