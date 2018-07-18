@@ -3,12 +3,13 @@ lib LibNCurses
   # 
   # Uses NCURSES_MOUSE_VERSION 2
   # 
-  # If `#get_char` returns `NCurses::Key:Mouse`
-  # Check using `NCurses#get_mouse`which returns a `MouseEvent`
-  # which contains `#state`
+  # If `#get_char` returns `NCurses::Key:Mouse`,
+  # Check using `NCurses#get_mouse`which returns a `MouseEvent`,
+  # which contains `#state`.
   @[Flags]
   enum Mouse : LibC::ULong
     # B1: Left Button
+    #
     # BUTTON1_RELEASED
     B1Released = 0o1
 
@@ -25,6 +26,7 @@ lib LibNCurses
     B1TripleClicked = 0o20
 
     # B2: Middle Button (scroll wheel)
+    #
     # BUTTON2_RELEASED
     B2Released = 0o40
 
@@ -41,6 +43,7 @@ lib LibNCurses
     B2TripleClicked = 0o1_000
 
     # B3: Right button
+    #
     # BUTTON3_RELEASED
     B3Released = 0o2_000
 
@@ -57,10 +60,12 @@ lib LibNCurses
     B3TripleClicked = 0o40_000
 
     # B4: Mouse Wheel Up
+    #
     # BUTTON4_RELEASED
     B4Released = 0o100_000
 
     # When scrolling up
+    #
     # BUTTON4_PRESSED
     B4Pressed = 0o200_000
 
@@ -74,10 +79,12 @@ lib LibNCurses
     B4TripleClicked = 0o2_000_000
 
     # B5: Mouse Wheel Down
+    #
     # BUTTON5_RELEASED
     B5Released = 0o4_000_000
 
     # When scrolling down
+    #
     # BUTTON5_PRESSED
     B5Pressed = 0o10_000_000
 
@@ -91,10 +98,12 @@ lib LibNCurses
     B5TripleClicked =  0o100_000_000
 
     # Ctrl was pressed at the same time
+    #
     # BUTTON_CTRL
     Ctrl = 0o200_000_000
 
     # Shift was pressed at the same time
+    #
     # BUTTON_SHIFT
     Shift = 0o400_000_000
 
@@ -102,12 +111,16 @@ lib LibNCurses
     Alt = 0o1_000_000_000
 
     # Should mouse coordinates be reported
+    #
     # TODO: Does this work?
+    #
     # REPORT_MOUSE_POSITION
     Position = 0o2_000_000_000
 
     # All mouse events (excl. position)
+    #
     # Use `Mouse::Position | Mouse::AllEvents` for both
+    #
     # ALL_MOUSE_EVENTS
     AllEvents = 0o1_777_777_777
   end

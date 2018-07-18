@@ -12,6 +12,7 @@ module NCurses
       @state = Mouse.new(event.bstate)
     end
 
+    # Because of Mouse::AllEvents, instances must be checked for actual contents
     private def parse_state(state : LibC::ULong, &block)
       state = Mouse.new(state)
       Mouse.each do |member, value|
