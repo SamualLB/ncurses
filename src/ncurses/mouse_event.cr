@@ -12,6 +12,43 @@ module NCurses
       @state = Mouse.new(event.bstate)
     end
 
+    def initialize(@device_id, @coordinates, @state)
+    end
+
+    # If this mouse event took place inside a specific window
+    def enclose?(window : Window)
+      window.enclose?(self)
+    end
+
+    # Returns a new `MouseEvent` with window-relative coordinates
+    #
+    # Wrapper for `wmouse_trafo()`
+    def relative(window : Window) : MouseEvent
+      raise "not inside" unless enclose?(window)
+      y = @coordinates[:y]
+      x = @coordinates[:x]
+      unless LibNCurses.wmouse_trafo(window, pointerof(y), pointerof(x), false)
+        raise "wmouse_trafo error"
+      end
+      MouseEvent.new(@device_id, {y: y, x: x, z: @coordinates[:z]}, @state)
+    end
+
+    # Returns a new `MouseEvent` with full-screen relative coordinates
+    #
+    # The opposite of `#relative`
+    #
+    # Wrapper for `wmouse_trafo()`
+    def non_relative(window : Window) : MouseEvent
+      y = @coordinates[:y]
+      x = @coordinates[:x]
+      unless LibNCurses.wmouse_trafo(window, pointerof(y), pointerof(x), true)
+        raise "wmouse_trafo error"
+      end
+      m_e = MouseEvent.new(@device_id, {y: y, x: x, z: @coordinates[:z]}, @state)
+      raise "not inside" unless m_e.enclose?(window)
+      m_e
+    end
+
     # Because of Mouse::AllEvents, instances must be checked for actual contents
     private def parse_state(state : LibC::ULong, &block)
       state = Mouse.new(state)

@@ -179,6 +179,41 @@ module NCurses
     end
 
     #
+    # ## Mouse
+    #
+
+    # If a mouse position is in this window
+    #
+    # Wrapper for `wenclose()`
+    def enclose?(y, x) : Bool
+      LibNCurses.wenclose(self, y, x)
+    end
+
+    def enclose?(yx) : Bool
+      enclose?(yx[0], yx[1])
+    end
+
+    def enclose?(yx : NamedTuple) : Bool
+      enclose?(yx[:y], yx[:x])
+    end
+
+    # If a mouse event took place within this window
+    def enclose?(mouse_event : MouseEvent) : Bool
+      enclose?(mouse_event.coordinates)
+    end
+
+    # Returns a new `MouseEvent` with coordinates relative to the window
+    #
+    # To convert back user `#non_relative`
+    def relative(event : MouseEvent) : MouseEvent
+      event.relative(self)
+    end
+
+    def non_relative(event : MouseEvent) : MouseEvent
+      event.non_relative(self)
+    end
+
+    #
     # ## Output
     #
     # TODO: Add waddstr and waddnstr if needed, could be part of `#print`
