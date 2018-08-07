@@ -5,36 +5,53 @@ NCurses.cbreak
 NCurses.no_echo
 NCurses.mouse_mask NCurses::Mouse::AllEvents
 
-left = NCurses::Window.new(NCurses.height, NCurses.width / 2, 0, 0)
-left.keypad true
-right = NCurses::Window.new(NCurses.height, NCurses.width / 2, 0, NCurses.width - (NCurses.width / 2))
+tl = NCurses::Window.new(NCurses.height / 2, NCurses.width / 2, 0, 0)
+tl.keypad true
+bl = NCurses::Window.new(NCurses.height / 2, NCurses.width / 2, NCurses.height - (NCurses.height / 2), 0)
+tr = NCurses::Window.new(NCurses.height / 2, NCurses.width / 2, 0, NCurses.width - (NCurses.width / 2))
+br = NCurses::Window.new(NCurses.height / 2, NCurses.width / 2, NCurses.height - (NCurses.height / 2), NCurses.width - (NCurses.width / 2))
 
-left.print "Left side!\n"
-left.print "Width: #{left.width}\n"
-left.print "Height: #{left.height}\n"
+tl.print "Top left!\n"
+tl.print "Width: #{tl.width}\n"
+tl.print "Height: #{tl.height}\n"
 
-right.print "Right side!\n"
-right.print "Width: #{right.width}\n"
-right.print "Height: #{right.height}\n"
+bl.print "Bottom left!\n"
+bl.print "Width: #{bl.width}\n"
+bl.print "Height: #{bl.height}\n"
 
-left.print "\nPress q to quit\n"
+br.print "Bottom right!\n"
+br.print "Width: #{br.width}\n"
+br.print "Height: #{br.height}\n"
 
-left.refresh
-right.refresh
+tr.print "Top right!\n"
+tr.print "Width: #{tr.width}\n"
+tr.print "Height: #{tr.height}\n"
 
-left.get_char do |ch|
+tl.print "\nPress q to quit\n"
+
+
+
+tl.refresh
+bl.refresh
+br.refresh
+tr.refresh
+
+tl.get_char do |ch|
   break if ch == 113
   if ch == NCurses::Key::Mouse
     mse = NCurses.get_mouse
-    if mse.enclose? left
-      left.print "Mouse interaction inside this window\n"
-      left.refresh
-    elsif right.enclose? mse
-      right.print "Mouse interaction inside this window\n"
-      right.print "#{mse}\n"
-      right.print "#{mse.relative right}\n"
-      right.print "#{right.non_relative(mse.relative(right))}\n"
-      right.refresh
+    if mse.enclose? tl
+      tl.print "Mouse interaction inside this window\nNon-relative: #{mse.coordinates}\nRelative: #{mse.relative(tl).coordinates}\n"
+      tl.refresh
+    elsif mse.enclose? bl
+      bl.print "Mouse interaction inside this window\nNon-relative: #{mse.coordinates}\nRelative: #{mse.relative(bl).coordinates}\n"
+      bl.refresh
+    elsif mse.enclose? br
+      br.print "Mouse interaction inside this window\nNon-relative: #{mse.coordinates}\nRelative: #{mse.relative(br).coordinates}\n"
+      br.refresh
+    elsif tr.enclose? mse
+      tr.print "Mouse interaction inside this window\nNon-relative: #{mse.coordinates}\nRelative: #{mse.relative(tr).coordinates}\n"
+      tr.refresh
     end
   end
 end
