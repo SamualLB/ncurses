@@ -62,12 +62,10 @@ lib LibNCurses
     # Vertical highlight
     Vertical = 0o10_000_000_000
 
-    # Italic text ???
-    # TODO: check if this works as it is i32.max + 1
+    # Italic text
     Italic = 0o20_000_000_000
 
     # Extract attributes
-    # TODO: check if this works as it is > i32.max
     Attributes = 0o37_777_777_400
   end
 end

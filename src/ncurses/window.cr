@@ -7,6 +7,7 @@ module NCurses
     #
 
     # Create a new window with given size
+    #
     # Wrapper for `newwin()`
     def initialize(height = nil, width = nil, y = 0, x = 0)
       max_height, max_width = NCurses.max_x, NCurses.max_y
@@ -14,6 +15,7 @@ module NCurses
     end
 
     # Delete the window
+    #
     # Wrapper for `delwin()`
     def delete_window
       LibNCurses.delwin(self)
@@ -29,6 +31,7 @@ module NCurses
     end
 
     # Return height
+    #
     # Wrapper for `getmaxy()`
     def max_y
       raise "getmaxy error" if (out = LibNCurses.getmaxy(self)) == ERR
@@ -46,6 +49,7 @@ module NCurses
     end
 
     # Return width
+    #
     # Wrapper for `getmaxx()`
     def max_x
       raise "getmaxx error" if (out = LibNCurses.getmaxx(self)) == ERR
@@ -73,6 +77,7 @@ module NCurses
     end
 
     # Move cursor to new position
+    #
     # Wrapper for `wmove()` (`move()`)
     def move(y, x)
       raise "wmove error" if LibNCurses.wmove(self, y, x) == ERR
@@ -104,12 +109,14 @@ module NCurses
     end
 
     # Refresh window
+    #
     # Wrapper for `wrefresh()` (`refresh()`)
     def refresh
       raise "wrefresh error" if LibNCurses.wrefresh(self) == ERR
     end
 
     # Clear window
+    #
     # Wrapper for `wclear()` (`clear()`)
     def clear
       raise "wclear error" if LibNCurses.wclear(self) == ERR
@@ -125,6 +132,7 @@ module NCurses
     end
 
     # Wait for input, no errors should be returned
+    #
     # Wrapper for `notimeout()`
     def no_timeout
       LibNCurses.nodelay(self, false)
@@ -132,6 +140,7 @@ module NCurses
     end
 
     # Do not wait for input, return ERR
+    #
     # Wrapper for `nodelay()`
     def no_delay
       LibNCurses.notimeout(self, false)
@@ -139,6 +148,7 @@ module NCurses
     end
 
     # Set input timeout
+    #
     # Wrapper for `wtimeout()` (`timeout()`)
     def timeout=(value)
       LibNCurses.notimeout(self, false)
@@ -155,7 +165,7 @@ module NCurses
     #
     # Wrapper for `wgetch()` (`getch()`)
     def get_char
-      raise "wgetch error" if (key = LibNCurses.wgetch(self)) == ERR
+      return nil if (key = LibNCurses.wgetch(self)) == ERR
       return Key.from_value?(key) || key
     end
 
@@ -169,12 +179,48 @@ module NCurses
     end
 
     #
+    # ## Mouse
+    #
+
+    # If a mouse position is in this window
+    #
+    # Wrapper for `wenclose()`
+    def enclose?(y, x) : Bool
+      LibNCurses.wenclose(self, y, x)
+    end
+
+    def enclose?(yx) : Bool
+      enclose?(yx[0], yx[1])
+    end
+
+    def enclose?(yx : NamedTuple) : Bool
+      enclose?(yx[:y], yx[:x])
+    end
+
+    # If a mouse event took place within this window
+    def enclose?(mouse_event : MouseEvent) : Bool
+      enclose?(mouse_event.coordinates)
+    end
+
+    # Returns a new `MouseEvent` with coordinates relative to the window
+    #
+    # To convert back user `#non_relative`
+    def relative(event : MouseEvent) : MouseEvent
+      event.relative(self)
+    end
+
+    def non_relative(event : MouseEvent) : MouseEvent
+      event.non_relative(self)
+    end
+
+    #
     # ## Output
     #
     # TODO: Add waddstr and waddnstr if needed, could be part of `#print`
     #
 
     # Draw a character
+    #
     # Wrapper for `waddch()` and `mvwaddch()` (`addch()` and `mvaddch()`)
     def add_char(chr, position = nil)
       if position
@@ -190,6 +236,7 @@ module NCurses
     end
 
     # Write a string
+    #
     # Wrapper for `wprintw()` and `mvwprintw()` (`printw()` and `mvprintw()`)
     def print(message, position = nil)
       if position
@@ -230,13 +277,15 @@ module NCurses
     #
 
     # Set this window's default color pair
+    #
     # Wrapper for `wcolor_set()` (`color_set()`)
     def set_color(color_pair = 0)
       LibNCurses.wcolor_set(self, color_pair.to_i16, nil)
     end
 
     # Get the current attributes and color pair
-    # As a named tuple with *attr* and *color*
+    # as a named tuple with *attr* and *color*
+    #
     # Wrapper for `wattr_get()` (`attr_get()`)
     def attr_get
       LibNCurses.wattr_get(self, out attr, out color_pair, nil)
@@ -249,6 +298,7 @@ module NCurses
     end
 
     # Turn off attribute(s)
+    #
     # Wrapper for `wattr_off()` (`attr_off()`)
     def attr_off(attr : Attribute)
       LibNCurses.wattr_off(self, attr, nil)
@@ -260,6 +310,7 @@ module NCurses
     end
 
     # Turn on attribute(s)
+    #
     # Wrapper for `wattr_on()` (`attr_on()`)
     def attr_on(attr : Attribute)
       LibNCurses.wattr_on(self, attr, nil)
@@ -288,6 +339,7 @@ module NCurses
     end
 
     # Replace attribute(s) and color with these
+    #
     # Wrapper for `wattr_set()` (`attr_set()`)
     def set_attr(attr : Attribute = Attribute::Normal, color_pair = 0)
       LibNCurses.wattr_set(self, attr, color_pair.to_i16, nil)
@@ -298,11 +350,11 @@ module NCurses
       set_attr attr, color_pair
     end
 
-    # chgat wrapper
-    # *attr* is the `Attribute` enum
-    # *color_pair* is the color pair number (0 is the default white on black)
-    # *length* defaults to -1, but represents the number of characters to change, up to EOL
-    # If *y* and *x* are set, the cursor location is moved before changing attributes
+    # *attr* is the `Attribute` enum.
+    # *color_pair* is the color pair number (0 is the default white on black.)
+    # *length* defaults to -1, but represents the number of characters to change, up to EOL.
+    # If *y* and *x* are set, the cursor location is moved before changing attributes.
+    #
     # Wrapper for `wchgat()` and `mvwchgat()` (`chgat()` and `mvchgat()`)
     def change_attribute(attr : Attribute = Attribute::Normal, color_pair = 0, length = -1, y = nil, x = nil)
       if y.nil? || x.nil?

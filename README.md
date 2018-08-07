@@ -34,17 +34,29 @@ NCurses.end
 
 #### Run Examples
 
+Prints input
 ```text
 $ crystal run examples/input.cr
 ```
+
+Displays text with attributes
 ```text
 $ crystal run examples/attributes.cr
 ```
+
+Displays text with colors
 ```text
 $ crystal run examples/colors.cr
 ```
+
+Shows separate windows
 ```text
 $ crystal run examples/windows.cr
+```
+
+Mouse interaction with individual windows
+```text
+$ crystal run examples/window_enclose.cr
 ```
 
 ## Contributing

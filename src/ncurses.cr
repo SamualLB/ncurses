@@ -169,7 +169,7 @@ module NCurses
   # Returns a `MouseEvent` containing the mouse state and coordinates
   # Wrapper for `getmouse()`
   def get_mouse
-    raise "getmouse error" if LibNCurses.getmouse(out event) == ERR
+    return nil if LibNCurses.getmouse(out event) == ERR
     return MouseEvent.new(event)
   end
 
