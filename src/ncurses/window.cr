@@ -165,7 +165,7 @@ module NCurses
     #
     # Wrapper for `wgetch()` (`getch()`)
     def get_char
-      raise "wgetch error" if (key = LibNCurses.wgetch(self)) == ERR
+      return nil if (key = LibNCurses.wgetch(self)) == ERR
       return Key.from_value?(key) || key
     end
 
