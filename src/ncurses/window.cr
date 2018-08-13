@@ -122,6 +122,13 @@ module NCurses
       raise "wclear error" if LibNCurses.wclear(self) == ERR
     end
 
+    # Resize the window
+    #
+    # Wrapper for `wresize()` (`resize()`)
+    def resize(y : Int, x : Int)
+      raise "wresize error" if LibNCurses.wresize(self, y, x) == ERR
+    end
+
     #
     # ## Input options
     #

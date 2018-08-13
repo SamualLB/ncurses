@@ -34,14 +34,15 @@ lib LibNCurses
   fun curs_set(visibility : LibC::Int) : LibC::Int
 
   # General window functions
-  fun newwin(height : LibC::Int, width : LibC::Int, row : LibC::Int, col : LibC::Int) : Window
+  fun newwin(height : LibC::Int, width : LibC::Int, y : LibC::Int, x : LibC::Int) : Window
   fun delwin(window : Window) : LibC::Int
   fun mvwin(window : Window, y : LibC::Int, x : LibC::Int) : LibC::Int
   fun getmaxy(window : Window) : LibC::Int
   fun getmaxx(window : Window) : LibC::Int
-  fun wmove(window : Window, row : LibC::Int, col : LibC::Int) : LibC::Int
+  fun wmove(window : Window, y : LibC::Int, x : LibC::Int) : LibC::Int
   fun wrefresh(window : Window) : LibC::Int
   fun wclear(window : Window) : LibC::Int
+  fun wresize(window : Window, y : LibC::Int, x : LibC::Int) : LibC::Int
 
   # Input option functions
   fun cbreak : LibC::Int
