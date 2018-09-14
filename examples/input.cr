@@ -17,6 +17,8 @@ NCurses.refresh
 NCurses.get_char do |ch|
   NCurses.clear
   NCurses.print(ch.to_s, 0, 0)
+  NCurses.print(ch.value.to_s, 1, 0) if ch.is_a?(NCurses::Key)
+  NCurses.print(ch.chr.to_s, 2, 0) if ch.is_a?(NCurses::Key)
   NCurses.refresh
   break if ch == 113
   if ch == NCurses::Key::Mouse

@@ -3,6 +3,12 @@ lib LibNCurses
   # 
   # Contains all F keys from 0 to 63
   enum Key : LibC::Int
+    # Horizontal Tab
+    Tab = 9
+
+    # Enter / Return
+    Enter = 10
+
     # Required 2 inputs, do not use normally
     Esc = 27
 
@@ -62,7 +68,9 @@ lib LibNCurses
     PageUp = 0o523
 
     # KEY_ENTER
-    Enter = 0o527
+    #
+    # Does not work
+    #Enter = 0o527
 
     # KEY_BTAB
     #
@@ -118,5 +126,9 @@ lib LibNCurses
     #
     # If the terminal has been resized
     Resize = 0o632
+
+    def chr
+      value.chr
+    end
   end
 end
