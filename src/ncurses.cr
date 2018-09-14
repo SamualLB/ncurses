@@ -128,7 +128,7 @@ module NCurses
   #
   # Wrapper for `halfdelay()`
   def half_delay(tenths : Int)
-    raise "Outside range 1-255" unless 1..255.includes?(tenths)
+    raise "Outside range 1-255" unless (1..255).includes?(tenths)
     LibNCurses.halfdelay(tenths)
   end
 

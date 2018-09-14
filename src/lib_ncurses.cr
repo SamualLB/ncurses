@@ -49,7 +49,7 @@ lib LibNCurses
   fun nocbreak : LibC::Int
   fun echo : LibC::Int
   fun noecho : LibC::Int
-  fun halfdelay(tenths_delay LibC::Int) : LibC::Int
+  fun halfdelay(tenths_delay : LibC::Int) : LibC::Int
   fun raw : LibC::Int
   fun noraw : LibC::Int
 
