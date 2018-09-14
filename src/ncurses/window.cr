@@ -177,11 +177,22 @@ module NCurses
     end
 
     # Get a character input for main loop
-    def get_char(&block)
-      no_timeout
+    def get_char(timeout : Bool | Number = true, &block)
+      delay = nil
+      case timeout
+      when Bool
+        if timeout
+          no_timeout
+        else
+          no_delay
+        end
+      when Number
+        delay = timeout
+      end
       loop do
         ch = get_char
         yield ch
+        sleep delay unless delay.nil?
       end
     end
 
