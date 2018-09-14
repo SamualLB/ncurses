@@ -122,6 +122,16 @@ module NCurses
     end
   end
 
+  # Delay input up to this many tenths of a second
+  #
+  # `#get_char` will return the input, or nil after this many tenths
+  #
+  # Wrapper for `halfdelay()`
+  def half_delay(tenths : Int)
+    raise "Outside range 1-255" unless 1..255.includes?(tenths)
+    LibNCurses.halfdelay(tenths)
+  end
+
   # Disable buffering of input and signals
   # `#cbreak` but also passes signals
   # TODO: Implement signals?
