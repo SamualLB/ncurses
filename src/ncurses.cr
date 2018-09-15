@@ -202,6 +202,13 @@ module NCurses
     raise "start_color error" if LibNCurses.start_color == ERR
   end
 
+  # Uses default terminal colors
+  #
+  # Wrapper for `use_default_colors()`
+  def use_default_colors
+    LibNCurses.use_default_colors
+  end
+
   # Terminal supports colors
   # Wrapper for `has_colors()`
   def has_colors?
