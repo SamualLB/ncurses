@@ -101,7 +101,7 @@ lib LibNCurses
 
   # Color functions
   fun start_color : LibC::Int
-  fun use_default colors : LibC::Int
+  fun use_default_colors : LibC::Int
   fun has_colors : Bool
   fun can_change_color : Bool
   fun init_color(slot : LibC::Short, red : LibC::Short, green : LibC::Short, blue : LibC::Short) : LibC::Int
