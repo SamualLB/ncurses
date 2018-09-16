@@ -44,6 +44,12 @@ NCurses.print "But color pair 4 is cyan on magenta\n"
 
 NCurses.set_color
 
+
+NCurses.print "\nMagenta: #{NCurses.color_content(NCurses::Color::Magenta)}\n"
+NCurses.print "Cyan: #{NCurses.color_content(NCurses::Color::Cyan)}\n"
+
+NCurses.print "\nPair 4: #{NCurses.pair_content(4)}\n"
+
 NCurses.print "\nPress q to exit\n"
 NCurses.get_char do |ch|
   break if ch == 113

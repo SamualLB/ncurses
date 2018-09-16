@@ -106,4 +106,6 @@ lib LibNCurses
   fun can_change_color : Bool
   fun init_color(slot : LibC::Short, red : LibC::Short, green : LibC::Short, blue : LibC::Short) : LibC::Int
   fun init_pair(slot : LibC::Short, foreground : LibC::Short, background : LibC::Short) : LibC::Int
+  fun color_content(color : LibC::Short, red : LibC::Short*, green : LibC::Short*, blue : LibC::Short*) : LibC::Int
+  fun pair_content(pair : LibC::Short, fg : LibC::Short*, bg : LibC::Short*) : LibC::Int
 end

@@ -236,6 +236,16 @@ module NCurses
     init_color slot, red, green, blue
   end
 
+  # `#init_color` using a tuple of red, green, blue
+  def init_color(slot, colors)
+    init_color(slot, colors[0], colors[1], colors[2])
+  end
+
+  # Alias for `#init_color` using a tuple
+  def change_color(slot, colors)
+    change_color(slot, colors[0], colors[1], colors[2])
+  end
+
   # Create a color pair to use
   # Pass an integer for id of the pair in the *slot*
   # Pass a `Color` for both the *foreground* and then *background*
@@ -245,6 +255,22 @@ module NCurses
   # Wrapper for `init_pair()`
   def init_color_pair(slot, foreground : Color, background : Color)
     raise "init_pair error" if LibNCurses.init_pair(slot.to_i16, foreground.to_i16, background.to_i16) == ERR
+  end
+
+  # Gets the terminal color values 1-1000
+  #
+  # Wrapper for `color_content()`
+  def color_content(color : Color)
+    LibNCurses.color_content(color.to_i16, out red, out green, out blue)
+    {red, green, blue}
+  end
+
+  # Gets the colors that form a pair
+  #
+  # Wrapper for `pair_content()`
+  def pair_content(slot)
+    LibNCurses.pair_content(slot, out fg, out bg)
+    {Color.new(fg), Color.new(bg)}
   end
 
   #
