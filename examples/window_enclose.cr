@@ -39,7 +39,7 @@ tr.refresh
 tl.get_char do |ch|
   break if ch == 113
   if ch == NCurses::Key::Mouse
-    mse = NCurses.get_mouse
+    next if (mse = NCurses.get_mouse).nil?
     if mse.enclose? tl
       tl.print "Mouse interaction inside this window\nNon-relative: #{mse.coordinates}\nRelative: #{mse.relative(tl).coordinates}\n"
       tl.refresh
