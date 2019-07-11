@@ -1,4 +1,4 @@
-require "../ncurses"
+require "./../src/ncurses"
 
 NCurses.start
 NCurses.cbreak
@@ -21,7 +21,7 @@ left.refresh
 right.refresh
 
 left.get_char do |ch|
-  break if ch == 113
+  break if ch == 'q'
 end
 
 NCurses.end

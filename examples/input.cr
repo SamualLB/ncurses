@@ -1,4 +1,4 @@
-require "../ncurses"
+require "./../src/ncurses"
 
 NCurses.start
 NCurses.cbreak
@@ -18,7 +18,7 @@ NCurses.get_char do |ch|
   NCurses.clear
   NCurses.print(ch.to_s, 0, 0)
   NCurses.refresh
-  break if ch == 113
+  break if ch == 'q'
   if ch == NCurses::Key::Mouse
     mouse = NCurses.get_mouse
     NCurses.print(mouse.to_s, 1, 0)

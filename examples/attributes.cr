@@ -1,4 +1,4 @@
-require "../ncurses"
+require "./../src/ncurses"
 
 def print_attr(attr : NCurses::Attribute, y_pos = 0, text = "")
   NCurses.with_attribute(attr) do
@@ -27,7 +27,7 @@ print_attr(NCurses::Attribute::Standout | NCurses::Attribute::Bold, 13, "Standou
 
 NCurses.print "Press q to exit"
 NCurses.get_char do |ch|
-  break if ch == 113
+  break if ch == 'q'
 end
 
 NCurses.end

@@ -1,4 +1,4 @@
-require "../ncurses"
+require "./../src/ncurses"
 
 NCurses.start
 NCurses.cbreak
@@ -37,7 +37,7 @@ br.refresh
 tr.refresh
 
 tl.get_char do |ch|
-  break if ch == 113
+  break if ch == 'q'
   if ch == NCurses::Key::Mouse
     next if (mse = NCurses.get_mouse).nil?
     if mse.enclose? tl

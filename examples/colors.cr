@@ -1,4 +1,4 @@
-require "../ncurses"
+require "./../src/ncurses"
 
 NCurses.start
 NCurses.cbreak
@@ -46,7 +46,7 @@ NCurses.set_color
 
 NCurses.print "\nPress q to exit\n"
 NCurses.get_char do |ch|
-  break if ch == 113
+  break if ch == 'q'
 end
 
 NCurses.end
