@@ -161,12 +161,12 @@ module NCurses
 
     # Get a character input
     #
-    # Returned as `Key` if recognised, int otherwise
+    # Returned as `Key` if recognised, `Char` otherwise
     #
     # Wrapper for `wgetch()` (`getch()`)
-    def get_char
+    def get_char : Key | Char | Nil
       return nil if (key = LibNCurses.wgetch(self)) == ERR
-      return Key.from_value?(key) || key
+      return Key.from_value?(key) || key.chr
     end
 
     # Get a character input for main loop
