@@ -6,16 +6,6 @@ lib LibNCurses
     # Required 2 inputs, do not use normally
     Esc = 27
 
-    # Capital A
-    #
-    # TODO: Find a macro to generate all letters
-    UpperA = 65
-
-    # Lowercase a
-    #
-    # TODO: Find a macro to generate all letters
-    LowerA = 97
-
     # KEY_DOWN
     Down = 0o402
 
