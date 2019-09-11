@@ -222,17 +222,59 @@ module NCurses
     # Draw a character
     #
     # Wrapper for `waddch()` and `mvwaddch()` (`addch()` and `mvaddch()`)
-    def add_char(chr, position = nil)
+    def add_char(chr : Char, position = nil)
       if position
-        return LibNCurses.mvwaddch(self, position[0], position[1], chr) == OK
+        return LibNCurses.mvwaddch(self, position[0], position[1], chr.ord) == OK
       else
-        return LibNCurses.waddch(self, chr) == OK
+        return LibNCurses.waddch(self, chr.ord) == OK
       end
     end
 
+    # Draw a vertical line 
+    #
+    # Wrapper for 'wvline()' and 'mvwvline()'
+    def add_vertical_line(n : Int32, position = nil, chr = '\0')
+      if position
+        return LibNCurses.mvwvline(self, position[0], position[1], chr.ord, n) == OK
+      else
+        return LibNCurses.wvline(self, chr.ord, n) == OK
+      end
+    end
+
+    # Draw a vertical line 
+    #
+    # Wrapper for 'whline()' and 'mhwvline()'
+    def add_horizontal_line(n : Int32, position = nil, chr = '\0')
+      if position
+        return LibNCurses.mvwhline(self, position[0], position[1], chr.ord, n) == OK
+      else
+        return LibNCurses.whline(self, chr.ord, n) == OK
+      end
+    end
+
+    # Draw border 
+    #
+    # Wrapper for 'wborder()'
+    def border(left_side = '\0',   right_side = '\0',
+               top_side = '\0',    bottom_side = '\0',
+               top_left = '\0',    top_right = '\0',
+               bottom_left = '\0', bottom_right = '\0')
+      return LibNCurses.wborder(self, left_side.ord,   right_side.ord,
+                                      top_side.ord,    bottom_side.ord,
+                                      top_left.ord,    top_right.ord,
+                                      bottom_left.ord, bottom_right.ord) == OK
+    end
+
+    # Draw border 
+    #
+    # Wrapper for 'box()'
+    def box(vchar = '\0', hchar = '\0')
+      return LibNCurses.box(self, vchar.ord, hchar.ord) == OK
+    end
+
     # Alias for `#add_char`
-    def add_char(chr, pos_y, pos_x)
-      LibNCurses.mvwaddch(self, pos_y, pos_x, chr) == OK
+    def add_char(chr : Char, pos_y, pos_x)
+      LibNCurses.mvwaddch(self, pos_y, pos_x, chr.ord) == OK
     end
 
     # Write a string

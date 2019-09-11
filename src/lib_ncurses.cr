@@ -6,6 +6,8 @@ lib LibNCurses
   type Window = Void*
   alias FileDescriptor = Int32
 
+  alias Chtype = LibC::UInt
+
   $color_pairs = COLOR_PAIRS : Int32
   $colors = COLORS : Int32
 
@@ -77,6 +79,15 @@ lib LibNCurses
   fun mvwaddch(window : Window, y : LibC::Int, x : LibC::Int, chr : LibC::Char) : LibC::Int
   fun wprintw(window : Window, format : LibC::Char*, ...) : LibC::Int
   fun mvwprintw(window : Window, y : LibC::Int, x : LibC::Int, format : LibC::Char*, ...) : LibC::Int
+
+  # Lines and borders
+  fun wvline(window : Window, chr : Chtype, n : LibC::Int) : LibC::Int
+  fun mvwvline(window : Window, y : LibC::Int, x : LibC::Int, chr : Chtype, n : LibC::Int) : LibC::Int
+  fun whline(window : Window, chr : Chtype, n : LibC::Int) : LibC::Int
+  fun mvwhline(window : Window, y : LibC::Int, x : LibC::Int, chr : Chtype, n : LibC::Int) : LibC::Int
+  fun wborder(window : Window, ls :  Chtype, rs : Chtype, ts : Chtype, bs : Chtype, tl : Chtype, tr : Chtype, bl : Chtype, br : Chtype) : LibC::Int
+  fun box(window : Window, verch : LibC::Char, horch : LibC::Char) : LibC::Int
+
 
   # Window background functions
   fun wbkgdset(window : Window, char : LibC::UInt)
