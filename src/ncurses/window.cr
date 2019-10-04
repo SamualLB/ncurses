@@ -76,6 +76,54 @@ module NCurses
       {y: max_y, x: max_x}
     end
 
+    # Returns cursor current x position
+    # 
+    # Wrapper for `getcurx()`
+    def x
+      raise "getcurx error" if (out = LibNCurses.getcurx(self)) == ERR
+      out
+    end
+
+    # Alias for `#x`
+    def col
+      x
+    end
+
+    # Returns cursor current y position
+    #
+    # Wrapper for `getcury()`
+    def y
+      raise "getcury error" if (out = LibNCurses.getcury(self)) == ERR
+      out
+    end
+
+    # Alias for `#y`
+    def row
+      y
+    end
+
+    # Cursor current position as tuple (y,x)
+    #
+    # Simulates ncurses macro `getyx`
+    def pos
+      {y, x}
+    end
+
+    # Alias for `#pos`
+    def position
+      pos
+    end
+
+    # Cursor current position as named tuple
+    def pos_named
+      {y: y, x: x}
+    end
+
+    # Alias for `#pos_named`
+    def position_named
+      pos_named
+    end
+
     # Move cursor to new position
     #
     # Wrapper for `wmove()` (`move()`)

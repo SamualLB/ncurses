@@ -259,6 +259,7 @@ module NCurses
   # General
   delegate max_y, height, lines, max_x, width, cols, to: stdscr
   delegate max_dimensions, max_dimensions_named, to: stdscr
+  delegate x, col, y, row, pos, position, pos_named, position_named, to: stdscr
   delegate move, set_pos, refresh, clear, to: stdscr
 
   # Input

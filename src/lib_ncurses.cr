@@ -37,6 +37,8 @@ lib LibNCurses
   fun newwin(height : LibC::Int, width : LibC::Int, row : LibC::Int, col : LibC::Int) : Window
   fun delwin(window : Window) : LibC::Int
   fun mvwin(window : Window, y : LibC::Int, x : LibC::Int) : LibC::Int
+  fun getcury(window : Window) : LibC::Int
+  fun getcurx(window : Window) : LibC::Int
   fun getmaxy(window : Window) : LibC::Int
   fun getmaxx(window : Window) : LibC::Int
   fun wmove(window : Window, row : LibC::Int, col : LibC::Int) : LibC::Int
