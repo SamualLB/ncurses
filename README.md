@@ -15,7 +15,7 @@ dependencies:
 
 2. Run `shards install`
 
-**NOTE**: You may need to install the ncurses development library `libncurses5-dev` (Debian)
+**NOTE**: You may need to install the wide ncurses development library `libncursesw5-dev` (Debian)
 
 ## Usage
 
