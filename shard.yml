@@ -1,10 +1,13 @@
 name: ncurses
-version: 0.0.3
+version: 0.0.4
 
 authors:
   - Joakim Reinert <mail@jreinert.com>
   - Samual Black <samuallb@hotmail.com>
 
-crystal: 0.29.0
+crystal: 0.30.1
+
+libraries:
+  libncurses: "*"
 
 license: MIT
