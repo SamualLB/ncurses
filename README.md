@@ -5,8 +5,7 @@ Ncurses Bindings for Crystal
 
 ## Installation
 
-
-Add this to your application's `shard.yml`:
+1. Add this to your application's `shard.yml`:
 
 ```yaml
 dependencies:
@@ -14,6 +13,9 @@ dependencies:
     github: SamualLB/ncurses
 ```
 
+2. Run `shards install`
+
+**NOTE**: You may need to install the ncurses development library `libncurses5-dev`
 
 ## Usage
 
