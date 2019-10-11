@@ -299,6 +299,21 @@ module NCurses
       LibNCurses.mvwprintw(self, pos_y, pos_x, message) == OK
     end
 
+    # Draw a box around the edge of a window
+    def border(ls : Char, rs : Char, ts : Char, bs : Char, tl : Char, tr : Char, bl : Char, br : Char)
+      LibNCurses.wborder(self, ls.ord, rs.ord, ts.ord, bs.ord, tl.ord, tr.ord, bl.ord, br.ord)
+    end
+
+    # Alias for `#border`
+    def border(top_bottom : Char = '-', left_right : Char = '|', corner : Char = '+')
+      border left_right, left_right, top_bottom, top_bottom, corner, corner, corner, corner
+    end
+
+    # Erase around the edge of a window
+    def no_border
+      border ' ', ' ', ' '
+    end
+
     #
     # ## Background
     #
