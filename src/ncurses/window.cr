@@ -308,12 +308,22 @@ module NCurses
     #
     # Default *char* is `-` and default length is `width`
     def draw_hline(char = nil, length = nil)
-      LibNCurses.whline(self, (char || '-').ord, length || width)
+      LibNCurses.whline(self, (char || '-').ord, length || max_x)
     end
 
     # Alias for `#draw_hline`
     def draw_hline(length : Int)
       draw_hline nil, length
+    end
+
+    # Draw a vertical line
+    def draw_vline(char = nil, height = nil)
+      LibNCurses.wvline(self, (char || '|').ord, height || max_y)
+    end
+
+    # Alias for `#draw_vline`
+    def draw_vline(height : Int)
+      draw_vline nil, height
     end
 
     #
