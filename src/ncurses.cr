@@ -19,6 +19,8 @@ module NCurses
   ERR = -1
   OK  =  0
 
+  BORDER_DEFAULT = 0.chr
+
   enum Cursor : LibC::Int
     Invisible      = 0
     Visible        = 1
@@ -267,7 +269,7 @@ module NCurses
   delegate get_char, to: stdscr
 
   # Output
-  delegate add_char, print, border, to: stdscr
+  delegate add_char, print, border, box, no_border, no_box, to: stdscr
 
   # Background
   delegate change_background, set_background, get_background, to: stdscr

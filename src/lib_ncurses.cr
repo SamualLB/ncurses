@@ -80,6 +80,7 @@ lib LibNCurses
   fun wprintw(window : Window, format : LibC::Char*, ...) : LibC::Int
   fun mvwprintw(window : Window, y : LibC::Int, x : LibC::Int, format : LibC::Char*, ...) : LibC::Int
   fun wborder(window : Window, ls : LibC::Char, rs : LibC::Char, ts : LibC::Char, bs : LibC::Char, tl : LibC::Char, tr : LibC::Char, bl : LibC::Char, br : LibC::Char) : LibC::Int
+  fun box(window : Window, ver : LibC::Char, hor : LibC::Char) : LibC::Int
 
   # Window background functions
   fun wbkgdset(window : Window, char : LibC::UInt)
