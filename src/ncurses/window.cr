@@ -299,6 +299,23 @@ module NCurses
       LibNCurses.mvwprintw(self, pos_y, pos_x, message) == OK
     end
 
+    # Alias for `#print`
+    def print(message, row : Int)
+      LibNCurses.mvwprintw(self, row, 0, message) == OK
+    end
+
+    # Draw a horizontal line
+    #
+    # Default *char* is `-` and default length is `width`
+    def draw_hline(char = nil, length = nil)
+      LibNCurses.whline(self, (char || '-').ord, length || width)
+    end
+
+    # Alias for `#draw_hline`
+    def draw_hline(length : Int)
+      draw_hline nil, length
+    end
+
     #
     # ## Background
     #
