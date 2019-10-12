@@ -1,4 +1,4 @@
-@[Link("ncurses")]
+@[Link("ncursesw")]
 
 require "./lib_ncurses/*"
 
