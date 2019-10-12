@@ -299,6 +299,54 @@ module NCurses
       LibNCurses.mvwprintw(self, pos_y, pos_x, message) == OK
     end
 
+    # Draw a box around the edge of a window
+    #
+    # *ls* - char to be used on left side
+    #
+    # *rs* - char to be used on right side
+    #
+    # *ts* - char to be used on top side
+    #
+    # *bs* - char to be used on bottom side
+    #
+    # *tl* - char to be used on top left-hand corner
+    #
+    # *tr* - char to be used on top right-hand corner
+    #
+    # *bl* - char to be used on bottom left-hand corner
+    #
+    # *br* - char to be used on bottom right-hand corner
+    def border(ls : Char, rs : Char, ts : Char, bs : Char, tl : Char, tr : Char, bl : Char, br : Char)
+      LibNCurses.wborder(self, ls.ord, rs.ord, ts.ord, bs.ord, tl.ord, tr.ord, bl.ord, br.ord) == OK
+    end
+
+    # Alias for `#border`
+    #
+    # Uses *hor* for horizontal lines, *ver* for vertical lines, and *cor* for corners
+    def border(ver : Char = BORDER_DEFAULT, hor : Char = BORDER_DEFAULT, cor : Char | Nil = nil)
+      if cor
+        border ver, ver, hor, hor, cor, cor, cor, cor
+      else
+        box ver, hor
+      end
+    end
+
+    # Erase around the edge of a window
+    def no_border
+      border ' ', ' ', ' '
+    end
+
+    # Alias for `#border`
+    #
+    # Same as `#border(ver, hor, BORDER_DEFAULT)`
+    def box(ver : Char = BORDER_DEFAULT, hor : Char = BORDER_DEFAULT)
+      LibNCurses.box(self, ver.ord, hor.ord) == OK
+    end
+
+    def no_box
+      no_border
+    end
+
     # Alias for `#print`
     def print(message, row : Int)
       LibNCurses.mvwprintw(self, row, 0, message) == OK
