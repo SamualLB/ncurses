@@ -269,7 +269,7 @@ module NCurses
   delegate get_char, to: stdscr
 
   # Output
-  delegate add_char, print, border, box, no_border, no_box, to: stdscr
+  delegate add_char, print, draw_hline, draw_bvline, border, box, no_border, no_box, to: stdscr
 
   # Background
   delegate change_background, set_background, get_background, to: stdscr
