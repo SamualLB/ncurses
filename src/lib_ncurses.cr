@@ -79,6 +79,8 @@ lib LibNCurses
   fun mvwaddch(window : Window, y : LibC::Int, x : LibC::Int, chr : LibC::Char) : LibC::Int
   fun wprintw(window : Window, format : LibC::Char*, ...) : LibC::Int
   fun mvwprintw(window : Window, y : LibC::Int, x : LibC::Int, format : LibC::Char*, ...) : LibC::Int
+  fun whline(window : Window, chr : LibC::Char, len : LibC::Int) : LibC::Int
+  fun wvline(window : Window, chr : LibC::Char, height : LibC::Int) : LibC::Int
 
   # Window background functions
   fun wbkgdset(window : Window, char : LibC::UInt)
