@@ -121,6 +121,8 @@ lib LibNCurses
     #
     # Use `Mouse::Position | Mouse::AllEvents` for both
     #
+    # Does not work well with #each
+    #
     # ALL_MOUSE_EVENTS
     AllEvents = 0o1_777_777_777
   end

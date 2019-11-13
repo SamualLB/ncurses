@@ -486,5 +486,45 @@ module NCurses
         LibNCurses.mvwchgat(self, y, x, length, attr, color_pair.to_i16, nil)
       end
     end
+
+
+    #
+    # ## Output options
+    #
+
+    # Wrapper for `clearok()`
+    def clearok(v : Bool = true)
+      LibNCurses.clearok(self, v)
+    end
+
+    # Wrapper for `idlok()`
+    def idlok(v : Bool = true)
+      LibNCurses.idlok(self, v)
+    end
+
+    # Wrapper for `idcok()`
+    def idcok(v : Bool = true)
+      LibNCurses.idcok(self, v)
+    end
+
+    # Wrapper for `immedok()`
+    def immedok(v : Bool = true)
+      LibNCurses.immedok(self, v)
+    end
+
+    # Wrapper for `leaveok()`
+    def leaveok(v : Bool = true)
+      LibNCurses.leaveok(self, v)
+    end
+
+    # Wrapper for `wsetscrreg()` & `setscrreg()`
+    def setscrreg(top, bot)
+      LibNCurses.setscrreg(self, top.to_i32, bot.to_i32)
+    end
+
+    # Wrapper for `scrollok()`
+    def scrollok(v : Bool = true)
+      LibNCurses.scrollok(self, v)
+    end
   end
 end

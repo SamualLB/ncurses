@@ -252,6 +252,16 @@ module NCurses
     @@stdscr = Window.new(screen)
   end
 
+  # Wrapper for `nl()`
+  def nl
+    LibNCurses.nl
+  end
+
+  # Wrapper for `nonl()`
+  def nonl
+    LibNCurses.nonl
+  end
+
   #
   # ## Delegation
   #
@@ -278,6 +288,9 @@ module NCurses
   delegate set_color, attr_get, get_attribute, attr_off, attribute_off, to: stdscr
   delegate attr_on, attribute_on, with_attr, with_attribute, to: stdscr
   delegate set_attr, set_attribute, change_attribute, to: stdscr
+
+  # Output options
+  delegate clearok, idlok, idcok, immedok, leaveok, setscrreg, scrollok, to: stdscr
 
   extend self
 end

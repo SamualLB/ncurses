@@ -109,4 +109,15 @@ lib LibNCurses
   fun can_change_color : Bool
   fun init_color(slot : LibC::Short, red : LibC::Short, green : LibC::Short, blue : LibC::Short) : LibC::Int
   fun init_pair(slot : LibC::Short, foreground : LibC::Short, background : LibC::Short) : LibC::Int
+
+  # Output options
+  fun clearok(window : Window, bf : Bool) : LibC::Int
+  fun idlok(window : Window, bf : Bool) : LibC::Int
+  fun idcok(window : Window, bf : Bool)
+  fun immedok(window : Window, bf : Bool)
+  fun leaveok(window : Window, bf : Bool) : LibC::Int
+  fun wsetscrreg(window : Window, top : LibC::Int, bot : LibC::Int) : LibC::Int
+  fun scrollok(window : Window, bf : Bool) : LibC::Int
+  fun nl : LibC::Int
+  fun nonl : LibC::Int
 end
