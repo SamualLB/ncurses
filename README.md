@@ -61,6 +61,12 @@ Mouse interaction with individual windows
 $ crystal run examples/window_enclose.cr
 ```
 
+Scroll when overflowing window
+```text
+$ crystal run examples/scroll.cr
+```
+
+
 ## Contributing
 
 1. Fork it ( https://github.com/SamualLB/ncurses.git )
