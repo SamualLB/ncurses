@@ -95,7 +95,7 @@ lib LibNCurses
   fun wattr_off(window : Window, attr : Attribute, unused : Void*) : LibC::Int
   fun wattr_on(window : Window, attr : Attribute, unused : Void*) : LibC::Int
   fun wattr_set(window : Window, attr : Attribute, color_pair : LibC::Short, unused : Void*) : LibC::Int
-  fun wchgat(window : Window, n : LibC::Int, attr : Attribute, color_pair : LibC::Short,  unused : Void*) : LibC::Int
+  fun wchgat(window : Window, n : LibC::Int, attr : Attribute, color_pair : LibC::Short, unused : Void*) : LibC::Int
   fun mvwchgat(window : Window, y : LibC::Int, x : LibC::Int, n : LibC::Int, attr : Attribute, color_pair : LibC::Short, unused : Void*) : LibC::Int
 
   # Legacy window attribute functions
@@ -117,7 +117,12 @@ lib LibNCurses
   fun immedok(window : Window, bf : Bool)
   fun leaveok(window : Window, bf : Bool) : LibC::Int
   fun wsetscrreg(window : Window, top : LibC::Int, bot : LibC::Int) : LibC::Int
-  fun scrollok(window : Window, bf : Bool) : LibC::Int
   fun nl : LibC::Int
   fun nonl : LibC::Int
+
+  # Window scrolling
+  fun scrollok(window : Window, bf : Bool) : LibC::Int
+  fun scroll(window : Window) : LibC::Int
+  fun scrl(n : LibC::Int) : LibC::Int
+  fun wscrl(window : Window, n : LibC::Int) : LibC::Int
 end
