@@ -77,7 +77,7 @@ module NCurses
     end
 
     # Returns cursor current x position
-    # 
+    #
     # Wrapper for `getcurx()`
     def x
       raise "getcurx error" if (out = LibNCurses.getcurx(self)) == ERR
@@ -487,7 +487,6 @@ module NCurses
       end
     end
 
-
     #
     # ## Output options
     #
@@ -519,7 +518,7 @@ module NCurses
 
     # Wrapper for `wsetscrreg()` & `setscrreg()`
     def setscrreg(top, bot)
-      LibNCurses.setscrreg(self, top.to_i32, bot.to_i32)
+      LibNCurses.wsetscrreg(self, top.to_i32, bot.to_i32)
     end
 
     # Wrapper for `scrollok()`
