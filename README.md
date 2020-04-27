@@ -79,3 +79,4 @@ $ crystal run examples/scroll.cr
 
 - (https://github.com/jreinert) Joakim Reinert - creator, maintainer
 - (https://github.com/SamualLB) Samual Black - maintainer
+- (https://github.com/data-niklas) Niklas Loeser - contributor

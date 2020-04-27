@@ -11,6 +11,7 @@ lib LibNCurses
 
   # Used to color output by creating color pairs
   enum Color : LibC::Short
+    Default = -1
     Black   = 0
     Red     = 1
     Green   = 2
@@ -109,6 +110,7 @@ lib LibNCurses
   fun can_change_color : Bool
   fun init_color(slot : LibC::Short, red : LibC::Short, green : LibC::Short, blue : LibC::Short) : LibC::Int
   fun init_pair(slot : LibC::Short, foreground : LibC::Short, background : LibC::Short) : LibC::Int
+  fun use_default_colors()
 
   # Output options
   fun clearok(window : Window, bf : Bool) : LibC::Int

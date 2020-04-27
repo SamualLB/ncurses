@@ -10,6 +10,7 @@ unless NCurses.has_colors?
   exit(1)
 end
 
+NCurses.default_colors
 NCurses.start_color
 
 NCurses.init_color_pair(1, NCurses::Color::Red, NCurses::Color::Green)

@@ -1,9 +1,10 @@
 name: ncurses
-version: 0.0.7
+version: 0.0.8
 
 authors:
   - Joakim Reinert <mail@jreinert.com>
   - Samual Black <samuallb@hotmail.com>
+  - Niklas Loeser <niklas@4loeser.net>
 
 crystal: 0.31.1
 

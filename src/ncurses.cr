@@ -232,6 +232,18 @@ module NCurses
     raise "init_pair error" if LibNCurses.init_pair(slot.to_i16, foreground.to_i16, background.to_i16) == ERR
   end
 
+
+  # Use the default terminal colors
+  # Takes no arguments and has no result
+  def use_default_colors
+    LibNCurses.use_default_colors
+  end
+
+  # Alias for use_default_colors
+  def default_colors
+    use_default_colors
+  end
+
   #
   # ## Other
   #
