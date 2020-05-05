@@ -188,6 +188,14 @@ module NCurses
   # ## Color
   #
 
+  def use_default_colors
+    raise "use_default_colors error" if LibNCurses.use_default_colors == ERR
+  end
+
+  def assume_default_colors(fg, bg)
+    raise "assume_default_colors error" if LibNCurses.assume_default_colors(fg, bg) == ERR
+  end
+
   # Start color support
   # Wrapper for `start_color()`
   def start_color
