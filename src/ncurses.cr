@@ -60,6 +60,16 @@ module NCurses
     LibNCurses.curs_set(visibility) != ERR
   end
 
+  # Save the tty mode
+  def def_prog_mode
+    LibNCurses.def_prog_mode
+  end
+
+  # Restore the tty mode
+  def reset_prog_mode
+    LibNCurses.reset_prog_mode
+  end
+
   # Get stdscr
   # May remove due to delegateing
   def stdscr

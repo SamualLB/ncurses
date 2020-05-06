@@ -32,6 +32,8 @@ lib LibNCurses
   fun initscr : Window
   fun endwin : LibC::Int
   fun curs_set(visibility : LibC::Int) : LibC::Int
+  fun def_prog_mode
+  fun reset_prog_mode
 
   # General window functions
   fun newwin(height : LibC::Int, width : LibC::Int, row : LibC::Int, col : LibC::Int) : Window
