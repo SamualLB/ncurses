@@ -11,6 +11,7 @@ lib LibNCurses
 
   # Used to color output by creating color pairs
   enum Color : LibC::Short
+    Default = -1
     Black   = 0
     Red     = 1
     Green   = 2
@@ -32,6 +33,8 @@ lib LibNCurses
   fun initscr : Window
   fun endwin : LibC::Int
   fun curs_set(visibility : LibC::Int) : LibC::Int
+  fun def_prog_mode
+  fun reset_prog_mode
 
   # General window functions
   fun newwin(height : LibC::Int, width : LibC::Int, row : LibC::Int, col : LibC::Int) : Window
@@ -104,6 +107,8 @@ lib LibNCurses
   fun wattrset(window : Window, attr : Attribute) : LibC::Int
 
   # Color functions
+  fun use_default_colors : LibC::Int
+  fun assume_default_colors(fg : LibC::Int, bg : LibC::Int) : LibC::Int
   fun start_color : LibC::Int
   fun has_colors : Bool
   fun can_change_color : Bool

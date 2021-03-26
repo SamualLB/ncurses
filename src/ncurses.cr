@@ -60,6 +60,16 @@ module NCurses
     LibNCurses.curs_set(visibility) != ERR
   end
 
+  # Save the tty mode
+  def def_prog_mode
+    LibNCurses.def_prog_mode
+  end
+
+  # Restore the tty mode
+  def reset_prog_mode
+    LibNCurses.reset_prog_mode
+  end
+
   # Get stdscr
   # May remove due to delegateing
   def stdscr
@@ -187,6 +197,14 @@ module NCurses
   #
   # ## Color
   #
+
+  def use_default_colors
+    raise "use_default_colors error" if LibNCurses.use_default_colors == ERR
+  end
+
+  def assume_default_colors(fg, bg)
+    raise "assume_default_colors error" if LibNCurses.assume_default_colors(fg, bg) == ERR
+  end
 
   # Start color support
   # Wrapper for `start_color()`
