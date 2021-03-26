@@ -77,7 +77,7 @@ module NCurses
     end
 
     # Returns cursor current x position
-    # 
+    #
     # Wrapper for `getcurx()`
     def x
       raise "getcurx error" if (out = LibNCurses.getcurx(self)) == ERR
@@ -486,7 +486,6 @@ module NCurses
         LibNCurses.mvwchgat(self, y, x, length, attr, color_pair.to_i16, nil)
       end
     end
-
 
     #
     # ## Output options

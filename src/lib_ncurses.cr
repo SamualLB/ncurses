@@ -95,7 +95,7 @@ lib LibNCurses
   fun wattr_off(window : Window, attr : Attribute, unused : Void*) : LibC::Int
   fun wattr_on(window : Window, attr : Attribute, unused : Void*) : LibC::Int
   fun wattr_set(window : Window, attr : Attribute, color_pair : LibC::Short, unused : Void*) : LibC::Int
-  fun wchgat(window : Window, n : LibC::Int, attr : Attribute, color_pair : LibC::Short,  unused : Void*) : LibC::Int
+  fun wchgat(window : Window, n : LibC::Int, attr : Attribute, color_pair : LibC::Short, unused : Void*) : LibC::Int
   fun mvwchgat(window : Window, y : LibC::Int, x : LibC::Int, n : LibC::Int, attr : Attribute, color_pair : LibC::Short, unused : Void*) : LibC::Int
 
   # Legacy window attribute functions

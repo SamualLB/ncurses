@@ -1,8 +1,8 @@
 lib LibNCurses
   # Used to check for key presses
-  # 
+  #
   # Uses NCURSES_MOUSE_VERSION 2
-  # 
+  #
   # If `#get_char` returns `NCurses::Key:Mouse`,
   # Check using `NCurses#get_mouse`which returns a `MouseEvent`,
   # which contains `#state`.
@@ -19,10 +19,10 @@ lib LibNCurses
     # BUTTON1_CLICKED
     B1Clicked = 0o4
 
-    #BUTTON1_DOUBLE_CLICKED
+    # BUTTON1_DOUBLE_CLICKED
     B1DoubleClicked = 0o10
 
-    #BUTTON1_TRIPLE_CLICKED
+    # BUTTON1_TRIPLE_CLICKED
     B1TripleClicked = 0o20
 
     # B2: Middle Button (scroll wheel)
@@ -95,7 +95,7 @@ lib LibNCurses
     B5DoubleClicked = 0o40_000_000
 
     # BUTTON5_TRIPLE_CLICKED
-    B5TripleClicked =  0o100_000_000
+    B5TripleClicked = 0o100_000_000
 
     # Ctrl was pressed at the same time
     #

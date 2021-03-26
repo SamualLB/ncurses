@@ -167,7 +167,7 @@ module NCurses
   end
 
   # Should only be called if `#get_char` returned `Key::Mouse`
-  # 
+  #
   # Returns a `MouseEvent` containing the mouse state and coordinates
   # Wrapper for `getmouse()`
   def get_mouse
@@ -206,10 +206,9 @@ module NCurses
     LibNCurses.can_change_color
   end
 
-
   # Change the RGB values of the color
   # Between 0 and 1000
-  # ```crystal
+  # ```
   # change_color Color::Red, 0, 0, 1000 # => Color::Red will now appear blue
   # ```
   def init_color(slot, red, green, blue)
@@ -224,7 +223,7 @@ module NCurses
   # Create a color pair to use
   # Pass an integer for id of the pair in the *slot*
   # Pass a `Color` for both the *foreground* and then *background*
-  # ```crystal
+  # ```
   # init_color_pair 5, Color::Red, Color::Blue # => Color pair 5 is not red on black
   # ```
   # Wrapper for `init_pair()`

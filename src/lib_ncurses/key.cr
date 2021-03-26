@@ -1,6 +1,6 @@
 lib LibNCurses
   # Special keys recovered when using `NCurses#keypad(true)`
-  # 
+  #
   # Contains all F keys from 0 to 63
   enum Key : LibC::Int
     # Required 2 inputs, do not use normally

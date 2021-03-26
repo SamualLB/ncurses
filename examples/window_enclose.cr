@@ -29,8 +29,6 @@ tr.print "Height: #{tr.height}\n"
 
 tl.print "\nPress q to quit\n"
 
-
-
 tl.refresh
 bl.refresh
 br.refresh
