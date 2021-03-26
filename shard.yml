@@ -1,11 +1,11 @@
 name: ncurses
-version: 0.0.7
+version: 1.0.0
 
 authors:
   - Joakim Reinert <mail@jreinert.com>
   - Samual Black <samuallb@hotmail.com>
 
-crystal: 0.31.1
+crystal: 1.0.0
 
 libraries:
   libncurses: "*"
