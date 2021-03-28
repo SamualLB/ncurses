@@ -46,7 +46,10 @@ lib LibNCurses
   fun getmaxx(window : Window) : LibC::Int
   fun wmove(window : Window, row : LibC::Int, col : LibC::Int) : LibC::Int
   fun wrefresh(window : Window) : LibC::Int
+  fun werase(window : Window) : LibC::Int
   fun wclear(window : Window) : LibC::Int
+  fun wclrtoeol(window : Window) : LibC::Int
+  fun wclrtobot(window : Window) : LibC::Int
 
   # Input option functions
   fun cbreak : LibC::Int

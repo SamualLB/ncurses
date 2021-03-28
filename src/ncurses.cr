@@ -289,7 +289,7 @@ module NCurses
   delegate max_y, height, lines, max_x, width, cols, to: stdscr
   delegate max_dimensions, max_dimensions_named, to: stdscr
   delegate x, col, y, row, pos, position, pos_named, position_named, to: stdscr
-  delegate move, set_pos, refresh, clear, to: stdscr
+  delegate move, set_pos, refresh, erase, clear, clear_to_eol, clear_to_bot, to: stdscr
 
   # Input
   delegate keypad, no_timeout, no_delay, timeout, to: stdscr
