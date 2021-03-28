@@ -1,0 +1,1643 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Crystal Docs 0.36.1">
+<meta name="crystal_docs.project_version" content="HEAD">
+<meta name="crystal_docs.project_name" content="ncurses">
+
+
+
+<link href="../css/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="../js/doc.js"></script>
+
+  <meta name="repository-name" content="ncurses">
+  <title>NCurses::Attribute - ncurses HEAD</title>
+  <script type="text/javascript">
+    CrystalDocs.base_path = "../";
+  </script>
+</head>
+<body>
+
+<svg class="hidden">
+  <symbol id="octicon-link" viewBox="0 0 16 16">
+    <path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path>
+  </symbol>
+</svg>
+<div class="sidebar">
+  <div class="sidebar-header">
+    <div class="search-box">
+      <input type="search" class="search-input" placeholder="Search..." spellcheck="false" aria-label="Search">
+    </div>
+
+    <div class="project-summary">
+      <h1 class="project-name">
+        <a href="../index.html">
+          ncurses
+        </a>
+      </h1>
+
+      <span class="project-version">
+        HEAD
+      </span>
+    </div>
+  </div>
+
+  <div class="search-results hidden">
+    <ul class="search-list"></ul>
+  </div>
+
+  <div class="types-list">
+    <ul>
+  
+  <li class="parent open current" data-id="ncurses/NCurses" data-name="ncurses">
+      <a href="../NCurses.html">NCurses</a>
+      
+        <ul>
+  
+  <li class=" current" data-id="ncurses/NCurses/Attribute" data-name="ncurses::attribute">
+      <a href="../NCurses/Attribute.html">Attribute</a>
+      
+    </li>
+  
+  <li class=" " data-id="ncurses/NCurses/Color" data-name="ncurses::color">
+      <a href="../NCurses/Color.html">Color</a>
+      
+    </li>
+  
+  <li class=" " data-id="ncurses/NCurses/Cursor" data-name="ncurses::cursor">
+      <a href="../NCurses/Cursor.html">Cursor</a>
+      
+    </li>
+  
+  <li class=" " data-id="ncurses/NCurses/Key" data-name="ncurses::key">
+      <a href="../NCurses/Key.html">Key</a>
+      
+    </li>
+  
+  <li class=" " data-id="ncurses/NCurses/Mouse" data-name="ncurses::mouse">
+      <a href="../NCurses/Mouse.html">Mouse</a>
+      
+    </li>
+  
+  <li class=" " data-id="ncurses/NCurses/MouseEvent" data-name="ncurses::mouseevent">
+      <a href="../NCurses/MouseEvent.html">MouseEvent</a>
+      
+    </li>
+  
+  <li class=" " data-id="ncurses/NCurses/Window" data-name="ncurses::window">
+      <a href="../NCurses/Window.html">Window</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+</ul>
+
+  </div>
+</div>
+
+
+<div class="main-content">
+<h1 class="type-name">
+
+  <span class="kind">alias</span> NCurses::Attribute
+
+</h1>
+
+
+
+
+
+
+
+  <h2>
+    <a id="alias-definition" class="anchor" href="#alias-definition">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Alias Definition
+  </h2>
+  <code>LibNCurses::Attribute</code>
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2>
+    <a id="defined-in" class="anchor" href="#defined-in">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Defined in:
+  </h2>
+  
+    
+      <a href="https://github.com/SamualLB/ncurses/blob/8e1bebaeaafdbf9a0f8e9ccf5df07c0c24171b69/src/ncurses.cr#L15" target="_blank">
+        ncurses.cr
+      </a>
+    
+    <br/>
+  
+
+
+
+  
+    <h2>
+      <a id="constant-summary" class="anchor" href="#constant-summary">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+      Constant Summary
+    </h2>
+  
+  <dl>
+    
+      <dt class="entry-const" id="AltCharSet">
+        <strong>AltCharSet</strong> = <code><span class="n">4194304_u32</span></code>
+      </dt>
+      
+      <dd class="entry-const-doc">
+        <p>Alternate character set</p>
+      </dd>
+      
+    
+      <dt class="entry-const" id="Attributes">
+        <strong>Attributes</strong> = <code><span class="n">4294967040_u32</span></code>
+      </dt>
+      
+      <dd class="entry-const-doc">
+        <p>Extract attributes</p>
+      </dd>
+      
+    
+      <dt class="entry-const" id="Blink">
+        <strong>Blink</strong> = <code><span class="n">524288_u32</span></code>
+      </dt>
+      
+      <dd class="entry-const-doc">
+        <p>Blinking text</p>
+      </dd>
+      
+    
+      <dt class="entry-const" id="Bold">
+        <strong>Bold</strong> = <code><span class="n">2097152_u32</span></code>
+      </dt>
+      
+      <dd class="entry-const-doc">
+        <p>Extra bright or bold</p>
+      </dd>
+      
+    
+      <dt class="entry-const" id="Color">
+        <strong>Color</strong> = <code><span class="n">65280_u32</span></code>
+      </dt>
+      
+      <dd class="entry-const-doc">
+        <p>Extract color pair</p>
+      </dd>
+      
+    
+      <dt class="entry-const" id="ColorPair1">
+        <strong>ColorPair1</strong> = <code><span class="n">256_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair10">
+        <strong>ColorPair10</strong> = <code><span class="n">2560_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair100">
+        <strong>ColorPair100</strong> = <code><span class="n">25600_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair101">
+        <strong>ColorPair101</strong> = <code><span class="n">25856_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair102">
+        <strong>ColorPair102</strong> = <code><span class="n">26112_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair103">
+        <strong>ColorPair103</strong> = <code><span class="n">26368_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair104">
+        <strong>ColorPair104</strong> = <code><span class="n">26624_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair105">
+        <strong>ColorPair105</strong> = <code><span class="n">26880_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair106">
+        <strong>ColorPair106</strong> = <code><span class="n">27136_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair107">
+        <strong>ColorPair107</strong> = <code><span class="n">27392_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair108">
+        <strong>ColorPair108</strong> = <code><span class="n">27648_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair109">
+        <strong>ColorPair109</strong> = <code><span class="n">27904_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair11">
+        <strong>ColorPair11</strong> = <code><span class="n">2816_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair110">
+        <strong>ColorPair110</strong> = <code><span class="n">28160_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair111">
+        <strong>ColorPair111</strong> = <code><span class="n">28416_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair112">
+        <strong>ColorPair112</strong> = <code><span class="n">28672_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair113">
+        <strong>ColorPair113</strong> = <code><span class="n">28928_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair114">
+        <strong>ColorPair114</strong> = <code><span class="n">29184_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair115">
+        <strong>ColorPair115</strong> = <code><span class="n">29440_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair116">
+        <strong>ColorPair116</strong> = <code><span class="n">29696_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair117">
+        <strong>ColorPair117</strong> = <code><span class="n">29952_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair118">
+        <strong>ColorPair118</strong> = <code><span class="n">30208_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair119">
+        <strong>ColorPair119</strong> = <code><span class="n">30464_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair12">
+        <strong>ColorPair12</strong> = <code><span class="n">3072_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair120">
+        <strong>ColorPair120</strong> = <code><span class="n">30720_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair121">
+        <strong>ColorPair121</strong> = <code><span class="n">30976_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair122">
+        <strong>ColorPair122</strong> = <code><span class="n">31232_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair123">
+        <strong>ColorPair123</strong> = <code><span class="n">31488_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair124">
+        <strong>ColorPair124</strong> = <code><span class="n">31744_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair125">
+        <strong>ColorPair125</strong> = <code><span class="n">32000_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair126">
+        <strong>ColorPair126</strong> = <code><span class="n">32256_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair127">
+        <strong>ColorPair127</strong> = <code><span class="n">32512_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair128">
+        <strong>ColorPair128</strong> = <code><span class="n">32768_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair129">
+        <strong>ColorPair129</strong> = <code><span class="n">33024_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair13">
+        <strong>ColorPair13</strong> = <code><span class="n">3328_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair130">
+        <strong>ColorPair130</strong> = <code><span class="n">33280_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair131">
+        <strong>ColorPair131</strong> = <code><span class="n">33536_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair132">
+        <strong>ColorPair132</strong> = <code><span class="n">33792_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair133">
+        <strong>ColorPair133</strong> = <code><span class="n">34048_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair134">
+        <strong>ColorPair134</strong> = <code><span class="n">34304_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair135">
+        <strong>ColorPair135</strong> = <code><span class="n">34560_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair136">
+        <strong>ColorPair136</strong> = <code><span class="n">34816_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair137">
+        <strong>ColorPair137</strong> = <code><span class="n">35072_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair138">
+        <strong>ColorPair138</strong> = <code><span class="n">35328_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair139">
+        <strong>ColorPair139</strong> = <code><span class="n">35584_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair14">
+        <strong>ColorPair14</strong> = <code><span class="n">3584_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair140">
+        <strong>ColorPair140</strong> = <code><span class="n">35840_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair141">
+        <strong>ColorPair141</strong> = <code><span class="n">36096_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair142">
+        <strong>ColorPair142</strong> = <code><span class="n">36352_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair143">
+        <strong>ColorPair143</strong> = <code><span class="n">36608_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair144">
+        <strong>ColorPair144</strong> = <code><span class="n">36864_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair145">
+        <strong>ColorPair145</strong> = <code><span class="n">37120_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair146">
+        <strong>ColorPair146</strong> = <code><span class="n">37376_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair147">
+        <strong>ColorPair147</strong> = <code><span class="n">37632_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair148">
+        <strong>ColorPair148</strong> = <code><span class="n">37888_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair149">
+        <strong>ColorPair149</strong> = <code><span class="n">38144_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair15">
+        <strong>ColorPair15</strong> = <code><span class="n">3840_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair150">
+        <strong>ColorPair150</strong> = <code><span class="n">38400_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair151">
+        <strong>ColorPair151</strong> = <code><span class="n">38656_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair152">
+        <strong>ColorPair152</strong> = <code><span class="n">38912_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair153">
+        <strong>ColorPair153</strong> = <code><span class="n">39168_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair154">
+        <strong>ColorPair154</strong> = <code><span class="n">39424_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair155">
+        <strong>ColorPair155</strong> = <code><span class="n">39680_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair156">
+        <strong>ColorPair156</strong> = <code><span class="n">39936_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair157">
+        <strong>ColorPair157</strong> = <code><span class="n">40192_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair158">
+        <strong>ColorPair158</strong> = <code><span class="n">40448_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair159">
+        <strong>ColorPair159</strong> = <code><span class="n">40704_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair16">
+        <strong>ColorPair16</strong> = <code><span class="n">4096_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair160">
+        <strong>ColorPair160</strong> = <code><span class="n">40960_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair161">
+        <strong>ColorPair161</strong> = <code><span class="n">41216_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair162">
+        <strong>ColorPair162</strong> = <code><span class="n">41472_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair163">
+        <strong>ColorPair163</strong> = <code><span class="n">41728_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair164">
+        <strong>ColorPair164</strong> = <code><span class="n">41984_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair165">
+        <strong>ColorPair165</strong> = <code><span class="n">42240_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair166">
+        <strong>ColorPair166</strong> = <code><span class="n">42496_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair167">
+        <strong>ColorPair167</strong> = <code><span class="n">42752_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair168">
+        <strong>ColorPair168</strong> = <code><span class="n">43008_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair169">
+        <strong>ColorPair169</strong> = <code><span class="n">43264_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair17">
+        <strong>ColorPair17</strong> = <code><span class="n">4352_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair170">
+        <strong>ColorPair170</strong> = <code><span class="n">43520_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair171">
+        <strong>ColorPair171</strong> = <code><span class="n">43776_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair172">
+        <strong>ColorPair172</strong> = <code><span class="n">44032_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair173">
+        <strong>ColorPair173</strong> = <code><span class="n">44288_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair174">
+        <strong>ColorPair174</strong> = <code><span class="n">44544_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair175">
+        <strong>ColorPair175</strong> = <code><span class="n">44800_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair176">
+        <strong>ColorPair176</strong> = <code><span class="n">45056_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair177">
+        <strong>ColorPair177</strong> = <code><span class="n">45312_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair178">
+        <strong>ColorPair178</strong> = <code><span class="n">45568_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair179">
+        <strong>ColorPair179</strong> = <code><span class="n">45824_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair18">
+        <strong>ColorPair18</strong> = <code><span class="n">4608_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair180">
+        <strong>ColorPair180</strong> = <code><span class="n">46080_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair181">
+        <strong>ColorPair181</strong> = <code><span class="n">46336_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair182">
+        <strong>ColorPair182</strong> = <code><span class="n">46592_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair183">
+        <strong>ColorPair183</strong> = <code><span class="n">46848_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair184">
+        <strong>ColorPair184</strong> = <code><span class="n">47104_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair185">
+        <strong>ColorPair185</strong> = <code><span class="n">47360_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair186">
+        <strong>ColorPair186</strong> = <code><span class="n">47616_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair187">
+        <strong>ColorPair187</strong> = <code><span class="n">47872_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair188">
+        <strong>ColorPair188</strong> = <code><span class="n">48128_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair189">
+        <strong>ColorPair189</strong> = <code><span class="n">48384_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair19">
+        <strong>ColorPair19</strong> = <code><span class="n">4864_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair190">
+        <strong>ColorPair190</strong> = <code><span class="n">48640_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair191">
+        <strong>ColorPair191</strong> = <code><span class="n">48896_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair192">
+        <strong>ColorPair192</strong> = <code><span class="n">49152_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair193">
+        <strong>ColorPair193</strong> = <code><span class="n">49408_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair194">
+        <strong>ColorPair194</strong> = <code><span class="n">49664_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair195">
+        <strong>ColorPair195</strong> = <code><span class="n">49920_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair196">
+        <strong>ColorPair196</strong> = <code><span class="n">50176_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair197">
+        <strong>ColorPair197</strong> = <code><span class="n">50432_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair198">
+        <strong>ColorPair198</strong> = <code><span class="n">50688_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair199">
+        <strong>ColorPair199</strong> = <code><span class="n">50944_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair2">
+        <strong>ColorPair2</strong> = <code><span class="n">512_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair20">
+        <strong>ColorPair20</strong> = <code><span class="n">5120_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair200">
+        <strong>ColorPair200</strong> = <code><span class="n">51200_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair201">
+        <strong>ColorPair201</strong> = <code><span class="n">51456_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair202">
+        <strong>ColorPair202</strong> = <code><span class="n">51712_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair203">
+        <strong>ColorPair203</strong> = <code><span class="n">51968_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair204">
+        <strong>ColorPair204</strong> = <code><span class="n">52224_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair205">
+        <strong>ColorPair205</strong> = <code><span class="n">52480_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair206">
+        <strong>ColorPair206</strong> = <code><span class="n">52736_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair207">
+        <strong>ColorPair207</strong> = <code><span class="n">52992_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair208">
+        <strong>ColorPair208</strong> = <code><span class="n">53248_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair209">
+        <strong>ColorPair209</strong> = <code><span class="n">53504_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair21">
+        <strong>ColorPair21</strong> = <code><span class="n">5376_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair210">
+        <strong>ColorPair210</strong> = <code><span class="n">53760_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair211">
+        <strong>ColorPair211</strong> = <code><span class="n">54016_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair212">
+        <strong>ColorPair212</strong> = <code><span class="n">54272_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair213">
+        <strong>ColorPair213</strong> = <code><span class="n">54528_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair214">
+        <strong>ColorPair214</strong> = <code><span class="n">54784_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair215">
+        <strong>ColorPair215</strong> = <code><span class="n">55040_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair216">
+        <strong>ColorPair216</strong> = <code><span class="n">55296_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair217">
+        <strong>ColorPair217</strong> = <code><span class="n">55552_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair218">
+        <strong>ColorPair218</strong> = <code><span class="n">55808_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair219">
+        <strong>ColorPair219</strong> = <code><span class="n">56064_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair22">
+        <strong>ColorPair22</strong> = <code><span class="n">5632_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair220">
+        <strong>ColorPair220</strong> = <code><span class="n">56320_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair221">
+        <strong>ColorPair221</strong> = <code><span class="n">56576_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair222">
+        <strong>ColorPair222</strong> = <code><span class="n">56832_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair223">
+        <strong>ColorPair223</strong> = <code><span class="n">57088_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair224">
+        <strong>ColorPair224</strong> = <code><span class="n">57344_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair225">
+        <strong>ColorPair225</strong> = <code><span class="n">57600_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair226">
+        <strong>ColorPair226</strong> = <code><span class="n">57856_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair227">
+        <strong>ColorPair227</strong> = <code><span class="n">58112_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair228">
+        <strong>ColorPair228</strong> = <code><span class="n">58368_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair229">
+        <strong>ColorPair229</strong> = <code><span class="n">58624_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair23">
+        <strong>ColorPair23</strong> = <code><span class="n">5888_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair230">
+        <strong>ColorPair230</strong> = <code><span class="n">58880_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair231">
+        <strong>ColorPair231</strong> = <code><span class="n">59136_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair232">
+        <strong>ColorPair232</strong> = <code><span class="n">59392_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair233">
+        <strong>ColorPair233</strong> = <code><span class="n">59648_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair234">
+        <strong>ColorPair234</strong> = <code><span class="n">59904_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair235">
+        <strong>ColorPair235</strong> = <code><span class="n">60160_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair236">
+        <strong>ColorPair236</strong> = <code><span class="n">60416_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair237">
+        <strong>ColorPair237</strong> = <code><span class="n">60672_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair238">
+        <strong>ColorPair238</strong> = <code><span class="n">60928_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair239">
+        <strong>ColorPair239</strong> = <code><span class="n">61184_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair24">
+        <strong>ColorPair24</strong> = <code><span class="n">6144_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair240">
+        <strong>ColorPair240</strong> = <code><span class="n">61440_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair241">
+        <strong>ColorPair241</strong> = <code><span class="n">61696_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair242">
+        <strong>ColorPair242</strong> = <code><span class="n">61952_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair243">
+        <strong>ColorPair243</strong> = <code><span class="n">62208_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair244">
+        <strong>ColorPair244</strong> = <code><span class="n">62464_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair245">
+        <strong>ColorPair245</strong> = <code><span class="n">62720_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair246">
+        <strong>ColorPair246</strong> = <code><span class="n">62976_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair247">
+        <strong>ColorPair247</strong> = <code><span class="n">63232_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair248">
+        <strong>ColorPair248</strong> = <code><span class="n">63488_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair249">
+        <strong>ColorPair249</strong> = <code><span class="n">63744_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair25">
+        <strong>ColorPair25</strong> = <code><span class="n">6400_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair250">
+        <strong>ColorPair250</strong> = <code><span class="n">64000_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair251">
+        <strong>ColorPair251</strong> = <code><span class="n">64256_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair252">
+        <strong>ColorPair252</strong> = <code><span class="n">64512_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair253">
+        <strong>ColorPair253</strong> = <code><span class="n">64768_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair254">
+        <strong>ColorPair254</strong> = <code><span class="n">65024_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair255">
+        <strong>ColorPair255</strong> = <code><span class="n">65280_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair26">
+        <strong>ColorPair26</strong> = <code><span class="n">6656_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair27">
+        <strong>ColorPair27</strong> = <code><span class="n">6912_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair28">
+        <strong>ColorPair28</strong> = <code><span class="n">7168_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair29">
+        <strong>ColorPair29</strong> = <code><span class="n">7424_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair3">
+        <strong>ColorPair3</strong> = <code><span class="n">768_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair30">
+        <strong>ColorPair30</strong> = <code><span class="n">7680_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair31">
+        <strong>ColorPair31</strong> = <code><span class="n">7936_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair32">
+        <strong>ColorPair32</strong> = <code><span class="n">8192_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair33">
+        <strong>ColorPair33</strong> = <code><span class="n">8448_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair34">
+        <strong>ColorPair34</strong> = <code><span class="n">8704_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair35">
+        <strong>ColorPair35</strong> = <code><span class="n">8960_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair36">
+        <strong>ColorPair36</strong> = <code><span class="n">9216_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair37">
+        <strong>ColorPair37</strong> = <code><span class="n">9472_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair38">
+        <strong>ColorPair38</strong> = <code><span class="n">9728_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair39">
+        <strong>ColorPair39</strong> = <code><span class="n">9984_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair4">
+        <strong>ColorPair4</strong> = <code><span class="n">1024_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair40">
+        <strong>ColorPair40</strong> = <code><span class="n">10240_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair41">
+        <strong>ColorPair41</strong> = <code><span class="n">10496_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair42">
+        <strong>ColorPair42</strong> = <code><span class="n">10752_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair43">
+        <strong>ColorPair43</strong> = <code><span class="n">11008_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair44">
+        <strong>ColorPair44</strong> = <code><span class="n">11264_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair45">
+        <strong>ColorPair45</strong> = <code><span class="n">11520_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair46">
+        <strong>ColorPair46</strong> = <code><span class="n">11776_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair47">
+        <strong>ColorPair47</strong> = <code><span class="n">12032_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair48">
+        <strong>ColorPair48</strong> = <code><span class="n">12288_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair49">
+        <strong>ColorPair49</strong> = <code><span class="n">12544_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair5">
+        <strong>ColorPair5</strong> = <code><span class="n">1280_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair50">
+        <strong>ColorPair50</strong> = <code><span class="n">12800_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair51">
+        <strong>ColorPair51</strong> = <code><span class="n">13056_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair52">
+        <strong>ColorPair52</strong> = <code><span class="n">13312_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair53">
+        <strong>ColorPair53</strong> = <code><span class="n">13568_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair54">
+        <strong>ColorPair54</strong> = <code><span class="n">13824_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair55">
+        <strong>ColorPair55</strong> = <code><span class="n">14080_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair56">
+        <strong>ColorPair56</strong> = <code><span class="n">14336_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair57">
+        <strong>ColorPair57</strong> = <code><span class="n">14592_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair58">
+        <strong>ColorPair58</strong> = <code><span class="n">14848_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair59">
+        <strong>ColorPair59</strong> = <code><span class="n">15104_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair6">
+        <strong>ColorPair6</strong> = <code><span class="n">1536_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair60">
+        <strong>ColorPair60</strong> = <code><span class="n">15360_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair61">
+        <strong>ColorPair61</strong> = <code><span class="n">15616_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair62">
+        <strong>ColorPair62</strong> = <code><span class="n">15872_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair63">
+        <strong>ColorPair63</strong> = <code><span class="n">16128_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair64">
+        <strong>ColorPair64</strong> = <code><span class="n">16384_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair65">
+        <strong>ColorPair65</strong> = <code><span class="n">16640_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair66">
+        <strong>ColorPair66</strong> = <code><span class="n">16896_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair67">
+        <strong>ColorPair67</strong> = <code><span class="n">17152_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair68">
+        <strong>ColorPair68</strong> = <code><span class="n">17408_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair69">
+        <strong>ColorPair69</strong> = <code><span class="n">17664_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair7">
+        <strong>ColorPair7</strong> = <code><span class="n">1792_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair70">
+        <strong>ColorPair70</strong> = <code><span class="n">17920_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair71">
+        <strong>ColorPair71</strong> = <code><span class="n">18176_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair72">
+        <strong>ColorPair72</strong> = <code><span class="n">18432_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair73">
+        <strong>ColorPair73</strong> = <code><span class="n">18688_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair74">
+        <strong>ColorPair74</strong> = <code><span class="n">18944_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair75">
+        <strong>ColorPair75</strong> = <code><span class="n">19200_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair76">
+        <strong>ColorPair76</strong> = <code><span class="n">19456_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair77">
+        <strong>ColorPair77</strong> = <code><span class="n">19712_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair78">
+        <strong>ColorPair78</strong> = <code><span class="n">19968_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair79">
+        <strong>ColorPair79</strong> = <code><span class="n">20224_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair8">
+        <strong>ColorPair8</strong> = <code><span class="n">2048_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair80">
+        <strong>ColorPair80</strong> = <code><span class="n">20480_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair81">
+        <strong>ColorPair81</strong> = <code><span class="n">20736_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair82">
+        <strong>ColorPair82</strong> = <code><span class="n">20992_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair83">
+        <strong>ColorPair83</strong> = <code><span class="n">21248_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair84">
+        <strong>ColorPair84</strong> = <code><span class="n">21504_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair85">
+        <strong>ColorPair85</strong> = <code><span class="n">21760_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair86">
+        <strong>ColorPair86</strong> = <code><span class="n">22016_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair87">
+        <strong>ColorPair87</strong> = <code><span class="n">22272_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair88">
+        <strong>ColorPair88</strong> = <code><span class="n">22528_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair89">
+        <strong>ColorPair89</strong> = <code><span class="n">22784_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair9">
+        <strong>ColorPair9</strong> = <code><span class="n">2304_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair90">
+        <strong>ColorPair90</strong> = <code><span class="n">23040_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair91">
+        <strong>ColorPair91</strong> = <code><span class="n">23296_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair92">
+        <strong>ColorPair92</strong> = <code><span class="n">23552_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair93">
+        <strong>ColorPair93</strong> = <code><span class="n">23808_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair94">
+        <strong>ColorPair94</strong> = <code><span class="n">24064_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair95">
+        <strong>ColorPair95</strong> = <code><span class="n">24320_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair96">
+        <strong>ColorPair96</strong> = <code><span class="n">24576_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair97">
+        <strong>ColorPair97</strong> = <code><span class="n">24832_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair98">
+        <strong>ColorPair98</strong> = <code><span class="n">25088_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ColorPair99">
+        <strong>ColorPair99</strong> = <code><span class="n">25344_u32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="Dim">
+        <strong>Dim</strong> = <code><span class="n">1048576_u32</span></code>
+      </dt>
+      
+      <dd class="entry-const-doc">
+        <p>Half bright</p>
+      </dd>
+      
+    
+      <dt class="entry-const" id="Horizontal">
+        <strong>Horizontal</strong> = <code><span class="n">33554432_u32</span></code>
+      </dt>
+      
+      <dd class="entry-const-doc">
+        <p>Horizontal highlight</p>
+      </dd>
+      
+    
+      <dt class="entry-const" id="Invisible">
+        <strong>Invisible</strong> = <code><span class="n">8388608_u32</span></code>
+      </dt>
+      
+      <dd class="entry-const-doc">
+        <p>Invisible</p>
+      </dd>
+      
+    
+      <dt class="entry-const" id="Italic">
+        <strong>Italic</strong> = <code><span class="n">2147483648_u32</span></code>
+      </dt>
+      
+      <dd class="entry-const-doc">
+        <p>Italic text</p>
+      </dd>
+      
+    
+      <dt class="entry-const" id="Left">
+        <strong>Left</strong> = <code><span class="n">67108864_u32</span></code>
+      </dt>
+      
+      <dd class="entry-const-doc">
+        <p>Left highlight</p>
+      </dd>
+      
+    
+      <dt class="entry-const" id="Low">
+        <strong>Low</strong> = <code><span class="n">134217728_u32</span></code>
+      </dt>
+      
+      <dd class="entry-const-doc">
+        <p>Low highlight</p>
+      </dd>
+      
+    
+      <dt class="entry-const" id="Normal">
+        <strong>Normal</strong> = <code><span class="n">0_u32</span></code>
+      </dt>
+      
+      <dd class="entry-const-doc">
+        <p>Reset all attributes</p>
+      </dd>
+      
+    
+      <dt class="entry-const" id="Protect">
+        <strong>Protect</strong> = <code><span class="n">16777216_u32</span></code>
+      </dt>
+      
+      <dd class="entry-const-doc">
+        <p>Protective mode</p>
+      </dd>
+      
+    
+      <dt class="entry-const" id="Reverse">
+        <strong>Reverse</strong> = <code><span class="n">262144_u32</span></code>
+      </dt>
+      
+      <dd class="entry-const-doc">
+        <p>Reverse colors (fg & bg)</p>
+      </dd>
+      
+    
+      <dt class="entry-const" id="Right">
+        <strong>Right</strong> = <code><span class="n">268435456_u32</span></code>
+      </dt>
+      
+      <dd class="entry-const-doc">
+        <p>Right highlight</p>
+      </dd>
+      
+    
+      <dt class="entry-const" id="Standout">
+        <strong>Standout</strong> = <code><span class="n">65536_u32</span></code>
+      </dt>
+      
+      <dd class="entry-const-doc">
+        <p>Highlight</p>
+      </dd>
+      
+    
+      <dt class="entry-const" id="Top">
+        <strong>Top</strong> = <code><span class="n">536870912_u32</span></code>
+      </dt>
+      
+      <dd class="entry-const-doc">
+        <p>Top highlight</p>
+      </dd>
+      
+    
+      <dt class="entry-const" id="Underline">
+        <strong>Underline</strong> = <code><span class="n">131072_u32</span></code>
+      </dt>
+      
+      <dd class="entry-const-doc">
+        <p>Underline text</p>
+      </dd>
+      
+    
+      <dt class="entry-const" id="Vertical">
+        <strong>Vertical</strong> = <code><span class="n">1073741824_u32</span></code>
+      </dt>
+      
+      <dd class="entry-const-doc">
+        <p>Vertical highlight</p>
+      </dd>
+      
+    
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+<div class="methods-inherited">
+  
+</div>
+
+
+
+
+
+
+
+
+
+</div>
+
+</body>
+</html>

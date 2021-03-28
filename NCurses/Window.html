@@ -1,0 +1,2530 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Crystal Docs 0.36.1">
+<meta name="crystal_docs.project_version" content="HEAD">
+<meta name="crystal_docs.project_name" content="ncurses">
+
+
+
+<link href="../css/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="../js/doc.js"></script>
+
+  <meta name="repository-name" content="ncurses">
+  <title>NCurses::Window - ncurses HEAD</title>
+  <script type="text/javascript">
+    CrystalDocs.base_path = "../";
+  </script>
+</head>
+<body>
+
+<svg class="hidden">
+  <symbol id="octicon-link" viewBox="0 0 16 16">
+    <path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path>
+  </symbol>
+</svg>
+<div class="sidebar">
+  <div class="sidebar-header">
+    <div class="search-box">
+      <input type="search" class="search-input" placeholder="Search..." spellcheck="false" aria-label="Search">
+    </div>
+
+    <div class="project-summary">
+      <h1 class="project-name">
+        <a href="../index.html">
+          ncurses
+        </a>
+      </h1>
+
+      <span class="project-version">
+        HEAD
+      </span>
+    </div>
+  </div>
+
+  <div class="search-results hidden">
+    <ul class="search-list"></ul>
+  </div>
+
+  <div class="types-list">
+    <ul>
+  
+  <li class="parent open current" data-id="ncurses/NCurses" data-name="ncurses">
+      <a href="../NCurses.html">NCurses</a>
+      
+        <ul>
+  
+  <li class=" " data-id="ncurses/NCurses/Attribute" data-name="ncurses::attribute">
+      <a href="../NCurses/Attribute.html">Attribute</a>
+      
+    </li>
+  
+  <li class=" " data-id="ncurses/NCurses/Color" data-name="ncurses::color">
+      <a href="../NCurses/Color.html">Color</a>
+      
+    </li>
+  
+  <li class=" " data-id="ncurses/NCurses/Cursor" data-name="ncurses::cursor">
+      <a href="../NCurses/Cursor.html">Cursor</a>
+      
+    </li>
+  
+  <li class=" " data-id="ncurses/NCurses/Key" data-name="ncurses::key">
+      <a href="../NCurses/Key.html">Key</a>
+      
+    </li>
+  
+  <li class=" " data-id="ncurses/NCurses/Mouse" data-name="ncurses::mouse">
+      <a href="../NCurses/Mouse.html">Mouse</a>
+      
+    </li>
+  
+  <li class=" " data-id="ncurses/NCurses/MouseEvent" data-name="ncurses::mouseevent">
+      <a href="../NCurses/MouseEvent.html">MouseEvent</a>
+      
+    </li>
+  
+  <li class=" current" data-id="ncurses/NCurses/Window" data-name="ncurses::window">
+      <a href="../NCurses/Window.html">Window</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+</ul>
+
+  </div>
+</div>
+
+
+<div class="main-content">
+<h1 class="type-name">
+
+  <span class="kind">class</span> NCurses::Window
+
+</h1>
+
+
+  <ul class="superclass-hierarchy"><li class="superclass"><a href="../NCurses/Window.html">NCurses::Window</a></li><li class="superclass">Reference</li><li class="superclass">Object</li></ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2>
+    <a id="defined-in" class="anchor" href="#defined-in">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Defined in:
+  </h2>
+  
+    
+      <a href="https://github.com/SamualLB/ncurses/blob/8e1bebaeaafdbf9a0f8e9ccf5df07c0c24171b69/src/ncurses.cr#L30" target="_blank">
+        ncurses.cr
+      </a>
+    
+    <br/>
+  
+    
+      <a href="https://github.com/SamualLB/ncurses/blob/8e1bebaeaafdbf9a0f8e9ccf5df07c0c24171b69/src/ncurses/window.cr#L4" target="_blank">
+        ncurses/window.cr
+      </a>
+    
+    <br/>
+  
+
+
+
+
+
+  <h2>
+    <a id="constructors" class="anchor" href="#constructors">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Constructors
+  </h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#new(window:LibNCurses::Window)-class-method" class="signature"><strong>.new</strong>(window : LibNCurses::Window)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#new(height=nil,width=nil,y=0,x=0)-class-method" class="signature"><strong>.new</strong>(height = <span class="n">nil</span>, width = <span class="n">nil</span>, y = <span class="n">0</span>, x = <span class="n">0</span>)</a>
+        
+          <div class="summary"><p>Create a new window with given size</p></div>
+        
+      </li>
+    
+  </ul>
+
+
+
+
+
+  <h2>
+    <a id="instance-method-summary" class="anchor" href="#instance-method-summary">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Instance Method Summary
+  </h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#add_char(chr,pos_y,pos_x)-instance-method" class="signature"><strong>#add_char</strong>(chr, pos_y, pos_x)</a>
+        
+          <div class="summary"><p>Alias for <code><a href="../NCurses/Window.html#add_char(chr,pos_y,pos_x)-instance-method">#add_char</a></code></p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#add_char(chr,position=nil)-instance-method" class="signature"><strong>#add_char</strong>(chr, position = <span class="n">nil</span>)</a>
+        
+          <div class="summary"><p>Draw a character</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#attr_get-instance-method" class="signature"><strong>#attr_get</strong></a>
+        
+          <div class="summary"><p>Get the current attributes and color pair as a named tuple with <em>attr</em> and <em>color</em></p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#attr_off(attr:Attribute)-instance-method" class="signature"><strong>#attr_off</strong>(attr : Attribute)</a>
+        
+          <div class="summary"><p>Turn off attribute(s)</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#attr_on(attr:Attribute)-instance-method" class="signature"><strong>#attr_on</strong>(attr : Attribute)</a>
+        
+          <div class="summary"><p>Turn on attribute(s)</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#attribute_off(attr:Attribute)-instance-method" class="signature"><strong>#attribute_off</strong>(attr : Attribute)</a>
+        
+          <div class="summary"><p>Alias for <code><a href="../NCurses/Window.html#attr_off(attr:Attribute)-instance-method">#attr_off</a></code></p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#attribute_on(attr:Attribute)-instance-method" class="signature"><strong>#attribute_on</strong>(attr : Attribute)</a>
+        
+          <div class="summary"><p>Alias for <code><a href="../NCurses/Window.html#attr_on(attr:Attribute)-instance-method">#attr_on</a></code></p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#border(ls:Char,rs:Char,ts:Char,bs:Char,tl:Char,tr:Char,bl:Char,br:Char)-instance-method" class="signature"><strong>#border</strong>(ls : Char, rs : Char, ts : Char, bs : Char, tl : Char, tr : Char, bl : Char, br : Char)</a>
+        
+          <div class="summary"><p>Draw a box around the edge of a window</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#border(ver:Char=BORDER_DEFAULT,hor:Char=BORDER_DEFAULT,cor:Char?=nil)-instance-method" class="signature"><strong>#border</strong>(ver : Char = <span class="t">BORDER_DEFAULT</span>, hor : Char = <span class="t">BORDER_DEFAULT</span>, cor : Char? = <span class="n">nil</span>)</a>
+        
+          <div class="summary"><p>Alias for <code><a href="../NCurses/Window.html#border(ls:Char,rs:Char,ts:Char,bs:Char,tl:Char,tr:Char,bl:Char,br:Char)-instance-method">#border</a></code></p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#box(ver:Char=BORDER_DEFAULT,hor:Char=BORDER_DEFAULT)-instance-method" class="signature"><strong>#box</strong>(ver : Char = <span class="t">BORDER_DEFAULT</span>, hor : Char = <span class="t">BORDER_DEFAULT</span>)</a>
+        
+          <div class="summary"><p>Alias for <code><a href="../NCurses/Window.html#border(ls:Char,rs:Char,ts:Char,bs:Char,tl:Char,tr:Char,bl:Char,br:Char)-instance-method">#border</a></code></p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#change_attribute(attr:Attribute=Attribute::Normal,color_pair=0,length=-1,y=nil,x=nil)-instance-method" class="signature"><strong>#change_attribute</strong>(attr : Attribute = <span class="t">Attribute</span><span class="t">::</span><span class="t">Normal</span>, color_pair = <span class="n">0</span>, length = <span class="n">-1</span>, y = <span class="n">nil</span>, x = <span class="n">nil</span>)</a>
+        
+          <div class="summary"><p><em>attr</em> is the <code><a href="../NCurses/Attribute.html">Attribute</a></code> enum.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#change_background(char)-instance-method" class="signature"><strong>#change_background</strong>(char)</a>
+        
+          <div class="summary"><p>Change the background</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#clear-instance-method" class="signature"><strong>#clear</strong></a>
+        
+          <div class="summary"><p>Clear window, also causes repaint</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#clear_to_bot-instance-method" class="signature"><strong>#clear_to_bot</strong></a>
+        
+          <div class="summary"><p>Clear window from cursor to the rest of the whole window</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#clear_to_eol-instance-method" class="signature"><strong>#clear_to_eol</strong></a>
+        
+          <div class="summary"><p>Clear window from cursor position to the end of the current line</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#clearok(v:Bool=true)-instance-method" class="signature"><strong>#clearok</strong>(v : Bool = <span class="n">true</span>)</a>
+        
+          <div class="summary"><p>Wrapper for <code><a href="../NCurses/Window.html#clearok(v:Bool=true)-instance-method">#clearok()</a></code></p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#col-instance-method" class="signature"><strong>#col</strong></a>
+        
+          <div class="summary"><p>Alias for <code><a href="../NCurses/Window.html#x-instance-method">#x</a></code></p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#cols-instance-method" class="signature"><strong>#cols</strong></a>
+        
+          <div class="summary"><p>Alias for <code><a href="../NCurses/Window.html#max_x-instance-method">#max_x</a></code></p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#delete_window-instance-method" class="signature"><strong>#delete_window</strong></a>
+        
+          <div class="summary"><p>Delete the window</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#draw_hline(char=nil,length=nil)-instance-method" class="signature"><strong>#draw_hline</strong>(char = <span class="n">nil</span>, length = <span class="n">nil</span>)</a>
+        
+          <div class="summary"><p>Draw a horizontal line</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#draw_hline(length:Int)-instance-method" class="signature"><strong>#draw_hline</strong>(length : Int)</a>
+        
+          <div class="summary"><p>Alias for <code><a href="../NCurses/Window.html#draw_hline(char=nil,length=nil)-instance-method">#draw_hline</a></code></p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#draw_vline(char=nil,height=nil)-instance-method" class="signature"><strong>#draw_vline</strong>(char = <span class="n">nil</span>, height = <span class="n">nil</span>)</a>
+        
+          <div class="summary"><p>Draw a vertical line</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#draw_vline(height:Int)-instance-method" class="signature"><strong>#draw_vline</strong>(height : Int)</a>
+        
+          <div class="summary"><p>Alias for <code><a href="../NCurses/Window.html#draw_vline(char=nil,height=nil)-instance-method">#draw_vline</a></code></p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#enclose?(yx:NamedTuple):Bool-instance-method" class="signature"><strong>#enclose?</strong>(yx : NamedTuple) : Bool</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#enclose?(yx):Bool-instance-method" class="signature"><strong>#enclose?</strong>(yx) : Bool</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#enclose?(y,x):Bool-instance-method" class="signature"><strong>#enclose?</strong>(y, x) : Bool</a>
+        
+          <div class="summary"><p>If a mouse position is in this window</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#enclose?(mouse_event:MouseEvent):Bool-instance-method" class="signature"><strong>#enclose?</strong>(mouse_event : MouseEvent) : Bool</a>
+        
+          <div class="summary"><p>If a mouse event took place within this window</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#erase-instance-method" class="signature"><strong>#erase</strong></a>
+        
+          <div class="summary"><p>Clear window</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#get_attribute-instance-method" class="signature"><strong>#get_attribute</strong></a>
+        
+          <div class="summary"><p>Alias for <code><a href="../NCurses/Window.html#attr_get-instance-method">#attr_get</a></code></p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#get_background-instance-method" class="signature"><strong>#get_background</strong></a>
+        
+          <div class="summary"><p>Get the character and attributes from the current background</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#get_char(&)-instance-method" class="signature"><strong>#get_char</strong>(&)</a>
+        
+          <div class="summary"><p>Get a character input for main loop</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#get_char:Key%7CChar%7CNil-instance-method" class="signature"><strong>#get_char</strong> : Key | Char | Nil</a>
+        
+          <div class="summary"><p>Get a character input</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#height-instance-method" class="signature"><strong>#height</strong></a>
+        
+          <div class="summary"><p>Alias for <code><a href="../NCurses/Window.html#max_y-instance-method">#max_y</a></code></p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#idcok(v:Bool=true)-instance-method" class="signature"><strong>#idcok</strong>(v : Bool = <span class="n">true</span>)</a>
+        
+          <div class="summary"><p>Wrapper for <code><a href="../NCurses/Window.html#idcok(v:Bool=true)-instance-method">#idcok()</a></code></p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#idlok(v:Bool=true)-instance-method" class="signature"><strong>#idlok</strong>(v : Bool = <span class="n">true</span>)</a>
+        
+          <div class="summary"><p>Wrapper for <code><a href="../NCurses/Window.html#idlok(v:Bool=true)-instance-method">#idlok()</a></code></p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#immedok(v:Bool=true)-instance-method" class="signature"><strong>#immedok</strong>(v : Bool = <span class="n">true</span>)</a>
+        
+          <div class="summary"><p>Wrapper for <code><a href="../NCurses/Window.html#immedok(v:Bool=true)-instance-method">#immedok()</a></code></p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#keypad(enable)-instance-method" class="signature"><strong>#keypad</strong>(enable)</a>
+        
+          <div class="summary"><p>Enable or disable capturing function keys</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#leaveok(v:Bool=true)-instance-method" class="signature"><strong>#leaveok</strong>(v : Bool = <span class="n">true</span>)</a>
+        
+          <div class="summary"><p>Wrapper for <code><a href="../NCurses/Window.html#leaveok(v:Bool=true)-instance-method">#leaveok()</a></code></p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#lines-instance-method" class="signature"><strong>#lines</strong></a>
+        
+          <div class="summary"><p>Alias for <code><a href="../NCurses/Window.html#max_y-instance-method">#max_y</a></code></p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#max_dimensions-instance-method" class="signature"><strong>#max_dimensions</strong></a>
+        
+          <div class="summary"><p>Max height and width as tuple (y,x)</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#max_dimensions_named-instance-method" class="signature"><strong>#max_dimensions_named</strong></a>
+        
+          <div class="summary"><p>Max height and width as named tuple</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#max_x-instance-method" class="signature"><strong>#max_x</strong></a>
+        
+          <div class="summary"><p>Return width</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#max_y-instance-method" class="signature"><strong>#max_y</strong></a>
+        
+          <div class="summary"><p>Return height</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#move(new_pos:NamedTuple)-instance-method" class="signature"><strong>#move</strong>(new_pos : NamedTuple)</a>
+        
+          <div class="summary"><p>Alias for '#move'</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#move(y,x)-instance-method" class="signature"><strong>#move</strong>(y, x)</a>
+        
+          <div class="summary"><p>Move cursor to new position</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#move(new_pos:Tuple)-instance-method" class="signature"><strong>#move</strong>(new_pos : Tuple)</a>
+        
+          <div class="summary"><p>Alias for <code><a href="../NCurses/Window.html#move(new_pos:NamedTuple)-instance-method">#move</a></code></p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#move_window(y,x)-instance-method" class="signature"><strong>#move_window</strong>(y, x)</a>
+        
+          <div class="summary"><p>Move window relative to whole screen</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#no_border-instance-method" class="signature"><strong>#no_border</strong></a>
+        
+          <div class="summary"><p>Erase around the edge of a window</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#no_box-instance-method" class="signature"><strong>#no_box</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#no_delay-instance-method" class="signature"><strong>#no_delay</strong></a>
+        
+          <div class="summary"><p>Do not wait for input, return ERR</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#no_timeout-instance-method" class="signature"><strong>#no_timeout</strong></a>
+        
+          <div class="summary"><p>Wait for input, no errors should be returned</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#non_relative(event:MouseEvent):MouseEvent-instance-method" class="signature"><strong>#non_relative</strong>(event : MouseEvent) : MouseEvent</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#pos-instance-method" class="signature"><strong>#pos</strong></a>
+        
+          <div class="summary"><p>Cursor current position as tuple (y,x)</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#pos_named-instance-method" class="signature"><strong>#pos_named</strong></a>
+        
+          <div class="summary"><p>Cursor current position as named tuple</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#position-instance-method" class="signature"><strong>#position</strong></a>
+        
+          <div class="summary"><p>Alias for <code><a href="../NCurses/Window.html#pos-instance-method">#pos</a></code></p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#position_named-instance-method" class="signature"><strong>#position_named</strong></a>
+        
+          <div class="summary"><p>Alias for <code><a href="../NCurses/Window.html#pos_named-instance-method">#pos_named</a></code></p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#print(message,position=nil)-instance-method" class="signature"><strong>#print</strong>(message, position = <span class="n">nil</span>)</a>
+        
+          <div class="summary"><p>Write a string</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#print(message,row:Int)-instance-method" class="signature"><strong>#print</strong>(message, row : Int)</a>
+        
+          <div class="summary"><p>Alias for <code><a href="../NCurses/Window.html#print(message,position=nil)-instance-method">#print</a></code></p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#print(message,pos_y,pos_x)-instance-method" class="signature"><strong>#print</strong>(message, pos_y, pos_x)</a>
+        
+          <div class="summary"><p>Alias for <code><a href="../NCurses/Window.html#print(message,position=nil)-instance-method">#print</a></code></p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#refresh-instance-method" class="signature"><strong>#refresh</strong></a>
+        
+          <div class="summary"><p>Refresh window</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#relative(event:MouseEvent):MouseEvent-instance-method" class="signature"><strong>#relative</strong>(event : MouseEvent) : MouseEvent</a>
+        
+          <div class="summary"><p>Returns a new <code><a href="../NCurses/MouseEvent.html">MouseEvent</a></code> with coordinates relative to the window</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#row-instance-method" class="signature"><strong>#row</strong></a>
+        
+          <div class="summary"><p>Alias for <code><a href="../NCurses/Window.html#y-instance-method">#y</a></code></p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#scrollok(v:Bool=true)-instance-method" class="signature"><strong>#scrollok</strong>(v : Bool = <span class="n">true</span>)</a>
+        
+          <div class="summary"><p>Wrapper for <code><a href="../NCurses/Window.html#scrollok(v:Bool=true)-instance-method">#scrollok()</a></code></p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#set_attr(attr:Attribute=Attribute::Normal,color_pair=0)-instance-method" class="signature"><strong>#set_attr</strong>(attr : Attribute = <span class="t">Attribute</span><span class="t">::</span><span class="t">Normal</span>, color_pair = <span class="n">0</span>)</a>
+        
+          <div class="summary"><p>Replace attribute(s) and color with these</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#set_attribute(attr:Attribute=Attribute::Normal,color_pair=0)-instance-method" class="signature"><strong>#set_attribute</strong>(attr : Attribute = <span class="t">Attribute</span><span class="t">::</span><span class="t">Normal</span>, color_pair = <span class="n">0</span>)</a>
+        
+          <div class="summary"><p>Alias for <code><a href="../NCurses/Window.html#set_attr(attr:Attribute=Attribute::Normal,color_pair=0)-instance-method">#set_attr</a></code></p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#set_background(char)-instance-method" class="signature"><strong>#set_background</strong>(char)</a>
+        
+          <div class="summary"><p>Sets a new background and applies it everywhere</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#set_color(color_pair=0)-instance-method" class="signature"><strong>#set_color</strong>(color_pair = <span class="n">0</span>)</a>
+        
+          <div class="summary"><p>Set this window's default color pair</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#set_pos(y,x)-instance-method" class="signature"><strong>#set_pos</strong>(y, x)</a>
+        
+          <div class="summary"><p>Alias for <code><a href="../NCurses/Window.html#move(new_pos:NamedTuple)-instance-method">#move</a></code></p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#set_pos(new_pos:Tuple)-instance-method" class="signature"><strong>#set_pos</strong>(new_pos : Tuple)</a>
+        
+          <div class="summary"><p>Alias for <code><a href="../NCurses/Window.html#move(new_pos:NamedTuple)-instance-method">#move</a></code></p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#set_pos(new_pos:NamedTuple)-instance-method" class="signature"><strong>#set_pos</strong>(new_pos : NamedTuple)</a>
+        
+          <div class="summary"><p>Alias for '#move'</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#setscrreg(top,bot)-instance-method" class="signature"><strong>#setscrreg</strong>(top, bot)</a>
+        
+          <div class="summary"><p>Wrapper for <code>wsetscrreg()</code> & <code><a href="../NCurses/Window.html#setscrreg(top,bot)-instance-method">#setscrreg()</a></code></p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#timeout=(value)-instance-method" class="signature"><strong>#timeout=</strong>(value)</a>
+        
+          <div class="summary"><p>Set input timeout</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#to_unsafe:LibNCurses::Window-instance-method" class="signature"><strong>#to_unsafe</strong> : LibNCurses::Window</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#width-instance-method" class="signature"><strong>#width</strong></a>
+        
+          <div class="summary"><p>Alias for <code><a href="../NCurses/Window.html#max_x-instance-method">#max_x</a></code></p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#with_attr(attrs:Attribute,&)-instance-method" class="signature"><strong>#with_attr</strong>(attrs : Attribute, &)</a>
+        
+          <div class="summary"><p>Block with attribute(s) turned on</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#with_attribute(attrs:Attribute,&)-instance-method" class="signature"><strong>#with_attribute</strong>(attrs : Attribute, &)</a>
+        
+          <div class="summary"><p>Alias for <code><a href="../NCurses/Window.html#with_attr(attrs:Attribute,&)-instance-method">#with_attr</a></code></p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#x-instance-method" class="signature"><strong>#x</strong></a>
+        
+          <div class="summary"><p>Returns cursor current x position</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#y-instance-method" class="signature"><strong>#y</strong></a>
+        
+          <div class="summary"><p>Returns cursor current y position</p></div>
+        
+      </li>
+    
+  </ul>
+
+
+
+
+
+<div class="methods-inherited">
+  
+    
+
+
+    
+
+
+    
+
+
+  
+    
+
+
+    
+
+
+    
+
+
+  
+</div>
+
+
+  <h2>
+    <a id="constructor-detail" class="anchor" href="#constructor-detail">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Constructor Detail
+  </h2>
+  
+    <div class="entry-detail" id="new(window:LibNCurses::Window)-class-method">
+      <div class="signature">
+        
+        def self.<strong>new</strong>(window : LibNCurses::Window)
+
+        <a class="method-permalink" href="#new(window:LibNCurses::Window)-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/SamualLB/ncurses/blob/8e1bebaeaafdbf9a0f8e9ccf5df07c0c24171b69/src/ncurses.cr#L31" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="new(height=nil,width=nil,y=0,x=0)-class-method">
+      <div class="signature">
+        
+        def self.<strong>new</strong>(height = <span class="n">nil</span>, width = <span class="n">nil</span>, y = <span class="n">0</span>, x = <span class="n">0</span>)
+
+        <a class="method-permalink" href="#new(height=nil,width=nil,y=0,x=0)-class-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Create a new window with given size</p>
+
+<p>Wrapper for <code>newwin()</code></p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/SamualLB/ncurses/blob/8e1bebaeaafdbf9a0f8e9ccf5df07c0c24171b69/src/ncurses/window.cr#L12" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+
+
+
+
+
+  <h2>
+    <a id="instance-method-detail" class="anchor" href="#instance-method-detail">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Instance Method Detail
+  </h2>
+  
+    <div class="entry-detail" id="add_char(chr,pos_y,pos_x)-instance-method">
+      <div class="signature">
+        
+        def <strong>add_char</strong>(chr, pos_y, pos_x)
+
+        <a class="method-permalink" href="#add_char(chr,pos_y,pos_x)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Alias for <code><a href="../NCurses/Window.html#add_char(chr,pos_y,pos_x)-instance-method">#add_char</a></code></p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/SamualLB/ncurses/blob/8e1bebaeaafdbf9a0f8e9ccf5df07c0c24171b69/src/ncurses/window.cr#L303" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="add_char(chr,position=nil)-instance-method">
+      <div class="signature">
+        
+        def <strong>add_char</strong>(chr, position = <span class="n">nil</span>)
+
+        <a class="method-permalink" href="#add_char(chr,position=nil)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Draw a character</p>
+
+<p>Wrapper for <code>waddch()</code> and <code>mvwaddch()</code> (<code>addch()</code> and <code>mvaddch()</code>)</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/SamualLB/ncurses/blob/8e1bebaeaafdbf9a0f8e9ccf5df07c0c24171b69/src/ncurses/window.cr#L294" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="attr_get-instance-method">
+      <div class="signature">
+        
+        def <strong>attr_get</strong>
+
+        <a class="method-permalink" href="#attr_get-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Get the current attributes and color pair
+as a named tuple with <em>attr</em> and <em>color</em></p>
+
+<p>Wrapper for <code>wattr_get()</code> (<code><a href="../NCurses/Window.html#attr_get-instance-method">#attr_get()</a></code>)</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/SamualLB/ncurses/blob/8e1bebaeaafdbf9a0f8e9ccf5df07c0c24171b69/src/ncurses/window.cr#L434" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="attr_off(attr:Attribute)-instance-method">
+      <div class="signature">
+        
+        def <strong>attr_off</strong>(attr : <a href="../NCurses/Attribute.html">Attribute</a>)
+
+        <a class="method-permalink" href="#attr_off(attr:Attribute)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Turn off attribute(s)</p>
+
+<p>Wrapper for <code>wattr_off()</code> (<code><a href="../NCurses/Window.html#attr_off(attr:Attribute)-instance-method">#attr_off()</a></code>)</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/SamualLB/ncurses/blob/8e1bebaeaafdbf9a0f8e9ccf5df07c0c24171b69/src/ncurses/window.cr#L447" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="attr_on(attr:Attribute)-instance-method">
+      <div class="signature">
+        
+        def <strong>attr_on</strong>(attr : <a href="../NCurses/Attribute.html">Attribute</a>)
+
+        <a class="method-permalink" href="#attr_on(attr:Attribute)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Turn on attribute(s)</p>
+
+<p>Wrapper for <code>wattr_on()</code> (<code><a href="../NCurses/Window.html#attr_on(attr:Attribute)-instance-method">#attr_on()</a></code>)</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/SamualLB/ncurses/blob/8e1bebaeaafdbf9a0f8e9ccf5df07c0c24171b69/src/ncurses/window.cr#L459" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="attribute_off(attr:Attribute)-instance-method">
+      <div class="signature">
+        
+        def <strong>attribute_off</strong>(attr : <a href="../NCurses/Attribute.html">Attribute</a>)
+
+        <a class="method-permalink" href="#attribute_off(attr:Attribute)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Alias for <code><a href="../NCurses/Window.html#attr_off(attr:Attribute)-instance-method">#attr_off</a></code></p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/SamualLB/ncurses/blob/8e1bebaeaafdbf9a0f8e9ccf5df07c0c24171b69/src/ncurses/window.cr#L452" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="attribute_on(attr:Attribute)-instance-method">
+      <div class="signature">
+        
+        def <strong>attribute_on</strong>(attr : <a href="../NCurses/Attribute.html">Attribute</a>)
+
+        <a class="method-permalink" href="#attribute_on(attr:Attribute)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Alias for <code><a href="../NCurses/Window.html#attr_on(attr:Attribute)-instance-method">#attr_on</a></code></p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/SamualLB/ncurses/blob/8e1bebaeaafdbf9a0f8e9ccf5df07c0c24171b69/src/ncurses/window.cr#L464" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="border(ls:Char,rs:Char,ts:Char,bs:Char,tl:Char,tr:Char,bl:Char,br:Char)-instance-method">
+      <div class="signature">
+        
+        def <strong>border</strong>(ls : Char, rs : Char, ts : Char, bs : Char, tl : Char, tr : Char, bl : Char, br : Char)
+
+        <a class="method-permalink" href="#border(ls:Char,rs:Char,ts:Char,bs:Char,tl:Char,tr:Char,bl:Char,br:Char)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Draw a box around the edge of a window</p>
+
+<p><em>ls</em> - char to be used on left side</p>
+
+<p><em>rs</em> - char to be used on right side</p>
+
+<p><em>ts</em> - char to be used on top side</p>
+
+<p><em>bs</em> - char to be used on bottom side</p>
+
+<p><em>tl</em> - char to be used on top left-hand corner</p>
+
+<p><em>tr</em> - char to be used on top right-hand corner</p>
+
+<p><em>bl</em> - char to be used on bottom left-hand corner</p>
+
+<p><em>br</em> - char to be used on bottom right-hand corner</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/SamualLB/ncurses/blob/8e1bebaeaafdbf9a0f8e9ccf5df07c0c24171b69/src/ncurses/window.cr#L340" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="border(ver:Char=BORDER_DEFAULT,hor:Char=BORDER_DEFAULT,cor:Char?=nil)-instance-method">
+      <div class="signature">
+        
+        def <strong>border</strong>(ver : Char = <span class="t">BORDER_DEFAULT</span>, hor : Char = <span class="t">BORDER_DEFAULT</span>, cor : Char? = <span class="n">nil</span>)
+
+        <a class="method-permalink" href="#border(ver:Char=BORDER_DEFAULT,hor:Char=BORDER_DEFAULT,cor:Char?=nil)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Alias for <code><a href="../NCurses/Window.html#border(ls:Char,rs:Char,ts:Char,bs:Char,tl:Char,tr:Char,bl:Char,br:Char)-instance-method">#border</a></code></p>
+
+<p>Uses <em>hor</em> for horizontal lines, <em>ver</em> for vertical lines, and <em>cor</em> for corners</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/SamualLB/ncurses/blob/8e1bebaeaafdbf9a0f8e9ccf5df07c0c24171b69/src/ncurses/window.cr#L347" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="box(ver:Char=BORDER_DEFAULT,hor:Char=BORDER_DEFAULT)-instance-method">
+      <div class="signature">
+        
+        def <strong>box</strong>(ver : Char = <span class="t">BORDER_DEFAULT</span>, hor : Char = <span class="t">BORDER_DEFAULT</span>)
+
+        <a class="method-permalink" href="#box(ver:Char=BORDER_DEFAULT,hor:Char=BORDER_DEFAULT)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Alias for <code><a href="../NCurses/Window.html#border(ls:Char,rs:Char,ts:Char,bs:Char,tl:Char,tr:Char,bl:Char,br:Char)-instance-method">#border</a></code></p>
+
+<p>Same as <code><a href="../NCurses/Window.html#border(ver:Char=BORDER_DEFAULT,hor:Char=BORDER_DEFAULT,cor:Char?=nil)-instance-method">#border(ver, hor, BORDER_DEFAULT)</a></code></p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/SamualLB/ncurses/blob/8e1bebaeaafdbf9a0f8e9ccf5df07c0c24171b69/src/ncurses/window.cr#L363" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="change_attribute(attr:Attribute=Attribute::Normal,color_pair=0,length=-1,y=nil,x=nil)-instance-method">
+      <div class="signature">
+        
+        def <strong>change_attribute</strong>(attr : <a href="../NCurses/Attribute.html">Attribute</a> = <span class="t">Attribute</span><span class="t">::</span><span class="t">Normal</span>, color_pair = <span class="n">0</span>, length = <span class="n">-1</span>, y = <span class="n">nil</span>, x = <span class="n">nil</span>)
+
+        <a class="method-permalink" href="#change_attribute(attr:Attribute=Attribute::Normal,color_pair=0,length=-1,y=nil,x=nil)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p><em>attr</em> is the <code><a href="../NCurses/Attribute.html">Attribute</a></code> enum.
+<em>color_pair</em> is the color pair number (0 is the default white on black.)
+<em>length</em> defaults to -1, but represents the number of characters to change, up to EOL.
+If <em>y</em> and <em>x</em> are set, the cursor location is moved before changing attributes.</p>
+
+<p>Wrapper for <code>wchgat()</code> and <code>mvwchgat()</code> (<code>chgat()</code> and <code>mvchgat()</code>)</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/SamualLB/ncurses/blob/8e1bebaeaafdbf9a0f8e9ccf5df07c0c24171b69/src/ncurses/window.cr#L503" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="change_background(char)-instance-method">
+      <div class="signature">
+        
+        def <strong>change_background</strong>(char)
+
+        <a class="method-permalink" href="#change_background(char)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Change the background</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/SamualLB/ncurses/blob/8e1bebaeaafdbf9a0f8e9ccf5df07c0c24171b69/src/ncurses/window.cr#L405" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="clear-instance-method">
+      <div class="signature">
+        
+        def <strong>clear</strong>
+
+        <a class="method-permalink" href="#clear-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Clear window, also causes repaint</p>
+
+<p>Wrapper for <code>wclear()</code> (<code><a href="../NCurses/Window.html#clear-instance-method">#clear()</a></code>)</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/SamualLB/ncurses/blob/8e1bebaeaafdbf9a0f8e9ccf5df07c0c24171b69/src/ncurses/window.cr#L176" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="clear_to_bot-instance-method">
+      <div class="signature">
+        
+        def <strong>clear_to_bot</strong>
+
+        <a class="method-permalink" href="#clear_to_bot-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Clear window from cursor to the rest of the whole window</p>
+
+<p>Wrapper for <code>wclrtobot()</code> (<code>clrtoeol()</code>)</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/SamualLB/ncurses/blob/8e1bebaeaafdbf9a0f8e9ccf5df07c0c24171b69/src/ncurses/window.cr#L190" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="clear_to_eol-instance-method">
+      <div class="signature">
+        
+        def <strong>clear_to_eol</strong>
+
+        <a class="method-permalink" href="#clear_to_eol-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Clear window from cursor position to the end of the current line</p>
+
+<p>Wrapper for <code>wclrtoeol()</code> (<code>clrtoeol()</code>)</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/SamualLB/ncurses/blob/8e1bebaeaafdbf9a0f8e9ccf5df07c0c24171b69/src/ncurses/window.cr#L183" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="clearok(v:Bool=true)-instance-method">
+      <div class="signature">
+        
+        def <strong>clearok</strong>(v : Bool = <span class="n">true</span>)
+
+        <a class="method-permalink" href="#clearok(v:Bool=true)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Wrapper for <code><a href="../NCurses/Window.html#clearok(v:Bool=true)-instance-method">#clearok()</a></code></p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/SamualLB/ncurses/blob/8e1bebaeaafdbf9a0f8e9ccf5df07c0c24171b69/src/ncurses/window.cr#L516" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="col-instance-method">
+      <div class="signature">
+        
+        def <strong>col</strong>
+
+        <a class="method-permalink" href="#col-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Alias for <code><a href="../NCurses/Window.html#x-instance-method">#x</a></code></p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/SamualLB/ncurses/blob/8e1bebaeaafdbf9a0f8e9ccf5df07c0c24171b69/src/ncurses/window.cr#L88" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="cols-instance-method">
+      <div class="signature">
+        
+        def <strong>cols</strong>
+
+        <a class="method-permalink" href="#cols-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Alias for <code><a href="../NCurses/Window.html#max_x-instance-method">#max_x</a></code></p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/SamualLB/ncurses/blob/8e1bebaeaafdbf9a0f8e9ccf5df07c0c24171b69/src/ncurses/window.cr#L65" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="delete_window-instance-method">
+      <div class="signature">
+        
+        def <strong>delete_window</strong>
+
+        <a class="method-permalink" href="#delete_window-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Delete the window</p>
+
+<p>Wrapper for <code>delwin()</code></p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/SamualLB/ncurses/blob/8e1bebaeaafdbf9a0f8e9ccf5df07c0c24171b69/src/ncurses/window.cr#L20" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="draw_hline(char=nil,length=nil)-instance-method">
+      <div class="signature">
+        
+        def <strong>draw_hline</strong>(char = <span class="n">nil</span>, length = <span class="n">nil</span>)
+
+        <a class="method-permalink" href="#draw_hline(char=nil,length=nil)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Draw a horizontal line</p>
+
+<p>Default <em>char</em> is <code>-</code> and default length is <code><a href="../NCurses/Window.html#width-instance-method">#width</a></code></p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/SamualLB/ncurses/blob/8e1bebaeaafdbf9a0f8e9ccf5df07c0c24171b69/src/ncurses/window.cr#L379" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="draw_hline(length:Int)-instance-method">
+      <div class="signature">
+        
+        def <strong>draw_hline</strong>(length : Int)
+
+        <a class="method-permalink" href="#draw_hline(length:Int)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Alias for <code><a href="../NCurses/Window.html#draw_hline(char=nil,length=nil)-instance-method">#draw_hline</a></code></p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/SamualLB/ncurses/blob/8e1bebaeaafdbf9a0f8e9ccf5df07c0c24171b69/src/ncurses/window.cr#L384" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="draw_vline(char=nil,height=nil)-instance-method">
+      <div class="signature">
+        
+        def <strong>draw_vline</strong>(char = <span class="n">nil</span>, height = <span class="n">nil</span>)
+
+        <a class="method-permalink" href="#draw_vline(char=nil,height=nil)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Draw a vertical line</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/SamualLB/ncurses/blob/8e1bebaeaafdbf9a0f8e9ccf5df07c0c24171b69/src/ncurses/window.cr#L389" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="draw_vline(height:Int)-instance-method">
+      <div class="signature">
+        
+        def <strong>draw_vline</strong>(height : Int)
+
+        <a class="method-permalink" href="#draw_vline(height:Int)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Alias for <code><a href="../NCurses/Window.html#draw_vline(char=nil,height=nil)-instance-method">#draw_vline</a></code></p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/SamualLB/ncurses/blob/8e1bebaeaafdbf9a0f8e9ccf5df07c0c24171b69/src/ncurses/window.cr#L394" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="enclose?(yx:NamedTuple):Bool-instance-method">
+      <div class="signature">
+        
+        def <strong>enclose?</strong>(yx : NamedTuple) : Bool
+
+        <a class="method-permalink" href="#enclose?(yx:NamedTuple):Bool-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/SamualLB/ncurses/blob/8e1bebaeaafdbf9a0f8e9ccf5df07c0c24171b69/src/ncurses/window.cr#L265" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="enclose?(yx):Bool-instance-method">
+      <div class="signature">
+        
+        def <strong>enclose?</strong>(yx) : Bool
+
+        <a class="method-permalink" href="#enclose?(yx):Bool-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/SamualLB/ncurses/blob/8e1bebaeaafdbf9a0f8e9ccf5df07c0c24171b69/src/ncurses/window.cr#L261" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="enclose?(y,x):Bool-instance-method">
+      <div class="signature">
+        
+        def <strong>enclose?</strong>(y, x) : Bool
+
+        <a class="method-permalink" href="#enclose?(y,x):Bool-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>If a mouse position is in this window</p>
+
+<p>Wrapper for <code>wenclose()</code></p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/SamualLB/ncurses/blob/8e1bebaeaafdbf9a0f8e9ccf5df07c0c24171b69/src/ncurses/window.cr#L257" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="enclose?(mouse_event:MouseEvent):Bool-instance-method">
+      <div class="signature">
+        
+        def <strong>enclose?</strong>(mouse_event : <a href="../NCurses/MouseEvent.html">MouseEvent</a>) : Bool
+
+        <a class="method-permalink" href="#enclose?(mouse_event:MouseEvent):Bool-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>If a mouse event took place within this window</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/SamualLB/ncurses/blob/8e1bebaeaafdbf9a0f8e9ccf5df07c0c24171b69/src/ncurses/window.cr#L270" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="erase-instance-method">
+      <div class="signature">
+        
+        def <strong>erase</strong>
+
+        <a class="method-permalink" href="#erase-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Clear window</p>
+
+<p>Wrapper for <code>werase()</code> (<code><a href="../NCurses/Window.html#erase-instance-method">#erase()</a></code>)</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/SamualLB/ncurses/blob/8e1bebaeaafdbf9a0f8e9ccf5df07c0c24171b69/src/ncurses/window.cr#L169" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="get_attribute-instance-method">
+      <div class="signature">
+        
+        def <strong>get_attribute</strong>
+
+        <a class="method-permalink" href="#get_attribute-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Alias for <code><a href="../NCurses/Window.html#attr_get-instance-method">#attr_get</a></code></p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/SamualLB/ncurses/blob/8e1bebaeaafdbf9a0f8e9ccf5df07c0c24171b69/src/ncurses/window.cr#L440" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="get_background-instance-method">
+      <div class="signature">
+        
+        def <strong>get_background</strong>
+
+        <a class="method-permalink" href="#get_background-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Get the character and attributes from the current background</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/SamualLB/ncurses/blob/8e1bebaeaafdbf9a0f8e9ccf5df07c0c24171b69/src/ncurses/window.cr#L415" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="get_char(&)-instance-method">
+      <div class="signature">
+        
+        def <strong>get_char</strong>(&)
+
+        <a class="method-permalink" href="#get_char(&)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Get a character input for main loop</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/SamualLB/ncurses/blob/8e1bebaeaafdbf9a0f8e9ccf5df07c0c24171b69/src/ncurses/window.cr#L242" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="get_char:Key|Char|Nil-instance-method">
+      <div class="signature">
+        
+        def <strong>get_char</strong> : <a href="../NCurses/Key.html">Key</a> | Char | Nil
+
+        <a class="method-permalink" href="#get_char:Key%7CChar%7CNil-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Get a character input</p>
+
+<p>Returned as <code><a href="../NCurses/Key.html">Key</a></code> if recognised, <code>Char</code> otherwise</p>
+
+<p>Wrapper for <code>wgetch()</code> (<code>getch()</code>)</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/SamualLB/ncurses/blob/8e1bebaeaafdbf9a0f8e9ccf5df07c0c24171b69/src/ncurses/window.cr#L236" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="height-instance-method">
+      <div class="signature">
+        
+        def <strong>height</strong>
+
+        <a class="method-permalink" href="#height-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Alias for <code><a href="../NCurses/Window.html#max_y-instance-method">#max_y</a></code></p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/SamualLB/ncurses/blob/8e1bebaeaafdbf9a0f8e9ccf5df07c0c24171b69/src/ncurses/window.cr#L42" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="idcok(v:Bool=true)-instance-method">
+      <div class="signature">
+        
+        def <strong>idcok</strong>(v : Bool = <span class="n">true</span>)
+
+        <a class="method-permalink" href="#idcok(v:Bool=true)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Wrapper for <code><a href="../NCurses/Window.html#idcok(v:Bool=true)-instance-method">#idcok()</a></code></p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/SamualLB/ncurses/blob/8e1bebaeaafdbf9a0f8e9ccf5df07c0c24171b69/src/ncurses/window.cr#L526" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="idlok(v:Bool=true)-instance-method">
+      <div class="signature">
+        
+        def <strong>idlok</strong>(v : Bool = <span class="n">true</span>)
+
+        <a class="method-permalink" href="#idlok(v:Bool=true)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Wrapper for <code><a href="../NCurses/Window.html#idlok(v:Bool=true)-instance-method">#idlok()</a></code></p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/SamualLB/ncurses/blob/8e1bebaeaafdbf9a0f8e9ccf5df07c0c24171b69/src/ncurses/window.cr#L521" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="immedok(v:Bool=true)-instance-method">
+      <div class="signature">
+        
+        def <strong>immedok</strong>(v : Bool = <span class="n">true</span>)
+
+        <a class="method-permalink" href="#immedok(v:Bool=true)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Wrapper for <code><a href="../NCurses/Window.html#immedok(v:Bool=true)-instance-method">#immedok()</a></code></p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/SamualLB/ncurses/blob/8e1bebaeaafdbf9a0f8e9ccf5df07c0c24171b69/src/ncurses/window.cr#L531" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="keypad(enable)-instance-method">
+      <div class="signature">
+        
+        def <strong>keypad</strong>(enable)
+
+        <a class="method-permalink" href="#keypad(enable)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Enable or disable capturing function keys</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/SamualLB/ncurses/blob/8e1bebaeaafdbf9a0f8e9ccf5df07c0c24171b69/src/ncurses/window.cr#L199" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="leaveok(v:Bool=true)-instance-method">
+      <div class="signature">
+        
+        def <strong>leaveok</strong>(v : Bool = <span class="n">true</span>)
+
+        <a class="method-permalink" href="#leaveok(v:Bool=true)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Wrapper for <code><a href="../NCurses/Window.html#leaveok(v:Bool=true)-instance-method">#leaveok()</a></code></p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/SamualLB/ncurses/blob/8e1bebaeaafdbf9a0f8e9ccf5df07c0c24171b69/src/ncurses/window.cr#L536" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="lines-instance-method">
+      <div class="signature">
+        
+        def <strong>lines</strong>
+
+        <a class="method-permalink" href="#lines-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Alias for <code><a href="../NCurses/Window.html#max_y-instance-method">#max_y</a></code></p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/SamualLB/ncurses/blob/8e1bebaeaafdbf9a0f8e9ccf5df07c0c24171b69/src/ncurses/window.cr#L47" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="max_dimensions-instance-method">
+      <div class="signature">
+        
+        def <strong>max_dimensions</strong>
+
+        <a class="method-permalink" href="#max_dimensions-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Max height and width as tuple (y,x)</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/SamualLB/ncurses/blob/8e1bebaeaafdbf9a0f8e9ccf5df07c0c24171b69/src/ncurses/window.cr#L70" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="max_dimensions_named-instance-method">
+      <div class="signature">
+        
+        def <strong>max_dimensions_named</strong>
+
+        <a class="method-permalink" href="#max_dimensions_named-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Max height and width as named tuple</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/SamualLB/ncurses/blob/8e1bebaeaafdbf9a0f8e9ccf5df07c0c24171b69/src/ncurses/window.cr#L75" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="max_x-instance-method">
+      <div class="signature">
+        
+        def <strong>max_x</strong>
+
+        <a class="method-permalink" href="#max_x-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Return width</p>
+
+<p>Wrapper for <code>getmaxx()</code></p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/SamualLB/ncurses/blob/8e1bebaeaafdbf9a0f8e9ccf5df07c0c24171b69/src/ncurses/window.cr#L54" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="max_y-instance-method">
+      <div class="signature">
+        
+        def <strong>max_y</strong>
+
+        <a class="method-permalink" href="#max_y-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Return height</p>
+
+<p>Wrapper for <code>getmaxy()</code></p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/SamualLB/ncurses/blob/8e1bebaeaafdbf9a0f8e9ccf5df07c0c24171b69/src/ncurses/window.cr#L36" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="move(new_pos:NamedTuple)-instance-method">
+      <div class="signature">
+        
+        def <strong>move</strong>(new_pos : NamedTuple)
+
+        <a class="method-permalink" href="#move(new_pos:NamedTuple)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Alias for '#move'</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/SamualLB/ncurses/blob/8e1bebaeaafdbf9a0f8e9ccf5df07c0c24171b69/src/ncurses/window.cr#L150" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="move(y,x)-instance-method">
+      <div class="signature">
+        
+        def <strong>move</strong>(y, x)
+
+        <a class="method-permalink" href="#move(y,x)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Move cursor to new position</p>
+
+<p>Wrapper for <code>wmove()</code> (<code><a href="../NCurses/Window.html#move(new_pos:NamedTuple)-instance-method">#move()</a></code>)</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/SamualLB/ncurses/blob/8e1bebaeaafdbf9a0f8e9ccf5df07c0c24171b69/src/ncurses/window.cr#L130" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="move(new_pos:Tuple)-instance-method">
+      <div class="signature">
+        
+        def <strong>move</strong>(new_pos : Tuple)
+
+        <a class="method-permalink" href="#move(new_pos:Tuple)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Alias for <code><a href="../NCurses/Window.html#move(new_pos:NamedTuple)-instance-method">#move</a></code></p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/SamualLB/ncurses/blob/8e1bebaeaafdbf9a0f8e9ccf5df07c0c24171b69/src/ncurses/window.cr#L140" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="move_window(y,x)-instance-method">
+      <div class="signature">
+        
+        def <strong>move_window</strong>(y, x)
+
+        <a class="method-permalink" href="#move_window(y,x)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Move window relative to whole screen</p>
+
+<p><span class="flag orange">TODO</span>  Tuple version</p>
+
+<p>Wrapper for <code>mvwin()</code></p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/SamualLB/ncurses/blob/8e1bebaeaafdbf9a0f8e9ccf5df07c0c24171b69/src/ncurses/window.cr#L29" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="no_border-instance-method">
+      <div class="signature">
+        
+        def <strong>no_border</strong>
+
+        <a class="method-permalink" href="#no_border-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Erase around the edge of a window</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/SamualLB/ncurses/blob/8e1bebaeaafdbf9a0f8e9ccf5df07c0c24171b69/src/ncurses/window.cr#L356" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="no_box-instance-method">
+      <div class="signature">
+        
+        def <strong>no_box</strong>
+
+        <a class="method-permalink" href="#no_box-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/SamualLB/ncurses/blob/8e1bebaeaafdbf9a0f8e9ccf5df07c0c24171b69/src/ncurses/window.cr#L367" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="no_delay-instance-method">
+      <div class="signature">
+        
+        def <strong>no_delay</strong>
+
+        <a class="method-permalink" href="#no_delay-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Do not wait for input, return ERR</p>
+
+<p>Wrapper for <code>nodelay()</code></p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/SamualLB/ncurses/blob/8e1bebaeaafdbf9a0f8e9ccf5df07c0c24171b69/src/ncurses/window.cr#L214" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="no_timeout-instance-method">
+      <div class="signature">
+        
+        def <strong>no_timeout</strong>
+
+        <a class="method-permalink" href="#no_timeout-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Wait for input, no errors should be returned</p>
+
+<p>Wrapper for <code>notimeout()</code></p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/SamualLB/ncurses/blob/8e1bebaeaafdbf9a0f8e9ccf5df07c0c24171b69/src/ncurses/window.cr#L206" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="non_relative(event:MouseEvent):MouseEvent-instance-method">
+      <div class="signature">
+        
+        def <strong>non_relative</strong>(event : <a href="../NCurses/MouseEvent.html">MouseEvent</a>) : <a href="../NCurses/MouseEvent.html">MouseEvent</a>
+
+        <a class="method-permalink" href="#non_relative(event:MouseEvent):MouseEvent-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/SamualLB/ncurses/blob/8e1bebaeaafdbf9a0f8e9ccf5df07c0c24171b69/src/ncurses/window.cr#L281" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="pos-instance-method">
+      <div class="signature">
+        
+        def <strong>pos</strong>
+
+        <a class="method-permalink" href="#pos-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Cursor current position as tuple (y,x)</p>
+
+<p>Simulates ncurses macro <code>getyx</code></p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/SamualLB/ncurses/blob/8e1bebaeaafdbf9a0f8e9ccf5df07c0c24171b69/src/ncurses/window.cr#L108" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="pos_named-instance-method">
+      <div class="signature">
+        
+        def <strong>pos_named</strong>
+
+        <a class="method-permalink" href="#pos_named-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Cursor current position as named tuple</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/SamualLB/ncurses/blob/8e1bebaeaafdbf9a0f8e9ccf5df07c0c24171b69/src/ncurses/window.cr#L118" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="position-instance-method">
+      <div class="signature">
+        
+        def <strong>position</strong>
+
+        <a class="method-permalink" href="#position-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Alias for <code><a href="../NCurses/Window.html#pos-instance-method">#pos</a></code></p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/SamualLB/ncurses/blob/8e1bebaeaafdbf9a0f8e9ccf5df07c0c24171b69/src/ncurses/window.cr#L113" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="position_named-instance-method">
+      <div class="signature">
+        
+        def <strong>position_named</strong>
+
+        <a class="method-permalink" href="#position_named-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Alias for <code><a href="../NCurses/Window.html#pos_named-instance-method">#pos_named</a></code></p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/SamualLB/ncurses/blob/8e1bebaeaafdbf9a0f8e9ccf5df07c0c24171b69/src/ncurses/window.cr#L123" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="print(message,position=nil)-instance-method">
+      <div class="signature">
+        
+        def <strong>print</strong>(message, position = <span class="n">nil</span>)
+
+        <a class="method-permalink" href="#print(message,position=nil)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Write a string</p>
+
+<p>Wrapper for <code>wprintw()</code> and <code>mvwprintw()</code> (<code>printw()</code> and <code>mvprintw()</code>)</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/SamualLB/ncurses/blob/8e1bebaeaafdbf9a0f8e9ccf5df07c0c24171b69/src/ncurses/window.cr#L310" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="print(message,row:Int)-instance-method">
+      <div class="signature">
+        
+        def <strong>print</strong>(message, row : Int)
+
+        <a class="method-permalink" href="#print(message,row:Int)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Alias for <code><a href="../NCurses/Window.html#print(message,position=nil)-instance-method">#print</a></code></p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/SamualLB/ncurses/blob/8e1bebaeaafdbf9a0f8e9ccf5df07c0c24171b69/src/ncurses/window.cr#L372" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="print(message,pos_y,pos_x)-instance-method">
+      <div class="signature">
+        
+        def <strong>print</strong>(message, pos_y, pos_x)
+
+        <a class="method-permalink" href="#print(message,pos_y,pos_x)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Alias for <code><a href="../NCurses/Window.html#print(message,position=nil)-instance-method">#print</a></code></p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/SamualLB/ncurses/blob/8e1bebaeaafdbf9a0f8e9ccf5df07c0c24171b69/src/ncurses/window.cr#L319" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="refresh-instance-method">
+      <div class="signature">
+        
+        def <strong>refresh</strong>
+
+        <a class="method-permalink" href="#refresh-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Refresh window</p>
+
+<p>Wrapper for <code>wrefresh()</code> (<code><a href="../NCurses/Window.html#refresh-instance-method">#refresh()</a></code>)</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/SamualLB/ncurses/blob/8e1bebaeaafdbf9a0f8e9ccf5df07c0c24171b69/src/ncurses/window.cr#L162" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="relative(event:MouseEvent):MouseEvent-instance-method">
+      <div class="signature">
+        
+        def <strong>relative</strong>(event : <a href="../NCurses/MouseEvent.html">MouseEvent</a>) : <a href="../NCurses/MouseEvent.html">MouseEvent</a>
+
+        <a class="method-permalink" href="#relative(event:MouseEvent):MouseEvent-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Returns a new <code><a href="../NCurses/MouseEvent.html">MouseEvent</a></code> with coordinates relative to the window</p>
+
+<p>To convert back user <code><a href="../NCurses/Window.html#non_relative(event:MouseEvent):MouseEvent-instance-method">#non_relative</a></code></p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/SamualLB/ncurses/blob/8e1bebaeaafdbf9a0f8e9ccf5df07c0c24171b69/src/ncurses/window.cr#L277" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="row-instance-method">
+      <div class="signature">
+        
+        def <strong>row</strong>
+
+        <a class="method-permalink" href="#row-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Alias for <code><a href="../NCurses/Window.html#y-instance-method">#y</a></code></p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/SamualLB/ncurses/blob/8e1bebaeaafdbf9a0f8e9ccf5df07c0c24171b69/src/ncurses/window.cr#L101" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="scrollok(v:Bool=true)-instance-method">
+      <div class="signature">
+        
+        def <strong>scrollok</strong>(v : Bool = <span class="n">true</span>)
+
+        <a class="method-permalink" href="#scrollok(v:Bool=true)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Wrapper for <code><a href="../NCurses/Window.html#scrollok(v:Bool=true)-instance-method">#scrollok()</a></code></p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/SamualLB/ncurses/blob/8e1bebaeaafdbf9a0f8e9ccf5df07c0c24171b69/src/ncurses/window.cr#L546" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="set_attr(attr:Attribute=Attribute::Normal,color_pair=0)-instance-method">
+      <div class="signature">
+        
+        def <strong>set_attr</strong>(attr : <a href="../NCurses/Attribute.html">Attribute</a> = <span class="t">Attribute</span><span class="t">::</span><span class="t">Normal</span>, color_pair = <span class="n">0</span>)
+
+        <a class="method-permalink" href="#set_attr(attr:Attribute=Attribute::Normal,color_pair=0)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Replace attribute(s) and color with these</p>
+
+<p>Wrapper for <code>wattr_set()</code> (<code>attr_set()</code>)</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/SamualLB/ncurses/blob/8e1bebaeaafdbf9a0f8e9ccf5df07c0c24171b69/src/ncurses/window.cr#L488" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="set_attribute(attr:Attribute=Attribute::Normal,color_pair=0)-instance-method">
+      <div class="signature">
+        
+        def <strong>set_attribute</strong>(attr : <a href="../NCurses/Attribute.html">Attribute</a> = <span class="t">Attribute</span><span class="t">::</span><span class="t">Normal</span>, color_pair = <span class="n">0</span>)
+
+        <a class="method-permalink" href="#set_attribute(attr:Attribute=Attribute::Normal,color_pair=0)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Alias for <code><a href="../NCurses/Window.html#set_attr(attr:Attribute=Attribute::Normal,color_pair=0)-instance-method">#set_attr</a></code></p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/SamualLB/ncurses/blob/8e1bebaeaafdbf9a0f8e9ccf5df07c0c24171b69/src/ncurses/window.cr#L493" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="set_background(char)-instance-method">
+      <div class="signature">
+        
+        def <strong>set_background</strong>(char)
+
+        <a class="method-permalink" href="#set_background(char)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Sets a new background and applies it everywhere</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/SamualLB/ncurses/blob/8e1bebaeaafdbf9a0f8e9ccf5df07c0c24171b69/src/ncurses/window.cr#L410" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="set_color(color_pair=0)-instance-method">
+      <div class="signature">
+        
+        def <strong>set_color</strong>(color_pair = <span class="n">0</span>)
+
+        <a class="method-permalink" href="#set_color(color_pair=0)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Set this window's default color pair</p>
+
+<p>Wrapper for <code>wcolor_set()</code> (<code>color_set()</code>)</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/SamualLB/ncurses/blob/8e1bebaeaafdbf9a0f8e9ccf5df07c0c24171b69/src/ncurses/window.cr#L426" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="set_pos(y,x)-instance-method">
+      <div class="signature">
+        
+        def <strong>set_pos</strong>(y, x)
+
+        <a class="method-permalink" href="#set_pos(y,x)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Alias for <code><a href="../NCurses/Window.html#move(new_pos:NamedTuple)-instance-method">#move</a></code></p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/SamualLB/ncurses/blob/8e1bebaeaafdbf9a0f8e9ccf5df07c0c24171b69/src/ncurses/window.cr#L135" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="set_pos(new_pos:Tuple)-instance-method">
+      <div class="signature">
+        
+        def <strong>set_pos</strong>(new_pos : Tuple)
+
+        <a class="method-permalink" href="#set_pos(new_pos:Tuple)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Alias for <code><a href="../NCurses/Window.html#move(new_pos:NamedTuple)-instance-method">#move</a></code></p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/SamualLB/ncurses/blob/8e1bebaeaafdbf9a0f8e9ccf5df07c0c24171b69/src/ncurses/window.cr#L145" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="set_pos(new_pos:NamedTuple)-instance-method">
+      <div class="signature">
+        
+        def <strong>set_pos</strong>(new_pos : NamedTuple)
+
+        <a class="method-permalink" href="#set_pos(new_pos:NamedTuple)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Alias for '#move'</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/SamualLB/ncurses/blob/8e1bebaeaafdbf9a0f8e9ccf5df07c0c24171b69/src/ncurses/window.cr#L155" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="setscrreg(top,bot)-instance-method">
+      <div class="signature">
+        
+        def <strong>setscrreg</strong>(top, bot)
+
+        <a class="method-permalink" href="#setscrreg(top,bot)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Wrapper for <code>wsetscrreg()</code> & <code><a href="../NCurses/Window.html#setscrreg(top,bot)-instance-method">#setscrreg()</a></code></p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/SamualLB/ncurses/blob/8e1bebaeaafdbf9a0f8e9ccf5df07c0c24171b69/src/ncurses/window.cr#L541" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="timeout=(value)-instance-method">
+      <div class="signature">
+        
+        def <strong>timeout=</strong>(value)
+
+        <a class="method-permalink" href="#timeout=(value)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Set input timeout</p>
+
+<p>Wrapper for <code>wtimeout()</code> (<code>timeout()</code>)</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/SamualLB/ncurses/blob/8e1bebaeaafdbf9a0f8e9ccf5df07c0c24171b69/src/ncurses/window.cr#L222" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="to_unsafe:LibNCurses::Window-instance-method">
+      <div class="signature">
+        
+        def <strong>to_unsafe</strong> : LibNCurses::Window
+
+        <a class="method-permalink" href="#to_unsafe:LibNCurses::Window-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/SamualLB/ncurses/blob/8e1bebaeaafdbf9a0f8e9ccf5df07c0c24171b69/src/ncurses.cr#L34" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="width-instance-method">
+      <div class="signature">
+        
+        def <strong>width</strong>
+
+        <a class="method-permalink" href="#width-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Alias for <code><a href="../NCurses/Window.html#max_x-instance-method">#max_x</a></code></p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/SamualLB/ncurses/blob/8e1bebaeaafdbf9a0f8e9ccf5df07c0c24171b69/src/ncurses/window.cr#L60" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="with_attr(attrs:Attribute,&)-instance-method">
+      <div class="signature">
+        
+        def <strong>with_attr</strong>(attrs : <a href="../NCurses/Attribute.html">Attribute</a>, &)
+
+        <a class="method-permalink" href="#with_attr(attrs:Attribute,&)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Block with attribute(s) turned on</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/SamualLB/ncurses/blob/8e1bebaeaafdbf9a0f8e9ccf5df07c0c24171b69/src/ncurses/window.cr#L469" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="with_attribute(attrs:Attribute,&)-instance-method">
+      <div class="signature">
+        
+        def <strong>with_attribute</strong>(attrs : <a href="../NCurses/Attribute.html">Attribute</a>, &)
+
+        <a class="method-permalink" href="#with_attribute(attrs:Attribute,&)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Alias for <code><a href="../NCurses/Window.html#with_attr(attrs:Attribute,&)-instance-method">#with_attr</a></code></p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/SamualLB/ncurses/blob/8e1bebaeaafdbf9a0f8e9ccf5df07c0c24171b69/src/ncurses/window.cr#L479" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="x-instance-method">
+      <div class="signature">
+        
+        def <strong>x</strong>
+
+        <a class="method-permalink" href="#x-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Returns cursor current x position</p>
+
+<p>Wrapper for <code>getcurx()</code></p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/SamualLB/ncurses/blob/8e1bebaeaafdbf9a0f8e9ccf5df07c0c24171b69/src/ncurses/window.cr#L82" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="y-instance-method">
+      <div class="signature">
+        
+        def <strong>y</strong>
+
+        <a class="method-permalink" href="#y-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Returns cursor current y position</p>
+
+<p>Wrapper for <code>getcury()</code></p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/SamualLB/ncurses/blob/8e1bebaeaafdbf9a0f8e9ccf5df07c0c24171b69/src/ncurses/window.cr#L95" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+
+
+
+
+</div>
+
+</body>
+</html>

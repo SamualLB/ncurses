@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Crystal Docs 0.36.1">
+<meta name="crystal_docs.project_version" content="HEAD">
+<meta name="crystal_docs.project_name" content="ncurses">
+
+
+
+<link href="../css/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="../js/doc.js"></script>
+
+  <meta name="repository-name" content="ncurses">
+  <title>NCurses::Key - ncurses HEAD</title>
+  <script type="text/javascript">
+    CrystalDocs.base_path = "../";
+  </script>
+</head>
+<body>
+
+<svg class="hidden">
+  <symbol id="octicon-link" viewBox="0 0 16 16">
+    <path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path>
+  </symbol>
+</svg>
+<div class="sidebar">
+  <div class="sidebar-header">
+    <div class="search-box">
+      <input type="search" class="search-input" placeholder="Search..." spellcheck="false" aria-label="Search">
+    </div>
+
+    <div class="project-summary">
+      <h1 class="project-name">
+        <a href="../index.html">
+          ncurses
+        </a>
+      </h1>
+
+      <span class="project-version">
+        HEAD
+      </span>
+    </div>
+  </div>
+
+  <div class="search-results hidden">
+    <ul class="search-list"></ul>
+  </div>
+
+  <div class="types-list">
+    <ul>
+  
+  <li class="parent open current" data-id="ncurses/NCurses" data-name="ncurses">
+      <a href="../NCurses.html">NCurses</a>
+      
+        <ul>
+  
+  <li class=" " data-id="ncurses/NCurses/Attribute" data-name="ncurses::attribute">
+      <a href="../NCurses/Attribute.html">Attribute</a>
+      
+    </li>
+  
+  <li class=" " data-id="ncurses/NCurses/Color" data-name="ncurses::color">
+      <a href="../NCurses/Color.html">Color</a>
+      
+    </li>
+  
+  <li class=" " data-id="ncurses/NCurses/Cursor" data-name="ncurses::cursor">
+      <a href="../NCurses/Cursor.html">Cursor</a>
+      
+    </li>
+  
+  <li class=" current" data-id="ncurses/NCurses/Key" data-name="ncurses::key">
+      <a href="../NCurses/Key.html">Key</a>
+      
+    </li>
+  
+  <li class=" " data-id="ncurses/NCurses/Mouse" data-name="ncurses::mouse">
+      <a href="../NCurses/Mouse.html">Mouse</a>
+      
+    </li>
+  
+  <li class=" " data-id="ncurses/NCurses/MouseEvent" data-name="ncurses::mouseevent">
+      <a href="../NCurses/MouseEvent.html">MouseEvent</a>
+      
+    </li>
+  
+  <li class=" " data-id="ncurses/NCurses/Window" data-name="ncurses::window">
+      <a href="../NCurses/Window.html">Window</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+</ul>
+
+  </div>
+</div>
+
+
+<div class="main-content">
+<h1 class="type-name">
+
+  <span class="kind">alias</span> NCurses::Key
+
+</h1>
+
+
+
+
+
+
+
+  <h2>
+    <a id="alias-definition" class="anchor" href="#alias-definition">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Alias Definition
+  </h2>
+  <code>LibNCurses::Key</code>
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2>
+    <a id="defined-in" class="anchor" href="#defined-in">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Defined in:
+  </h2>
+  
+    
+      <a href="https://github.com/SamualLB/ncurses/blob/8e1bebaeaafdbf9a0f8e9ccf5df07c0c24171b69/src/ncurses.cr#L13" target="_blank">
+        ncurses.cr
+      </a>
+    
+    <br/>
+  
+
+
+
+  
+    <h2>
+      <a id="constant-summary" class="anchor" href="#constant-summary">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+      Constant Summary
+    </h2>
+  
+  <dl>
+    
+      <dt class="entry-const" id="Backspace">
+        <strong>Backspace</strong> = <code><span class="n">263</span></code>
+      </dt>
+      
+      <dd class="entry-const-doc">
+        <p>KEY_BACKSPACE</p>
+      </dd>
+      
+    
+      <dt class="entry-const" id="Delete">
+        <strong>Delete</strong> = <code><span class="n">330</span></code>
+      </dt>
+      
+      <dd class="entry-const-doc">
+        <p>KEY_DL</p>
+      </dd>
+      
+    
+      <dt class="entry-const" id="Down">
+        <strong>Down</strong> = <code><span class="n">258</span></code>
+      </dt>
+      
+      <dd class="entry-const-doc">
+        <p>KEY_DOWN</p>
+      </dd>
+      
+    
+      <dt class="entry-const" id="End">
+        <strong>End</strong> = <code><span class="n">360</span></code>
+      </dt>
+      
+      <dd class="entry-const-doc">
+        <p>KEY_END</p>
+      </dd>
+      
+    
+      <dt class="entry-const" id="Enter">
+        <strong>Enter</strong> = <code><span class="n">343</span></code>
+      </dt>
+      
+      <dd class="entry-const-doc">
+        <p>KEY_ENTER</p>
+      </dd>
+      
+    
+      <dt class="entry-const" id="Esc">
+        <strong>Esc</strong> = <code><span class="n">27</span></code>
+      </dt>
+      
+      <dd class="entry-const-doc">
+        <p>Required 2 inputs, do not use normally</p>
+      </dd>
+      
+    
+      <dt class="entry-const" id="F0">
+        <strong>F0</strong> = <code><span class="n">264</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="F1">
+        <strong>F1</strong> = <code><span class="n">265</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="F10">
+        <strong>F10</strong> = <code><span class="n">274</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="F11">
+        <strong>F11</strong> = <code><span class="n">275</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="F12">
+        <strong>F12</strong> = <code><span class="n">276</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="F13">
+        <strong>F13</strong> = <code><span class="n">277</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="F14">
+        <strong>F14</strong> = <code><span class="n">278</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="F15">
+        <strong>F15</strong> = <code><span class="n">279</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="F16">
+        <strong>F16</strong> = <code><span class="n">280</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="F17">
+        <strong>F17</strong> = <code><span class="n">281</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="F18">
+        <strong>F18</strong> = <code><span class="n">282</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="F19">
+        <strong>F19</strong> = <code><span class="n">283</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="F2">
+        <strong>F2</strong> = <code><span class="n">266</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="F20">
+        <strong>F20</strong> = <code><span class="n">284</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="F21">
+        <strong>F21</strong> = <code><span class="n">285</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="F22">
+        <strong>F22</strong> = <code><span class="n">286</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="F23">
+        <strong>F23</strong> = <code><span class="n">287</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="F24">
+        <strong>F24</strong> = <code><span class="n">288</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="F25">
+        <strong>F25</strong> = <code><span class="n">289</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="F26">
+        <strong>F26</strong> = <code><span class="n">290</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="F27">
+        <strong>F27</strong> = <code><span class="n">291</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="F28">
+        <strong>F28</strong> = <code><span class="n">292</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="F29">
+        <strong>F29</strong> = <code><span class="n">293</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="F3">
+        <strong>F3</strong> = <code><span class="n">267</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="F30">
+        <strong>F30</strong> = <code><span class="n">294</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="F31">
+        <strong>F31</strong> = <code><span class="n">295</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="F32">
+        <strong>F32</strong> = <code><span class="n">296</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="F33">
+        <strong>F33</strong> = <code><span class="n">297</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="F34">
+        <strong>F34</strong> = <code><span class="n">298</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="F35">
+        <strong>F35</strong> = <code><span class="n">299</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="F36">
+        <strong>F36</strong> = <code><span class="n">300</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="F37">
+        <strong>F37</strong> = <code><span class="n">301</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="F38">
+        <strong>F38</strong> = <code><span class="n">302</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="F39">
+        <strong>F39</strong> = <code><span class="n">303</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="F4">
+        <strong>F4</strong> = <code><span class="n">268</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="F40">
+        <strong>F40</strong> = <code><span class="n">304</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="F41">
+        <strong>F41</strong> = <code><span class="n">305</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="F42">
+        <strong>F42</strong> = <code><span class="n">306</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="F43">
+        <strong>F43</strong> = <code><span class="n">307</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="F44">
+        <strong>F44</strong> = <code><span class="n">308</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="F45">
+        <strong>F45</strong> = <code><span class="n">309</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="F46">
+        <strong>F46</strong> = <code><span class="n">310</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="F47">
+        <strong>F47</strong> = <code><span class="n">311</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="F48">
+        <strong>F48</strong> = <code><span class="n">312</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="F49">
+        <strong>F49</strong> = <code><span class="n">313</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="F5">
+        <strong>F5</strong> = <code><span class="n">269</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="F50">
+        <strong>F50</strong> = <code><span class="n">314</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="F51">
+        <strong>F51</strong> = <code><span class="n">315</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="F52">
+        <strong>F52</strong> = <code><span class="n">316</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="F53">
+        <strong>F53</strong> = <code><span class="n">317</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="F54">
+        <strong>F54</strong> = <code><span class="n">318</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="F55">
+        <strong>F55</strong> = <code><span class="n">319</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="F56">
+        <strong>F56</strong> = <code><span class="n">320</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="F57">
+        <strong>F57</strong> = <code><span class="n">321</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="F58">
+        <strong>F58</strong> = <code><span class="n">322</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="F59">
+        <strong>F59</strong> = <code><span class="n">323</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="F6">
+        <strong>F6</strong> = <code><span class="n">270</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="F60">
+        <strong>F60</strong> = <code><span class="n">324</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="F61">
+        <strong>F61</strong> = <code><span class="n">325</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="F62">
+        <strong>F62</strong> = <code><span class="n">326</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="F63">
+        <strong>F63</strong> = <code><span class="n">327</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="F7">
+        <strong>F7</strong> = <code><span class="n">271</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="F8">
+        <strong>F8</strong> = <code><span class="n">272</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="F9">
+        <strong>F9</strong> = <code><span class="n">273</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="Home">
+        <strong>Home</strong> = <code><span class="n">262</span></code>
+      </dt>
+      
+      <dd class="entry-const-doc">
+        <p>KEY_HOME</p>
+      </dd>
+      
+    
+      <dt class="entry-const" id="Insert">
+        <strong>Insert</strong> = <code><span class="n">331</span></code>
+      </dt>
+      
+      <dd class="entry-const-doc">
+        <p>KEY_IC</p>
+      </dd>
+      
+    
+      <dt class="entry-const" id="Left">
+        <strong>Left</strong> = <code><span class="n">260</span></code>
+      </dt>
+      
+      <dd class="entry-const-doc">
+        <p>KEY_LEFT</p>
+      </dd>
+      
+    
+      <dt class="entry-const" id="Mouse">
+        <strong>Mouse</strong> = <code><span class="n">409</span></code>
+      </dt>
+      
+      <dd class="entry-const-doc">
+        <p>KEY_MOUSE</p>
+
+<p>If any mouse request mouse input was detected</p>
+
+<p>Retrieve actual date with <code><a href="../NCurses.html#get_mouse-instance-method">NCurses#get_mouse</a></code></p>
+      </dd>
+      
+    
+      <dt class="entry-const" id="PageDown">
+        <strong>PageDown</strong> = <code><span class="n">338</span></code>
+      </dt>
+      
+      <dd class="entry-const-doc">
+        <p>KEY_NPAGE</p>
+      </dd>
+      
+    
+      <dt class="entry-const" id="PageUp">
+        <strong>PageUp</strong> = <code><span class="n">339</span></code>
+      </dt>
+      
+      <dd class="entry-const-doc">
+        <p>KEY_PPAGE</p>
+      </dd>
+      
+    
+      <dt class="entry-const" id="Resize">
+        <strong>Resize</strong> = <code><span class="n">410</span></code>
+      </dt>
+      
+      <dd class="entry-const-doc">
+        <p>KEY_RESIZE</p>
+
+<p>If the terminal has been resized</p>
+      </dd>
+      
+    
+      <dt class="entry-const" id="Right">
+        <strong>Right</strong> = <code><span class="n">261</span></code>
+      </dt>
+      
+      <dd class="entry-const-doc">
+        <p>KEY_RIGHT</p>
+      </dd>
+      
+    
+      <dt class="entry-const" id="ShiftDelete">
+        <strong>ShiftDelete</strong> = <code><span class="n">383</span></code>
+      </dt>
+      
+      <dd class="entry-const-doc">
+        <p>KEY_SDC</p>
+
+<p>Shift + Delete</p>
+      </dd>
+      
+    
+      <dt class="entry-const" id="ShiftDown">
+        <strong>ShiftDown</strong> = <code><span class="n">336</span></code>
+      </dt>
+      
+      <dd class="entry-const-doc">
+        <p>KEY_SF</p>
+
+<p>Shift + Down</p>
+      </dd>
+      
+    
+      <dt class="entry-const" id="ShiftEnd">
+        <strong>ShiftEnd</strong> = <code><span class="n">386</span></code>
+      </dt>
+      
+      <dd class="entry-const-doc">
+        <p>KEY_SEND</p>
+
+<p>Shift + End</p>
+      </dd>
+      
+    
+      <dt class="entry-const" id="ShiftHome">
+        <strong>ShiftHome</strong> = <code><span class="n">391</span></code>
+      </dt>
+      
+      <dd class="entry-const-doc">
+        <p>KEY_SHOME</p>
+
+<p>Shift + Home</p>
+      </dd>
+      
+    
+      <dt class="entry-const" id="ShiftLeft">
+        <strong>ShiftLeft</strong> = <code><span class="n">393</span></code>
+      </dt>
+      
+      <dd class="entry-const-doc">
+        <p>KEY_SLEFT</p>
+
+<p>Shift + Left</p>
+      </dd>
+      
+    
+      <dt class="entry-const" id="ShiftPageDown">
+        <strong>ShiftPageDown</strong> = <code><span class="n">396</span></code>
+      </dt>
+      
+      <dd class="entry-const-doc">
+        <p>KEY_SNEXT</p>
+
+<p>Shift + PageDown</p>
+      </dd>
+      
+    
+      <dt class="entry-const" id="ShiftPageUp">
+        <strong>ShiftPageUp</strong> = <code><span class="n">398</span></code>
+      </dt>
+      
+      <dd class="entry-const-doc">
+        <p>KEY_SPREVIOUS</p>
+
+<p>Shift + PageUp</p>
+      </dd>
+      
+    
+      <dt class="entry-const" id="ShiftRight">
+        <strong>ShiftRight</strong> = <code><span class="n">402</span></code>
+      </dt>
+      
+      <dd class="entry-const-doc">
+        <p>KEY_SRIGHT</p>
+
+<p>Shift + Right</p>
+      </dd>
+      
+    
+      <dt class="entry-const" id="ShiftTab">
+        <strong>ShiftTab</strong> = <code><span class="n">353</span></code>
+      </dt>
+      
+      <dd class="entry-const-doc">
+        <p>KEY_BTAB</p>
+
+<p>Shift + Tab</p>
+      </dd>
+      
+    
+      <dt class="entry-const" id="ShiftUp">
+        <strong>ShiftUp</strong> = <code><span class="n">337</span></code>
+      </dt>
+      
+      <dd class="entry-const-doc">
+        <p>KEY_SR</p>
+
+<p>Shift + Up</p>
+      </dd>
+      
+    
+      <dt class="entry-const" id="Up">
+        <strong>Up</strong> = <code><span class="n">259</span></code>
+      </dt>
+      
+      <dd class="entry-const-doc">
+        <p>KEY_UP</p>
+      </dd>
+      
+    
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+<div class="methods-inherited">
+  
+</div>
+
+
+
+
+
+
+
+
+
+</div>
+
+</body>
+</html>

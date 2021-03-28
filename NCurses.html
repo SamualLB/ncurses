@@ -1,0 +1,4110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Crystal Docs 0.36.1">
+<meta name="crystal_docs.project_version" content="HEAD">
+<meta name="crystal_docs.project_name" content="ncurses">
+
+
+
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="js/doc.js"></script>
+
+  <meta name="repository-name" content="ncurses">
+  <title>NCurses - ncurses HEAD</title>
+  <script type="text/javascript">
+    CrystalDocs.base_path = "";
+  </script>
+</head>
+<body>
+
+<svg class="hidden">
+  <symbol id="octicon-link" viewBox="0 0 16 16">
+    <path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path>
+  </symbol>
+</svg>
+<div class="sidebar">
+  <div class="sidebar-header">
+    <div class="search-box">
+      <input type="search" class="search-input" placeholder="Search..." spellcheck="false" aria-label="Search">
+    </div>
+
+    <div class="project-summary">
+      <h1 class="project-name">
+        <a href="index.html">
+          ncurses
+        </a>
+      </h1>
+
+      <span class="project-version">
+        HEAD
+      </span>
+    </div>
+  </div>
+
+  <div class="search-results hidden">
+    <ul class="search-list"></ul>
+  </div>
+
+  <div class="types-list">
+    <ul>
+  
+  <li class="parent open current" data-id="ncurses/NCurses" data-name="ncurses">
+      <a href="NCurses.html">NCurses</a>
+      
+        <ul>
+  
+  <li class=" " data-id="ncurses/NCurses/Attribute" data-name="ncurses::attribute">
+      <a href="NCurses/Attribute.html">Attribute</a>
+      
+    </li>
+  
+  <li class=" " data-id="ncurses/NCurses/Color" data-name="ncurses::color">
+      <a href="NCurses/Color.html">Color</a>
+      
+    </li>
+  
+  <li class=" " data-id="ncurses/NCurses/Cursor" data-name="ncurses::cursor">
+      <a href="NCurses/Cursor.html">Cursor</a>
+      
+    </li>
+  
+  <li class=" " data-id="ncurses/NCurses/Key" data-name="ncurses::key">
+      <a href="NCurses/Key.html">Key</a>
+      
+    </li>
+  
+  <li class=" " data-id="ncurses/NCurses/Mouse" data-name="ncurses::mouse">
+      <a href="NCurses/Mouse.html">Mouse</a>
+      
+    </li>
+  
+  <li class=" " data-id="ncurses/NCurses/MouseEvent" data-name="ncurses::mouseevent">
+      <a href="NCurses/MouseEvent.html">MouseEvent</a>
+      
+    </li>
+  
+  <li class=" " data-id="ncurses/NCurses/Window" data-name="ncurses::window">
+      <a href="NCurses/Window.html">Window</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+</ul>
+
+  </div>
+</div>
+
+
+<div class="main-content">
+<h1 class="type-name">
+
+  <span class="kind">module</span> NCurses
+
+</h1>
+
+
+
+
+
+
+
+
+
+
+
+  <h2>
+    <a id="extended-modules" class="anchor" href="#extended-modules">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Extended Modules
+  </h2>
+  <ul class="other-types-list">
+    
+      <li class="other-type"><a href="NCurses.html">NCurses</a></li>
+    
+  </ul>
+
+
+
+
+
+
+
+
+  <h2>
+    <a id="defined-in" class="anchor" href="#defined-in">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Defined in:
+  </h2>
+  
+    
+      <a href="https://github.com/SamualLB/ncurses/blob/8e1bebaeaafdbf9a0f8e9ccf5df07c0c24171b69/src/ncurses.cr#L12" target="_blank">
+        ncurses.cr
+      </a>
+    
+    <br/>
+  
+    
+      <a href="https://github.com/SamualLB/ncurses/blob/8e1bebaeaafdbf9a0f8e9ccf5df07c0c24171b69/src/ncurses/mouse_event.cr#L1" target="_blank">
+        ncurses/mouse_event.cr
+      </a>
+    
+    <br/>
+  
+    
+      <a href="https://github.com/SamualLB/ncurses/blob/8e1bebaeaafdbf9a0f8e9ccf5df07c0c24171b69/src/ncurses/version.cr#L1" target="_blank">
+        ncurses/version.cr
+      </a>
+    
+    <br/>
+  
+    
+      <a href="https://github.com/SamualLB/ncurses/blob/8e1bebaeaafdbf9a0f8e9ccf5df07c0c24171b69/src/ncurses/window.cr#L3" target="_blank">
+        ncurses/window.cr
+      </a>
+    
+    <br/>
+  
+
+
+
+  
+    <h2>
+      <a id="constant-summary" class="anchor" href="#constant-summary">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+      Constant Summary
+    </h2>
+  
+  <dl>
+    
+      <dt class="entry-const" id="BORDER_DEFAULT">
+        <strong>BORDER_DEFAULT</strong> = <code><span class="n">0</span>.chr</code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ERR">
+        <strong>ERR</strong> = <code><span class="n">-1</span></code>
+      </dt>
+      
+      <dd class="entry-const-doc">
+        <p>Possible integer result values</p>
+      </dd>
+      
+    
+      <dt class="entry-const" id="OK">
+        <strong>OK</strong> = <code><span class="n">0</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="VERSION">
+        <strong>VERSION</strong> = <code><span class="s">&quot;1.1.0&quot;</span></code>
+      </dt>
+      
+    
+  </dl>
+
+
+
+
+
+
+
+  <h2>
+    <a id="instance-method-summary" class="anchor" href="#instance-method-summary">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Instance Method Summary
+  </h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#add_char(*args,**options)-instance-method" class="signature"><strong>#add_char</strong>(*args, **options)</a>
+        
+          <div class="summary"><p>Output</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#add_char(*args,**options,&)-instance-method" class="signature"><strong>#add_char</strong>(*args, **options, &)</a>
+        
+          <div class="summary"><p>Output</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#assume_default_colors(fg,bg)-instance-method" class="signature"><strong>#assume_default_colors</strong>(fg, bg)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#attr_get(*args,**options,&)-instance-method" class="signature"><strong>#attr_get</strong>(*args, **options, &)</a>
+        
+          <div class="summary"><p>Attribute</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#attr_get(*args,**options)-instance-method" class="signature"><strong>#attr_get</strong>(*args, **options)</a>
+        
+          <div class="summary"><p>Attribute</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#attr_off(*args,**options)-instance-method" class="signature"><strong>#attr_off</strong>(*args, **options)</a>
+        
+          <div class="summary"><p>Attribute</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#attr_off(*args,**options,&)-instance-method" class="signature"><strong>#attr_off</strong>(*args, **options, &)</a>
+        
+          <div class="summary"><p>Attribute</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#attr_on(*args,**options)-instance-method" class="signature"><strong>#attr_on</strong>(*args, **options)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#attr_on(*args,**options,&)-instance-method" class="signature"><strong>#attr_on</strong>(*args, **options, &)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#attribute_off(*args,**options)-instance-method" class="signature"><strong>#attribute_off</strong>(*args, **options)</a>
+        
+          <div class="summary"><p>Attribute</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#attribute_off(*args,**options,&)-instance-method" class="signature"><strong>#attribute_off</strong>(*args, **options, &)</a>
+        
+          <div class="summary"><p>Attribute</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#attribute_on(*args,**options,&)-instance-method" class="signature"><strong>#attribute_on</strong>(*args, **options, &)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#attribute_on(*args,**options)-instance-method" class="signature"><strong>#attribute_on</strong>(*args, **options)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#border(*args,**options)-instance-method" class="signature"><strong>#border</strong>(*args, **options)</a>
+        
+          <div class="summary"><p>Output</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#border(*args,**options,&)-instance-method" class="signature"><strong>#border</strong>(*args, **options, &)</a>
+        
+          <div class="summary"><p>Output</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#box(*args,**options)-instance-method" class="signature"><strong>#box</strong>(*args, **options)</a>
+        
+          <div class="summary"><p>Output</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#box(*args,**options,&)-instance-method" class="signature"><strong>#box</strong>(*args, **options, &)</a>
+        
+          <div class="summary"><p>Output</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#can_change_color?-instance-method" class="signature"><strong>#can_change_color?</strong></a>
+        
+          <div class="summary"><p>Terminal allows setting custom RGB color values Wrapper for <code>can_change_color()</code></p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#cbreak-instance-method" class="signature"><strong>#cbreak</strong></a>
+        
+          <div class="summary"><p>Disable buffering, key input is returned with no delay Wrapper for <code><a href="NCurses.html#cbreak-instance-method">#cbreak()</a></code></p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#change_attribute(*args,**options)-instance-method" class="signature"><strong>#change_attribute</strong>(*args, **options)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#change_attribute(*args,**options,&)-instance-method" class="signature"><strong>#change_attribute</strong>(*args, **options, &)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#change_background(*args,**options)-instance-method" class="signature"><strong>#change_background</strong>(*args, **options)</a>
+        
+          <div class="summary"><p>Background</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#change_background(*args,**options,&)-instance-method" class="signature"><strong>#change_background</strong>(*args, **options, &)</a>
+        
+          <div class="summary"><p>Background</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#change_color(slot,red,green,blue)-instance-method" class="signature"><strong>#change_color</strong>(slot, red, green, blue)</a>
+        
+          <div class="summary"><p>Alias for <code><a href="NCurses.html#init_color(slot,red,green,blue)-instance-method">#init_color</a></code></p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#clear(*args,**options)-instance-method" class="signature"><strong>#clear</strong>(*args, **options)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#clear(*args,**options,&)-instance-method" class="signature"><strong>#clear</strong>(*args, **options, &)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#clear_to_bot(*args,**options)-instance-method" class="signature"><strong>#clear_to_bot</strong>(*args, **options)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#clear_to_bot(*args,**options,&)-instance-method" class="signature"><strong>#clear_to_bot</strong>(*args, **options, &)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#clear_to_eol(*args,**options)-instance-method" class="signature"><strong>#clear_to_eol</strong>(*args, **options)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#clear_to_eol(*args,**options,&)-instance-method" class="signature"><strong>#clear_to_eol</strong>(*args, **options, &)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#clearok(*args,**options)-instance-method" class="signature"><strong>#clearok</strong>(*args, **options)</a>
+        
+          <div class="summary"><p>Output options</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#clearok(*args,**options,&)-instance-method" class="signature"><strong>#clearok</strong>(*args, **options, &)</a>
+        
+          <div class="summary"><p>Output options</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#col(*args,**options)-instance-method" class="signature"><strong>#col</strong>(*args, **options)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#col(*args,**options,&)-instance-method" class="signature"><strong>#col</strong>(*args, **options, &)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#cols(*args,**options,&)-instance-method" class="signature"><strong>#cols</strong>(*args, **options, &)</a>
+        
+          <div class="summary"><p>General</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#cols(*args,**options)-instance-method" class="signature"><strong>#cols</strong>(*args, **options)</a>
+        
+          <div class="summary"><p>General</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#def_prog_mode-instance-method" class="signature"><strong>#def_prog_mode</strong></a>
+        
+          <div class="summary"><p>Save the tty mode</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#disable_line_buffer-instance-method" class="signature"><strong>#disable_line_buffer</strong></a>
+        
+          <div class="summary"><p>Alias for <code><a href="NCurses.html#cbreak-instance-method">#cbreak</a></code></p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#draw_bvline(*args,**options)-instance-method" class="signature"><strong>#draw_bvline</strong>(*args, **options)</a>
+        
+          <div class="summary"><p>Output</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#draw_bvline(*args,**options,&)-instance-method" class="signature"><strong>#draw_bvline</strong>(*args, **options, &)</a>
+        
+          <div class="summary"><p>Output</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#draw_hline(*args,**options)-instance-method" class="signature"><strong>#draw_hline</strong>(*args, **options)</a>
+        
+          <div class="summary"><p>Output</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#draw_hline(*args,**options,&)-instance-method" class="signature"><strong>#draw_hline</strong>(*args, **options, &)</a>
+        
+          <div class="summary"><p>Output</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#echo(option:Bool)-instance-method" class="signature"><strong>#echo</strong>(option : Bool)</a>
+        
+          <div class="summary"><p>If echoing back to terminal should be enabled</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#echo-instance-method" class="signature"><strong>#echo</strong></a>
+        
+          <div class="summary"><p>Re-enable echoing of input back to console Wrapper for <code><a href="NCurses.html#echo-instance-method">#echo()</a></code></p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#enable_line_buffer-instance-method" class="signature"><strong>#enable_line_buffer</strong></a>
+        
+          <div class="summary"><p>Alias for <code><a href="NCurses.html#nocbreak-instance-method">#nocbreak</a></code></p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#end-instance-method" class="signature"><strong>#end</strong></a>
+        
+          <div class="summary"><p>End curses mode Wrapper for <code>endwin()</code></p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#erase(*args,**options,&)-instance-method" class="signature"><strong>#erase</strong>(*args, **options, &)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#erase(*args,**options)-instance-method" class="signature"><strong>#erase</strong>(*args, **options)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#flush_input-instance-method" class="signature"><strong>#flush_input</strong></a>
+        
+          <div class="summary"><p>Clear (delete contents of) the input buffer Wrapper for  <code>flushinp()</code></p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#get_attribute(*args,**options,&)-instance-method" class="signature"><strong>#get_attribute</strong>(*args, **options, &)</a>
+        
+          <div class="summary"><p>Attribute</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#get_attribute(*args,**options)-instance-method" class="signature"><strong>#get_attribute</strong>(*args, **options)</a>
+        
+          <div class="summary"><p>Attribute</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#get_background(*args,**options)-instance-method" class="signature"><strong>#get_background</strong>(*args, **options)</a>
+        
+          <div class="summary"><p>Background</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#get_background(*args,**options,&)-instance-method" class="signature"><strong>#get_background</strong>(*args, **options, &)</a>
+        
+          <div class="summary"><p>Background</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#get_char(*args,**options)-instance-method" class="signature"><strong>#get_char</strong>(*args, **options)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#get_char(*args,**options,&)-instance-method" class="signature"><strong>#get_char</strong>(*args, **options, &)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#get_mouse-instance-method" class="signature"><strong>#get_mouse</strong></a>
+        
+          <div class="summary"><p>Should only be called if <code><a href="NCurses.html#get_char(*args,**options)-instance-method">#get_char</a></code> returned <code><a href="LibNCurses/Key.html#Mouse">Key::Mouse</a></code></p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#has_colors?-instance-method" class="signature"><strong>#has_colors?</strong></a>
+        
+          <div class="summary"><p>Terminal supports colors Wrapper for <code>has_colors()</code></p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#has_mouse-instance-method" class="signature"><strong>#has_mouse</strong></a>
+        
+          <div class="summary"><p>If the terminal has mouse support Wrapper for <code><a href="NCurses.html#has_mouse-instance-method">#has_mouse()</a></code></p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#height(*args,**options)-instance-method" class="signature"><strong>#height</strong>(*args, **options)</a>
+        
+          <div class="summary"><p>General</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#height(*args,**options,&)-instance-method" class="signature"><strong>#height</strong>(*args, **options, &)</a>
+        
+          <div class="summary"><p>General</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#idcok(*args,**options)-instance-method" class="signature"><strong>#idcok</strong>(*args, **options)</a>
+        
+          <div class="summary"><p>Output options</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#idcok(*args,**options,&)-instance-method" class="signature"><strong>#idcok</strong>(*args, **options, &)</a>
+        
+          <div class="summary"><p>Output options</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#idlok(*args,**options)-instance-method" class="signature"><strong>#idlok</strong>(*args, **options)</a>
+        
+          <div class="summary"><p>Output options</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#idlok(*args,**options,&)-instance-method" class="signature"><strong>#idlok</strong>(*args, **options, &)</a>
+        
+          <div class="summary"><p>Output options</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#immedok(*args,**options)-instance-method" class="signature"><strong>#immedok</strong>(*args, **options)</a>
+        
+          <div class="summary"><p>Output options</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#immedok(*args,**options,&)-instance-method" class="signature"><strong>#immedok</strong>(*args, **options, &)</a>
+        
+          <div class="summary"><p>Output options</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#init_color(slot,red,green,blue)-instance-method" class="signature"><strong>#init_color</strong>(slot, red, green, blue)</a>
+        
+          <div class="summary"><p>Change the RGB values of the color Between 0 and 1000 <code></code>` change_color Color::Red, 0, 0, 1000 # => Color::Red will now appear blue <code></code>`</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#init_color_pair(slot,foreground:Color,background:Color)-instance-method" class="signature"><strong>#init_color_pair</strong>(slot, foreground : Color, background : Color)</a>
+        
+          <div class="summary"><p>Create a color pair to use Pass an integer for id of the pair in the <em>slot</em> Pass a <code><a href="NCurses/Color.html">Color</a></code> for both the <em>foreground</em> and then <em>background</em> <code></code>` init_color_pair 5, Color::Red, Color::Blue # => Color pair 5 is not red on black <code></code>` Wrapper for <code>init_pair()</code></p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#keypad(*args,**options)-instance-method" class="signature"><strong>#keypad</strong>(*args, **options)</a>
+        
+          <div class="summary"><p>Input</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#keypad(*args,**options,&)-instance-method" class="signature"><strong>#keypad</strong>(*args, **options, &)</a>
+        
+          <div class="summary"><p>Input</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#leaveok(*args,**options,&)-instance-method" class="signature"><strong>#leaveok</strong>(*args, **options, &)</a>
+        
+          <div class="summary"><p>Output options</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#leaveok(*args,**options)-instance-method" class="signature"><strong>#leaveok</strong>(*args, **options)</a>
+        
+          <div class="summary"><p>Output options</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#line_buffer(option)-instance-method" class="signature"><strong>#line_buffer</strong>(option)</a>
+        
+          <div class="summary"><p>If input should be buffered to new lines Enable if true, disable if false</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#lines(*args,**options,&)-instance-method" class="signature"><strong>#lines</strong>(*args, **options, &)</a>
+        
+          <div class="summary"><p>General</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#lines(*args,**options)-instance-method" class="signature"><strong>#lines</strong>(*args, **options)</a>
+        
+          <div class="summary"><p>General</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#max_dimensions(*args,**options,&)-instance-method" class="signature"><strong>#max_dimensions</strong>(*args, **options, &)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#max_dimensions(*args,**options)-instance-method" class="signature"><strong>#max_dimensions</strong>(*args, **options)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#max_dimensions_named(*args,**options,&)-instance-method" class="signature"><strong>#max_dimensions_named</strong>(*args, **options, &)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#max_dimensions_named(*args,**options)-instance-method" class="signature"><strong>#max_dimensions_named</strong>(*args, **options)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#max_x(*args,**options,&)-instance-method" class="signature"><strong>#max_x</strong>(*args, **options, &)</a>
+        
+          <div class="summary"><p>General</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#max_x(*args,**options)-instance-method" class="signature"><strong>#max_x</strong>(*args, **options)</a>
+        
+          <div class="summary"><p>General</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#max_y(*args,**options)-instance-method" class="signature"><strong>#max_y</strong>(*args, **options)</a>
+        
+          <div class="summary"><p>General</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#max_y(*args,**options,&)-instance-method" class="signature"><strong>#max_y</strong>(*args, **options, &)</a>
+        
+          <div class="summary"><p>General</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#mouse_mask(new_mask:Mouse)-instance-method" class="signature"><strong>#mouse_mask</strong>(new_mask : Mouse)</a>
+        
+          <div class="summary"><p>Sets the mouse events that should be returned Should be given a <code><a href="NCurses/Mouse.html">Mouse</a></code> enum</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#move(*args,**options,&)-instance-method" class="signature"><strong>#move</strong>(*args, **options, &)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#move(*args,**options)-instance-method" class="signature"><strong>#move</strong>(*args, **options)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#new_term(terminal,out_io,in_io)-instance-method" class="signature"><strong>#new_term</strong>(terminal, out_io, in_io)</a>
+        
+          <div class="summary"><p>Unknown functionality Wrpper for <code>newterm()</code></p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#nl-instance-method" class="signature"><strong>#nl</strong></a>
+        
+          <div class="summary"><p>Wrapper for <code><a href="NCurses.html#nl-instance-method">#nl()</a></code></p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#no_border(*args,**options)-instance-method" class="signature"><strong>#no_border</strong>(*args, **options)</a>
+        
+          <div class="summary"><p>Output</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#no_border(*args,**options,&)-instance-method" class="signature"><strong>#no_border</strong>(*args, **options, &)</a>
+        
+          <div class="summary"><p>Output</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#no_box(*args,**options,&)-instance-method" class="signature"><strong>#no_box</strong>(*args, **options, &)</a>
+        
+          <div class="summary"><p>Output</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#no_box(*args,**options)-instance-method" class="signature"><strong>#no_box</strong>(*args, **options)</a>
+        
+          <div class="summary"><p>Output</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#no_delay(*args,**options,&)-instance-method" class="signature"><strong>#no_delay</strong>(*args, **options, &)</a>
+        
+          <div class="summary"><p>Input</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#no_delay(*args,**options)-instance-method" class="signature"><strong>#no_delay</strong>(*args, **options)</a>
+        
+          <div class="summary"><p>Input</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#no_echo-instance-method" class="signature"><strong>#no_echo</strong></a>
+        
+          <div class="summary"><p>Do not echo back to the console Wrapper for <code>noecho()</code></p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#no_raw-instance-method" class="signature"><strong>#no_raw</strong></a>
+        
+          <div class="summary"><p>Re-enable buffering of input and signals Wrapper for <code>noraw()</code></p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#no_timeout(*args,**options,&)-instance-method" class="signature"><strong>#no_timeout</strong>(*args, **options, &)</a>
+        
+          <div class="summary"><p>Input</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#no_timeout(*args,**options)-instance-method" class="signature"><strong>#no_timeout</strong>(*args, **options)</a>
+        
+          <div class="summary"><p>Input</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#nocbreak-instance-method" class="signature"><strong>#nocbreak</strong></a>
+        
+          <div class="summary"><p>Re-enable buffering until new line Wrapper for <code><a href="NCurses.html#nocbreak-instance-method">#nocbreak()</a></code></p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#nonl-instance-method" class="signature"><strong>#nonl</strong></a>
+        
+          <div class="summary"><p>Wrapper for <code><a href="NCurses.html#nonl-instance-method">#nonl()</a></code></p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#pos(*args,**options,&)-instance-method" class="signature"><strong>#pos</strong>(*args, **options, &)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#pos(*args,**options)-instance-method" class="signature"><strong>#pos</strong>(*args, **options)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#pos_named(*args,**options)-instance-method" class="signature"><strong>#pos_named</strong>(*args, **options)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#pos_named(*args,**options,&)-instance-method" class="signature"><strong>#pos_named</strong>(*args, **options, &)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#position(*args,**options)-instance-method" class="signature"><strong>#position</strong>(*args, **options)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#position(*args,**options,&)-instance-method" class="signature"><strong>#position</strong>(*args, **options, &)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#position_named(*args,**options)-instance-method" class="signature"><strong>#position_named</strong>(*args, **options)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#position_named(*args,**options,&)-instance-method" class="signature"><strong>#position_named</strong>(*args, **options, &)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#print(*args,**options)-instance-method" class="signature"><strong>#print</strong>(*args, **options)</a>
+        
+          <div class="summary"><p>Output</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#print(*args,**options,&)-instance-method" class="signature"><strong>#print</strong>(*args, **options, &)</a>
+        
+          <div class="summary"><p>Output</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#raw(option)-instance-method" class="signature"><strong>#raw</strong>(option)</a>
+        
+          <div class="summary"><p>If buffering should be disabled for input and signals</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#raw-instance-method" class="signature"><strong>#raw</strong></a>
+        
+          <div class="summary"><p>Disable buffering of input and signals <code><a href="NCurses.html#cbreak-instance-method">#cbreak</a></code> but also passes signals TODO: Implement signals?</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#refresh(*args,**options,&)-instance-method" class="signature"><strong>#refresh</strong>(*args, **options, &)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#refresh(*args,**options)-instance-method" class="signature"><strong>#refresh</strong>(*args, **options)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#reset_prog_mode-instance-method" class="signature"><strong>#reset_prog_mode</strong></a>
+        
+          <div class="summary"><p>Restore the tty mode</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#row(*args,**options)-instance-method" class="signature"><strong>#row</strong>(*args, **options)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#row(*args,**options,&)-instance-method" class="signature"><strong>#row</strong>(*args, **options, &)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#scrollok(*args,**options)-instance-method" class="signature"><strong>#scrollok</strong>(*args, **options)</a>
+        
+          <div class="summary"><p>Output options</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#scrollok(*args,**options,&)-instance-method" class="signature"><strong>#scrollok</strong>(*args, **options, &)</a>
+        
+          <div class="summary"><p>Output options</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#set_attr(*args,**options,&)-instance-method" class="signature"><strong>#set_attr</strong>(*args, **options, &)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#set_attr(*args,**options)-instance-method" class="signature"><strong>#set_attr</strong>(*args, **options)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#set_attribute(*args,**options,&)-instance-method" class="signature"><strong>#set_attribute</strong>(*args, **options, &)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#set_attribute(*args,**options)-instance-method" class="signature"><strong>#set_attribute</strong>(*args, **options)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#set_background(*args,**options,&)-instance-method" class="signature"><strong>#set_background</strong>(*args, **options, &)</a>
+        
+          <div class="summary"><p>Background</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#set_background(*args,**options)-instance-method" class="signature"><strong>#set_background</strong>(*args, **options)</a>
+        
+          <div class="summary"><p>Background</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#set_color(*args,**options,&)-instance-method" class="signature"><strong>#set_color</strong>(*args, **options, &)</a>
+        
+          <div class="summary"><p>Attribute</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#set_color(*args,**options)-instance-method" class="signature"><strong>#set_color</strong>(*args, **options)</a>
+        
+          <div class="summary"><p>Attribute</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#set_cursor(visibility:Cursor)-instance-method" class="signature"><strong>#set_cursor</strong>(visibility : Cursor)</a>
+        
+          <div class="summary"><p>Set the cursor state Use <code><a href="NCurses/Cursor.html">Cursor</a></code> enum Wrapper for <code>curs_set()</code></p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#set_pos(*args,**options)-instance-method" class="signature"><strong>#set_pos</strong>(*args, **options)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#set_pos(*args,**options,&)-instance-method" class="signature"><strong>#set_pos</strong>(*args, **options, &)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#setscrreg(*args,**options,&)-instance-method" class="signature"><strong>#setscrreg</strong>(*args, **options, &)</a>
+        
+          <div class="summary"><p>Output options</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#setscrreg(*args,**options)-instance-method" class="signature"><strong>#setscrreg</strong>(*args, **options)</a>
+        
+          <div class="summary"><p>Output options</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#start-instance-method" class="signature"><strong>#start</strong></a>
+        
+          <div class="summary"><p>Start curses mode Wrapper for <code>initscr()</code></p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#start_color-instance-method" class="signature"><strong>#start_color</strong></a>
+        
+          <div class="summary"><p>Start color support Wrapper for <code><a href="NCurses.html#start_color-instance-method">#start_color()</a></code></p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#stdscr-instance-method" class="signature"><strong>#stdscr</strong></a>
+        
+          <div class="summary"><p>Get stdscr May remove due to delegateing</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#term=(screen)-instance-method" class="signature"><strong>#term=</strong>(screen)</a>
+        
+          <div class="summary"><p>Unknown functionality Wrapper for <code>set_term()</code></p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#timeout(*args,**options,&)-instance-method" class="signature"><strong>#timeout</strong>(*args, **options, &)</a>
+        
+          <div class="summary"><p>Input</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#timeout(*args,**options)-instance-method" class="signature"><strong>#timeout</strong>(*args, **options)</a>
+        
+          <div class="summary"><p>Input</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#use_default_colors-instance-method" class="signature"><strong>#use_default_colors</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#width(*args,**options)-instance-method" class="signature"><strong>#width</strong>(*args, **options)</a>
+        
+          <div class="summary"><p>General</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#width(*args,**options,&)-instance-method" class="signature"><strong>#width</strong>(*args, **options, &)</a>
+        
+          <div class="summary"><p>General</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#with_attr(*args,**options)-instance-method" class="signature"><strong>#with_attr</strong>(*args, **options)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#with_attr(*args,**options,&)-instance-method" class="signature"><strong>#with_attr</strong>(*args, **options, &)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#with_attribute(*args,**options)-instance-method" class="signature"><strong>#with_attribute</strong>(*args, **options)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#with_attribute(*args,**options,&)-instance-method" class="signature"><strong>#with_attribute</strong>(*args, **options, &)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#x(*args,**options)-instance-method" class="signature"><strong>#x</strong>(*args, **options)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#x(*args,**options,&)-instance-method" class="signature"><strong>#x</strong>(*args, **options, &)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#y(*args,**options)-instance-method" class="signature"><strong>#y</strong>(*args, **options)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#y(*args,**options,&)-instance-method" class="signature"><strong>#y</strong>(*args, **options, &)</a>
+        
+      </li>
+    
+  </ul>
+
+
+
+
+
+<div class="methods-inherited">
+  
+</div>
+
+
+
+
+
+
+  <h2>
+    <a id="instance-method-detail" class="anchor" href="#instance-method-detail">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Instance Method Detail
+  </h2>
+  
+    <div class="entry-detail" id="add_char(*args,**options)-instance-method">
+      <div class="signature">
+        
+        def <strong>add_char</strong>(*args, **options)
+
+        <a class="method-permalink" href="#add_char(*args,**options)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Output</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/SamualLB/ncurses/blob/8e1bebaeaafdbf9a0f8e9ccf5df07c0c24171b69/src/ncurses.cr#L299" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="add_char(*args,**options,&)-instance-method">
+      <div class="signature">
+        
+        def <strong>add_char</strong>(*args, **options, &)
+
+        <a class="method-permalink" href="#add_char(*args,**options,&)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Output</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/SamualLB/ncurses/blob/8e1bebaeaafdbf9a0f8e9ccf5df07c0c24171b69/src/ncurses.cr#L299" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="assume_default_colors(fg,bg)-instance-method">
+      <div class="signature">
+        
+        def <strong>assume_default_colors</strong>(fg, bg)
+
+        <a class="method-permalink" href="#assume_default_colors(fg,bg)-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/SamualLB/ncurses/blob/8e1bebaeaafdbf9a0f8e9ccf5df07c0c24171b69/src/ncurses.cr#L205" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="attr_get(*args,**options,&)-instance-method">
+      <div class="signature">
+        
+        def <strong>attr_get</strong>(*args, **options, &)
+
+        <a class="method-permalink" href="#attr_get(*args,**options,&)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Attribute</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/SamualLB/ncurses/blob/8e1bebaeaafdbf9a0f8e9ccf5df07c0c24171b69/src/ncurses.cr#L305" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="attr_get(*args,**options)-instance-method">
+      <div class="signature">
+        
+        def <strong>attr_get</strong>(*args, **options)
+
+        <a class="method-permalink" href="#attr_get(*args,**options)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Attribute</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/SamualLB/ncurses/blob/8e1bebaeaafdbf9a0f8e9ccf5df07c0c24171b69/src/ncurses.cr#L305" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="attr_off(*args,**options)-instance-method">
+      <div class="signature">
+        
+        def <strong>attr_off</strong>(*args, **options)
+
+        <a class="method-permalink" href="#attr_off(*args,**options)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Attribute</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/SamualLB/ncurses/blob/8e1bebaeaafdbf9a0f8e9ccf5df07c0c24171b69/src/ncurses.cr#L305" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="attr_off(*args,**options,&)-instance-method">
+      <div class="signature">
+        
+        def <strong>attr_off</strong>(*args, **options, &)
+
+        <a class="method-permalink" href="#attr_off(*args,**options,&)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Attribute</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/SamualLB/ncurses/blob/8e1bebaeaafdbf9a0f8e9ccf5df07c0c24171b69/src/ncurses.cr#L305" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="attr_on(*args,**options)-instance-method">
+      <div class="signature">
+        
+        def <strong>attr_on</strong>(*args, **options)
+
+        <a class="method-permalink" href="#attr_on(*args,**options)-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/SamualLB/ncurses/blob/8e1bebaeaafdbf9a0f8e9ccf5df07c0c24171b69/src/ncurses.cr#L306" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="attr_on(*args,**options,&)-instance-method">
+      <div class="signature">
+        
+        def <strong>attr_on</strong>(*args, **options, &)
+
+        <a class="method-permalink" href="#attr_on(*args,**options,&)-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/SamualLB/ncurses/blob/8e1bebaeaafdbf9a0f8e9ccf5df07c0c24171b69/src/ncurses.cr#L306" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="attribute_off(*args,**options)-instance-method">
+      <div class="signature">
+        
+        def <strong>attribute_off</strong>(*args, **options)
+
+        <a class="method-permalink" href="#attribute_off(*args,**options)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Attribute</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/SamualLB/ncurses/blob/8e1bebaeaafdbf9a0f8e9ccf5df07c0c24171b69/src/ncurses.cr#L305" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="attribute_off(*args,**options,&)-instance-method">
+      <div class="signature">
+        
+        def <strong>attribute_off</strong>(*args, **options, &)
+
+        <a class="method-permalink" href="#attribute_off(*args,**options,&)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Attribute</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/SamualLB/ncurses/blob/8e1bebaeaafdbf9a0f8e9ccf5df07c0c24171b69/src/ncurses.cr#L305" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="attribute_on(*args,**options,&)-instance-method">
+      <div class="signature">
+        
+        def <strong>attribute_on</strong>(*args, **options, &)
+
+        <a class="method-permalink" href="#attribute_on(*args,**options,&)-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/SamualLB/ncurses/blob/8e1bebaeaafdbf9a0f8e9ccf5df07c0c24171b69/src/ncurses.cr#L306" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="attribute_on(*args,**options)-instance-method">
+      <div class="signature">
+        
+        def <strong>attribute_on</strong>(*args, **options)
+
+        <a class="method-permalink" href="#attribute_on(*args,**options)-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/SamualLB/ncurses/blob/8e1bebaeaafdbf9a0f8e9ccf5df07c0c24171b69/src/ncurses.cr#L306" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="border(*args,**options)-instance-method">
+      <div class="signature">
+        
+        def <strong>border</strong>(*args, **options)
+
+        <a class="method-permalink" href="#border(*args,**options)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Output</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/SamualLB/ncurses/blob/8e1bebaeaafdbf9a0f8e9ccf5df07c0c24171b69/src/ncurses.cr#L299" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="border(*args,**options,&)-instance-method">
+      <div class="signature">
+        
+        def <strong>border</strong>(*args, **options, &)
+
+        <a class="method-permalink" href="#border(*args,**options,&)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Output</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/SamualLB/ncurses/blob/8e1bebaeaafdbf9a0f8e9ccf5df07c0c24171b69/src/ncurses.cr#L299" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="box(*args,**options)-instance-method">
+      <div class="signature">
+        
+        def <strong>box</strong>(*args, **options)
+
+        <a class="method-permalink" href="#box(*args,**options)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Output</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/SamualLB/ncurses/blob/8e1bebaeaafdbf9a0f8e9ccf5df07c0c24171b69/src/ncurses.cr#L299" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="box(*args,**options,&)-instance-method">
+      <div class="signature">
+        
+        def <strong>box</strong>(*args, **options, &)
+
+        <a class="method-permalink" href="#box(*args,**options,&)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Output</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/SamualLB/ncurses/blob/8e1bebaeaafdbf9a0f8e9ccf5df07c0c24171b69/src/ncurses.cr#L299" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="can_change_color?-instance-method">
+      <div class="signature">
+        
+        def <strong>can_change_color?</strong>
+
+        <a class="method-permalink" href="#can_change_color?-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Terminal allows setting custom RGB color values
+Wrapper for <code>can_change_color()</code></p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/SamualLB/ncurses/blob/8e1bebaeaafdbf9a0f8e9ccf5df07c0c24171b69/src/ncurses.cr#L223" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="cbreak-instance-method">
+      <div class="signature">
+        
+        def <strong>cbreak</strong>
+
+        <a class="method-permalink" href="#cbreak-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Disable buffering, key input is returned with no delay
+Wrapper for <code><a href="NCurses.html#cbreak-instance-method">#cbreak()</a></code></p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/SamualLB/ncurses/blob/8e1bebaeaafdbf9a0f8e9ccf5df07c0c24171b69/src/ncurses.cr#L86" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="change_attribute(*args,**options)-instance-method">
+      <div class="signature">
+        
+        def <strong>change_attribute</strong>(*args, **options)
+
+        <a class="method-permalink" href="#change_attribute(*args,**options)-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/SamualLB/ncurses/blob/8e1bebaeaafdbf9a0f8e9ccf5df07c0c24171b69/src/ncurses.cr#L307" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="change_attribute(*args,**options,&)-instance-method">
+      <div class="signature">
+        
+        def <strong>change_attribute</strong>(*args, **options, &)
+
+        <a class="method-permalink" href="#change_attribute(*args,**options,&)-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/SamualLB/ncurses/blob/8e1bebaeaafdbf9a0f8e9ccf5df07c0c24171b69/src/ncurses.cr#L307" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="change_background(*args,**options)-instance-method">
+      <div class="signature">
+        
+        def <strong>change_background</strong>(*args, **options)
+
+        <a class="method-permalink" href="#change_background(*args,**options)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Background</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/SamualLB/ncurses/blob/8e1bebaeaafdbf9a0f8e9ccf5df07c0c24171b69/src/ncurses.cr#L302" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="change_background(*args,**options,&)-instance-method">
+      <div class="signature">
+        
+        def <strong>change_background</strong>(*args, **options, &)
+
+        <a class="method-permalink" href="#change_background(*args,**options,&)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Background</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/SamualLB/ncurses/blob/8e1bebaeaafdbf9a0f8e9ccf5df07c0c24171b69/src/ncurses.cr#L302" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="change_color(slot,red,green,blue)-instance-method">
+      <div class="signature">
+        
+        def <strong>change_color</strong>(slot, red, green, blue)
+
+        <a class="method-permalink" href="#change_color(slot,red,green,blue)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Alias for <code><a href="NCurses.html#init_color(slot,red,green,blue)-instance-method">#init_color</a></code></p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/SamualLB/ncurses/blob/8e1bebaeaafdbf9a0f8e9ccf5df07c0c24171b69/src/ncurses.cr#L237" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="clear(*args,**options)-instance-method">
+      <div class="signature">
+        
+        def <strong>clear</strong>(*args, **options)
+
+        <a class="method-permalink" href="#clear(*args,**options)-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/SamualLB/ncurses/blob/8e1bebaeaafdbf9a0f8e9ccf5df07c0c24171b69/src/ncurses.cr#L292" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="clear(*args,**options,&)-instance-method">
+      <div class="signature">
+        
+        def <strong>clear</strong>(*args, **options, &)
+
+        <a class="method-permalink" href="#clear(*args,**options,&)-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/SamualLB/ncurses/blob/8e1bebaeaafdbf9a0f8e9ccf5df07c0c24171b69/src/ncurses.cr#L292" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="clear_to_bot(*args,**options)-instance-method">
+      <div class="signature">
+        
+        def <strong>clear_to_bot</strong>(*args, **options)
+
+        <a class="method-permalink" href="#clear_to_bot(*args,**options)-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/SamualLB/ncurses/blob/8e1bebaeaafdbf9a0f8e9ccf5df07c0c24171b69/src/ncurses.cr#L292" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="clear_to_bot(*args,**options,&)-instance-method">
+      <div class="signature">
+        
+        def <strong>clear_to_bot</strong>(*args, **options, &)
+
+        <a class="method-permalink" href="#clear_to_bot(*args,**options,&)-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/SamualLB/ncurses/blob/8e1bebaeaafdbf9a0f8e9ccf5df07c0c24171b69/src/ncurses.cr#L292" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="clear_to_eol(*args,**options)-instance-method">
+      <div class="signature">
+        
+        def <strong>clear_to_eol</strong>(*args, **options)
+
+        <a class="method-permalink" href="#clear_to_eol(*args,**options)-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/SamualLB/ncurses/blob/8e1bebaeaafdbf9a0f8e9ccf5df07c0c24171b69/src/ncurses.cr#L292" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="clear_to_eol(*args,**options,&)-instance-method">
+      <div class="signature">
+        
+        def <strong>clear_to_eol</strong>(*args, **options, &)
+
+        <a class="method-permalink" href="#clear_to_eol(*args,**options,&)-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/SamualLB/ncurses/blob/8e1bebaeaafdbf9a0f8e9ccf5df07c0c24171b69/src/ncurses.cr#L292" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="clearok(*args,**options)-instance-method">
+      <div class="signature">
+        
+        def <strong>clearok</strong>(*args, **options)
+
+        <a class="method-permalink" href="#clearok(*args,**options)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Output options</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/SamualLB/ncurses/blob/8e1bebaeaafdbf9a0f8e9ccf5df07c0c24171b69/src/ncurses.cr#L310" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="clearok(*args,**options,&)-instance-method">
+      <div class="signature">
+        
+        def <strong>clearok</strong>(*args, **options, &)
+
+        <a class="method-permalink" href="#clearok(*args,**options,&)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Output options</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/SamualLB/ncurses/blob/8e1bebaeaafdbf9a0f8e9ccf5df07c0c24171b69/src/ncurses.cr#L310" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="col(*args,**options)-instance-method">
+      <div class="signature">
+        
+        def <strong>col</strong>(*args, **options)
+
+        <a class="method-permalink" href="#col(*args,**options)-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/SamualLB/ncurses/blob/8e1bebaeaafdbf9a0f8e9ccf5df07c0c24171b69/src/ncurses.cr#L291" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="col(*args,**options,&)-instance-method">
+      <div class="signature">
+        
+        def <strong>col</strong>(*args, **options, &)
+
+        <a class="method-permalink" href="#col(*args,**options,&)-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/SamualLB/ncurses/blob/8e1bebaeaafdbf9a0f8e9ccf5df07c0c24171b69/src/ncurses.cr#L291" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="cols(*args,**options,&)-instance-method">
+      <div class="signature">
+        
+        def <strong>cols</strong>(*args, **options, &)
+
+        <a class="method-permalink" href="#cols(*args,**options,&)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>General</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/SamualLB/ncurses/blob/8e1bebaeaafdbf9a0f8e9ccf5df07c0c24171b69/src/ncurses.cr#L289" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="cols(*args,**options)-instance-method">
+      <div class="signature">
+        
+        def <strong>cols</strong>(*args, **options)
+
+        <a class="method-permalink" href="#cols(*args,**options)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>General</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/SamualLB/ncurses/blob/8e1bebaeaafdbf9a0f8e9ccf5df07c0c24171b69/src/ncurses.cr#L289" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="def_prog_mode-instance-method">
+      <div class="signature">
+        
+        def <strong>def_prog_mode</strong>
+
+        <a class="method-permalink" href="#def_prog_mode-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Save the tty mode</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/SamualLB/ncurses/blob/8e1bebaeaafdbf9a0f8e9ccf5df07c0c24171b69/src/ncurses.cr#L64" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="disable_line_buffer-instance-method">
+      <div class="signature">
+        
+        def <strong>disable_line_buffer</strong>
+
+        <a class="method-permalink" href="#disable_line_buffer-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Alias for <code><a href="NCurses.html#cbreak-instance-method">#cbreak</a></code></p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/SamualLB/ncurses/blob/8e1bebaeaafdbf9a0f8e9ccf5df07c0c24171b69/src/ncurses.cr#L91" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="draw_bvline(*args,**options)-instance-method">
+      <div class="signature">
+        
+        def <strong>draw_bvline</strong>(*args, **options)
+
+        <a class="method-permalink" href="#draw_bvline(*args,**options)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Output</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/SamualLB/ncurses/blob/8e1bebaeaafdbf9a0f8e9ccf5df07c0c24171b69/src/ncurses.cr#L299" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="draw_bvline(*args,**options,&)-instance-method">
+      <div class="signature">
+        
+        def <strong>draw_bvline</strong>(*args, **options, &)
+
+        <a class="method-permalink" href="#draw_bvline(*args,**options,&)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Output</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/SamualLB/ncurses/blob/8e1bebaeaafdbf9a0f8e9ccf5df07c0c24171b69/src/ncurses.cr#L299" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="draw_hline(*args,**options)-instance-method">
+      <div class="signature">
+        
+        def <strong>draw_hline</strong>(*args, **options)
+
+        <a class="method-permalink" href="#draw_hline(*args,**options)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Output</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/SamualLB/ncurses/blob/8e1bebaeaafdbf9a0f8e9ccf5df07c0c24171b69/src/ncurses.cr#L299" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="draw_hline(*args,**options,&)-instance-method">
+      <div class="signature">
+        
+        def <strong>draw_hline</strong>(*args, **options, &)
+
+        <a class="method-permalink" href="#draw_hline(*args,**options,&)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Output</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/SamualLB/ncurses/blob/8e1bebaeaafdbf9a0f8e9ccf5df07c0c24171b69/src/ncurses.cr#L299" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="echo(option:Bool)-instance-method">
+      <div class="signature">
+        
+        def <strong>echo</strong>(option : Bool)
+
+        <a class="method-permalink" href="#echo(option:Bool)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>If echoing back to terminal should be enabled</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/SamualLB/ncurses/blob/8e1bebaeaafdbf9a0f8e9ccf5df07c0c24171b69/src/ncurses.cr#L129" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="echo-instance-method">
+      <div class="signature">
+        
+        def <strong>echo</strong>
+
+        <a class="method-permalink" href="#echo-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Re-enable echoing of input back to console
+Wrapper for <code><a href="NCurses.html#echo-instance-method">#echo()</a></code></p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/SamualLB/ncurses/blob/8e1bebaeaafdbf9a0f8e9ccf5df07c0c24171b69/src/ncurses.cr#L118" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="enable_line_buffer-instance-method">
+      <div class="signature">
+        
+        def <strong>enable_line_buffer</strong>
+
+        <a class="method-permalink" href="#enable_line_buffer-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Alias for <code><a href="NCurses.html#nocbreak-instance-method">#nocbreak</a></code></p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/SamualLB/ncurses/blob/8e1bebaeaafdbf9a0f8e9ccf5df07c0c24171b69/src/ncurses.cr#L102" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="end-instance-method">
+      <div class="signature">
+        
+        def <strong>end</strong>
+
+        <a class="method-permalink" href="#end-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>End curses mode
+Wrapper for <code>endwin()</code></p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/SamualLB/ncurses/blob/8e1bebaeaafdbf9a0f8e9ccf5df07c0c24171b69/src/ncurses.cr#L50" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="erase(*args,**options,&)-instance-method">
+      <div class="signature">
+        
+        def <strong>erase</strong>(*args, **options, &)
+
+        <a class="method-permalink" href="#erase(*args,**options,&)-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/SamualLB/ncurses/blob/8e1bebaeaafdbf9a0f8e9ccf5df07c0c24171b69/src/ncurses.cr#L292" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="erase(*args,**options)-instance-method">
+      <div class="signature">
+        
+        def <strong>erase</strong>(*args, **options)
+
+        <a class="method-permalink" href="#erase(*args,**options)-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/SamualLB/ncurses/blob/8e1bebaeaafdbf9a0f8e9ccf5df07c0c24171b69/src/ncurses.cr#L292" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="flush_input-instance-method">
+      <div class="signature">
+        
+        def <strong>flush_input</strong>
+
+        <a class="method-permalink" href="#flush_input-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Clear (delete contents of) the input buffer
+Wrapper for  <code>flushinp()</code></p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/SamualLB/ncurses/blob/8e1bebaeaafdbf9a0f8e9ccf5df07c0c24171b69/src/ncurses.cr#L165" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="get_attribute(*args,**options,&)-instance-method">
+      <div class="signature">
+        
+        def <strong>get_attribute</strong>(*args, **options, &)
+
+        <a class="method-permalink" href="#get_attribute(*args,**options,&)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Attribute</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/SamualLB/ncurses/blob/8e1bebaeaafdbf9a0f8e9ccf5df07c0c24171b69/src/ncurses.cr#L305" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="get_attribute(*args,**options)-instance-method">
+      <div class="signature">
+        
+        def <strong>get_attribute</strong>(*args, **options)
+
+        <a class="method-permalink" href="#get_attribute(*args,**options)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Attribute</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/SamualLB/ncurses/blob/8e1bebaeaafdbf9a0f8e9ccf5df07c0c24171b69/src/ncurses.cr#L305" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="get_background(*args,**options)-instance-method">
+      <div class="signature">
+        
+        def <strong>get_background</strong>(*args, **options)
+
+        <a class="method-permalink" href="#get_background(*args,**options)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Background</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/SamualLB/ncurses/blob/8e1bebaeaafdbf9a0f8e9ccf5df07c0c24171b69/src/ncurses.cr#L302" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="get_background(*args,**options,&)-instance-method">
+      <div class="signature">
+        
+        def <strong>get_background</strong>(*args, **options, &)
+
+        <a class="method-permalink" href="#get_background(*args,**options,&)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Background</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/SamualLB/ncurses/blob/8e1bebaeaafdbf9a0f8e9ccf5df07c0c24171b69/src/ncurses.cr#L302" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="get_char(*args,**options)-instance-method">
+      <div class="signature">
+        
+        def <strong>get_char</strong>(*args, **options)
+
+        <a class="method-permalink" href="#get_char(*args,**options)-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/SamualLB/ncurses/blob/8e1bebaeaafdbf9a0f8e9ccf5df07c0c24171b69/src/ncurses.cr#L296" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="get_char(*args,**options,&)-instance-method">
+      <div class="signature">
+        
+        def <strong>get_char</strong>(*args, **options, &)
+
+        <a class="method-permalink" href="#get_char(*args,**options,&)-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/SamualLB/ncurses/blob/8e1bebaeaafdbf9a0f8e9ccf5df07c0c24171b69/src/ncurses.cr#L296" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="get_mouse-instance-method">
+      <div class="signature">
+        
+        def <strong>get_mouse</strong>
+
+        <a class="method-permalink" href="#get_mouse-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Should only be called if <code><a href="NCurses.html#get_char(*args,**options)-instance-method">#get_char</a></code> returned <code><a href="LibNCurses/Key.html#Mouse">Key::Mouse</a></code></p>
+
+<p>Returns a <code><a href="NCurses/MouseEvent.html">MouseEvent</a></code> containing the mouse state and coordinates
+Wrapper for <code>getmouse()</code></p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/SamualLB/ncurses/blob/8e1bebaeaafdbf9a0f8e9ccf5df07c0c24171b69/src/ncurses.cr#L183" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="has_colors?-instance-method">
+      <div class="signature">
+        
+        def <strong>has_colors?</strong>
+
+        <a class="method-permalink" href="#has_colors?-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Terminal supports colors
+Wrapper for <code>has_colors()</code></p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/SamualLB/ncurses/blob/8e1bebaeaafdbf9a0f8e9ccf5df07c0c24171b69/src/ncurses.cr#L217" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="has_mouse-instance-method">
+      <div class="signature">
+        
+        def <strong>has_mouse</strong>
+
+        <a class="method-permalink" href="#has_mouse-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>If the terminal has mouse support
+Wrapper for <code><a href="NCurses.html#has_mouse-instance-method">#has_mouse()</a></code></p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/SamualLB/ncurses/blob/8e1bebaeaafdbf9a0f8e9ccf5df07c0c24171b69/src/ncurses.cr#L175" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="height(*args,**options)-instance-method">
+      <div class="signature">
+        
+        def <strong>height</strong>(*args, **options)
+
+        <a class="method-permalink" href="#height(*args,**options)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>General</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/SamualLB/ncurses/blob/8e1bebaeaafdbf9a0f8e9ccf5df07c0c24171b69/src/ncurses.cr#L289" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="height(*args,**options,&)-instance-method">
+      <div class="signature">
+        
+        def <strong>height</strong>(*args, **options, &)
+
+        <a class="method-permalink" href="#height(*args,**options,&)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>General</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/SamualLB/ncurses/blob/8e1bebaeaafdbf9a0f8e9ccf5df07c0c24171b69/src/ncurses.cr#L289" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="idcok(*args,**options)-instance-method">
+      <div class="signature">
+        
+        def <strong>idcok</strong>(*args, **options)
+
+        <a class="method-permalink" href="#idcok(*args,**options)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Output options</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/SamualLB/ncurses/blob/8e1bebaeaafdbf9a0f8e9ccf5df07c0c24171b69/src/ncurses.cr#L310" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="idcok(*args,**options,&)-instance-method">
+      <div class="signature">
+        
+        def <strong>idcok</strong>(*args, **options, &)
+
+        <a class="method-permalink" href="#idcok(*args,**options,&)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Output options</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/SamualLB/ncurses/blob/8e1bebaeaafdbf9a0f8e9ccf5df07c0c24171b69/src/ncurses.cr#L310" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="idlok(*args,**options)-instance-method">
+      <div class="signature">
+        
+        def <strong>idlok</strong>(*args, **options)
+
+        <a class="method-permalink" href="#idlok(*args,**options)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Output options</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/SamualLB/ncurses/blob/8e1bebaeaafdbf9a0f8e9ccf5df07c0c24171b69/src/ncurses.cr#L310" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="idlok(*args,**options,&)-instance-method">
+      <div class="signature">
+        
+        def <strong>idlok</strong>(*args, **options, &)
+
+        <a class="method-permalink" href="#idlok(*args,**options,&)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Output options</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/SamualLB/ncurses/blob/8e1bebaeaafdbf9a0f8e9ccf5df07c0c24171b69/src/ncurses.cr#L310" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="immedok(*args,**options)-instance-method">
+      <div class="signature">
+        
+        def <strong>immedok</strong>(*args, **options)
+
+        <a class="method-permalink" href="#immedok(*args,**options)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Output options</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/SamualLB/ncurses/blob/8e1bebaeaafdbf9a0f8e9ccf5df07c0c24171b69/src/ncurses.cr#L310" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="immedok(*args,**options,&)-instance-method">
+      <div class="signature">
+        
+        def <strong>immedok</strong>(*args, **options, &)
+
+        <a class="method-permalink" href="#immedok(*args,**options,&)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Output options</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/SamualLB/ncurses/blob/8e1bebaeaafdbf9a0f8e9ccf5df07c0c24171b69/src/ncurses.cr#L310" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="init_color(slot,red,green,blue)-instance-method">
+      <div class="signature">
+        
+        def <strong>init_color</strong>(slot, red, green, blue)
+
+        <a class="method-permalink" href="#init_color(slot,red,green,blue)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Change the RGB values of the color
+Between 0 and 1000</p>
+
+<pre><code class="language-crystal">change_color <span class="t">Color</span><span class="t">::</span><span class="t">Red</span>, <span class="n">0</span>, <span class="n">0</span>, <span class="n">1000</span> <span class="c"># =&gt; Color::Red will now appear blue</span></code></pre>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/SamualLB/ncurses/blob/8e1bebaeaafdbf9a0f8e9ccf5df07c0c24171b69/src/ncurses.cr#L232" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="init_color_pair(slot,foreground:Color,background:Color)-instance-method">
+      <div class="signature">
+        
+        def <strong>init_color_pair</strong>(slot, foreground : <a href="NCurses/Color.html">Color</a>, background : <a href="NCurses/Color.html">Color</a>)
+
+        <a class="method-permalink" href="#init_color_pair(slot,foreground:Color,background:Color)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Create a color pair to use
+Pass an integer for id of the pair in the <em>slot</em>
+Pass a <code><a href="NCurses/Color.html">Color</a></code> for both the <em>foreground</em> and then <em>background</em></p>
+
+<pre><code class="language-crystal">init_color_pair <span class="n">5</span>, <span class="t">Color</span><span class="t">::</span><span class="t">Red</span>, <span class="t">Color</span><span class="t">::</span><span class="t">Blue</span> <span class="c"># =&gt; Color pair 5 is not red on black</span></code></pre>
+
+<p>Wrapper for <code>init_pair()</code></p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/SamualLB/ncurses/blob/8e1bebaeaafdbf9a0f8e9ccf5df07c0c24171b69/src/ncurses.cr#L248" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="keypad(*args,**options)-instance-method">
+      <div class="signature">
+        
+        def <strong>keypad</strong>(*args, **options)
+
+        <a class="method-permalink" href="#keypad(*args,**options)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Input</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/SamualLB/ncurses/blob/8e1bebaeaafdbf9a0f8e9ccf5df07c0c24171b69/src/ncurses.cr#L295" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="keypad(*args,**options,&)-instance-method">
+      <div class="signature">
+        
+        def <strong>keypad</strong>(*args, **options, &)
+
+        <a class="method-permalink" href="#keypad(*args,**options,&)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Input</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/SamualLB/ncurses/blob/8e1bebaeaafdbf9a0f8e9ccf5df07c0c24171b69/src/ncurses.cr#L295" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="leaveok(*args,**options,&)-instance-method">
+      <div class="signature">
+        
+        def <strong>leaveok</strong>(*args, **options, &)
+
+        <a class="method-permalink" href="#leaveok(*args,**options,&)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Output options</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/SamualLB/ncurses/blob/8e1bebaeaafdbf9a0f8e9ccf5df07c0c24171b69/src/ncurses.cr#L310" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="leaveok(*args,**options)-instance-method">
+      <div class="signature">
+        
+        def <strong>leaveok</strong>(*args, **options)
+
+        <a class="method-permalink" href="#leaveok(*args,**options)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Output options</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/SamualLB/ncurses/blob/8e1bebaeaafdbf9a0f8e9ccf5df07c0c24171b69/src/ncurses.cr#L310" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="line_buffer(option)-instance-method">
+      <div class="signature">
+        
+        def <strong>line_buffer</strong>(option)
+
+        <a class="method-permalink" href="#line_buffer(option)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>If input should be buffered to new lines
+Enable if true, disable if false</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/SamualLB/ncurses/blob/8e1bebaeaafdbf9a0f8e9ccf5df07c0c24171b69/src/ncurses.cr#L108" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="lines(*args,**options,&)-instance-method">
+      <div class="signature">
+        
+        def <strong>lines</strong>(*args, **options, &)
+
+        <a class="method-permalink" href="#lines(*args,**options,&)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>General</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/SamualLB/ncurses/blob/8e1bebaeaafdbf9a0f8e9ccf5df07c0c24171b69/src/ncurses.cr#L289" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="lines(*args,**options)-instance-method">
+      <div class="signature">
+        
+        def <strong>lines</strong>(*args, **options)
+
+        <a class="method-permalink" href="#lines(*args,**options)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>General</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/SamualLB/ncurses/blob/8e1bebaeaafdbf9a0f8e9ccf5df07c0c24171b69/src/ncurses.cr#L289" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="max_dimensions(*args,**options,&)-instance-method">
+      <div class="signature">
+        
+        def <strong>max_dimensions</strong>(*args, **options, &)
+
+        <a class="method-permalink" href="#max_dimensions(*args,**options,&)-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/SamualLB/ncurses/blob/8e1bebaeaafdbf9a0f8e9ccf5df07c0c24171b69/src/ncurses.cr#L290" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="max_dimensions(*args,**options)-instance-method">
+      <div class="signature">
+        
+        def <strong>max_dimensions</strong>(*args, **options)
+
+        <a class="method-permalink" href="#max_dimensions(*args,**options)-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/SamualLB/ncurses/blob/8e1bebaeaafdbf9a0f8e9ccf5df07c0c24171b69/src/ncurses.cr#L290" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="max_dimensions_named(*args,**options,&)-instance-method">
+      <div class="signature">
+        
+        def <strong>max_dimensions_named</strong>(*args, **options, &)
+
+        <a class="method-permalink" href="#max_dimensions_named(*args,**options,&)-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/SamualLB/ncurses/blob/8e1bebaeaafdbf9a0f8e9ccf5df07c0c24171b69/src/ncurses.cr#L290" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="max_dimensions_named(*args,**options)-instance-method">
+      <div class="signature">
+        
+        def <strong>max_dimensions_named</strong>(*args, **options)
+
+        <a class="method-permalink" href="#max_dimensions_named(*args,**options)-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/SamualLB/ncurses/blob/8e1bebaeaafdbf9a0f8e9ccf5df07c0c24171b69/src/ncurses.cr#L290" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="max_x(*args,**options,&)-instance-method">
+      <div class="signature">
+        
+        def <strong>max_x</strong>(*args, **options, &)
+
+        <a class="method-permalink" href="#max_x(*args,**options,&)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>General</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/SamualLB/ncurses/blob/8e1bebaeaafdbf9a0f8e9ccf5df07c0c24171b69/src/ncurses.cr#L289" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="max_x(*args,**options)-instance-method">
+      <div class="signature">
+        
+        def <strong>max_x</strong>(*args, **options)
+
+        <a class="method-permalink" href="#max_x(*args,**options)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>General</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/SamualLB/ncurses/blob/8e1bebaeaafdbf9a0f8e9ccf5df07c0c24171b69/src/ncurses.cr#L289" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="max_y(*args,**options)-instance-method">
+      <div class="signature">
+        
+        def <strong>max_y</strong>(*args, **options)
+
+        <a class="method-permalink" href="#max_y(*args,**options)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>General</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/SamualLB/ncurses/blob/8e1bebaeaafdbf9a0f8e9ccf5df07c0c24171b69/src/ncurses.cr#L289" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="max_y(*args,**options,&)-instance-method">
+      <div class="signature">
+        
+        def <strong>max_y</strong>(*args, **options, &)
+
+        <a class="method-permalink" href="#max_y(*args,**options,&)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>General</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/SamualLB/ncurses/blob/8e1bebaeaafdbf9a0f8e9ccf5df07c0c24171b69/src/ncurses.cr#L289" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="mouse_mask(new_mask:Mouse)-instance-method">
+      <div class="signature">
+        
+        def <strong>mouse_mask</strong>(new_mask : <a href="NCurses/Mouse.html">Mouse</a>)
+
+        <a class="method-permalink" href="#mouse_mask(new_mask:Mouse)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Sets the mouse events that should be returned
+Should be given a <code><a href="NCurses/Mouse.html">Mouse</a></code> enum</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/SamualLB/ncurses/blob/8e1bebaeaafdbf9a0f8e9ccf5df07c0c24171b69/src/ncurses.cr#L193" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="move(*args,**options,&)-instance-method">
+      <div class="signature">
+        
+        def <strong>move</strong>(*args, **options, &)
+
+        <a class="method-permalink" href="#move(*args,**options,&)-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/SamualLB/ncurses/blob/8e1bebaeaafdbf9a0f8e9ccf5df07c0c24171b69/src/ncurses.cr#L292" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="move(*args,**options)-instance-method">
+      <div class="signature">
+        
+        def <strong>move</strong>(*args, **options)
+
+        <a class="method-permalink" href="#move(*args,**options)-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/SamualLB/ncurses/blob/8e1bebaeaafdbf9a0f8e9ccf5df07c0c24171b69/src/ncurses.cr#L292" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="new_term(terminal,out_io,in_io)-instance-method">
+      <div class="signature">
+        
+        def <strong>new_term</strong>(terminal, out_io, in_io)
+
+        <a class="method-permalink" href="#new_term(terminal,out_io,in_io)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Unknown functionality
+Wrpper for <code>newterm()</code></p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/SamualLB/ncurses/blob/8e1bebaeaafdbf9a0f8e9ccf5df07c0c24171b69/src/ncurses.cr#L258" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="nl-instance-method">
+      <div class="signature">
+        
+        def <strong>nl</strong>
+
+        <a class="method-permalink" href="#nl-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Wrapper for <code><a href="NCurses.html#nl-instance-method">#nl()</a></code></p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/SamualLB/ncurses/blob/8e1bebaeaafdbf9a0f8e9ccf5df07c0c24171b69/src/ncurses.cr#L273" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="no_border(*args,**options)-instance-method">
+      <div class="signature">
+        
+        def <strong>no_border</strong>(*args, **options)
+
+        <a class="method-permalink" href="#no_border(*args,**options)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Output</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/SamualLB/ncurses/blob/8e1bebaeaafdbf9a0f8e9ccf5df07c0c24171b69/src/ncurses.cr#L299" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="no_border(*args,**options,&)-instance-method">
+      <div class="signature">
+        
+        def <strong>no_border</strong>(*args, **options, &)
+
+        <a class="method-permalink" href="#no_border(*args,**options,&)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Output</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/SamualLB/ncurses/blob/8e1bebaeaafdbf9a0f8e9ccf5df07c0c24171b69/src/ncurses.cr#L299" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="no_box(*args,**options,&)-instance-method">
+      <div class="signature">
+        
+        def <strong>no_box</strong>(*args, **options, &)
+
+        <a class="method-permalink" href="#no_box(*args,**options,&)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Output</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/SamualLB/ncurses/blob/8e1bebaeaafdbf9a0f8e9ccf5df07c0c24171b69/src/ncurses.cr#L299" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="no_box(*args,**options)-instance-method">
+      <div class="signature">
+        
+        def <strong>no_box</strong>(*args, **options)
+
+        <a class="method-permalink" href="#no_box(*args,**options)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Output</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/SamualLB/ncurses/blob/8e1bebaeaafdbf9a0f8e9ccf5df07c0c24171b69/src/ncurses.cr#L299" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="no_delay(*args,**options,&)-instance-method">
+      <div class="signature">
+        
+        def <strong>no_delay</strong>(*args, **options, &)
+
+        <a class="method-permalink" href="#no_delay(*args,**options,&)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Input</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/SamualLB/ncurses/blob/8e1bebaeaafdbf9a0f8e9ccf5df07c0c24171b69/src/ncurses.cr#L295" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="no_delay(*args,**options)-instance-method">
+      <div class="signature">
+        
+        def <strong>no_delay</strong>(*args, **options)
+
+        <a class="method-permalink" href="#no_delay(*args,**options)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Input</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/SamualLB/ncurses/blob/8e1bebaeaafdbf9a0f8e9ccf5df07c0c24171b69/src/ncurses.cr#L295" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="no_echo-instance-method">
+      <div class="signature">
+        
+        def <strong>no_echo</strong>
+
+        <a class="method-permalink" href="#no_echo-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Do not echo back to the console
+Wrapper for <code>noecho()</code></p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/SamualLB/ncurses/blob/8e1bebaeaafdbf9a0f8e9ccf5df07c0c24171b69/src/ncurses.cr#L124" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="no_raw-instance-method">
+      <div class="signature">
+        
+        def <strong>no_raw</strong>
+
+        <a class="method-permalink" href="#no_raw-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Re-enable buffering of input and signals
+Wrapper for <code>noraw()</code></p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/SamualLB/ncurses/blob/8e1bebaeaafdbf9a0f8e9ccf5df07c0c24171b69/src/ncurses.cr#L146" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="no_timeout(*args,**options,&)-instance-method">
+      <div class="signature">
+        
+        def <strong>no_timeout</strong>(*args, **options, &)
+
+        <a class="method-permalink" href="#no_timeout(*args,**options,&)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Input</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/SamualLB/ncurses/blob/8e1bebaeaafdbf9a0f8e9ccf5df07c0c24171b69/src/ncurses.cr#L295" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="no_timeout(*args,**options)-instance-method">
+      <div class="signature">
+        
+        def <strong>no_timeout</strong>(*args, **options)
+
+        <a class="method-permalink" href="#no_timeout(*args,**options)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Input</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/SamualLB/ncurses/blob/8e1bebaeaafdbf9a0f8e9ccf5df07c0c24171b69/src/ncurses.cr#L295" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="nocbreak-instance-method">
+      <div class="signature">
+        
+        def <strong>nocbreak</strong>
+
+        <a class="method-permalink" href="#nocbreak-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Re-enable buffering until new line
+Wrapper for <code><a href="NCurses.html#nocbreak-instance-method">#nocbreak()</a></code></p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/SamualLB/ncurses/blob/8e1bebaeaafdbf9a0f8e9ccf5df07c0c24171b69/src/ncurses.cr#L97" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="nonl-instance-method">
+      <div class="signature">
+        
+        def <strong>nonl</strong>
+
+        <a class="method-permalink" href="#nonl-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Wrapper for <code><a href="NCurses.html#nonl-instance-method">#nonl()</a></code></p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/SamualLB/ncurses/blob/8e1bebaeaafdbf9a0f8e9ccf5df07c0c24171b69/src/ncurses.cr#L278" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="pos(*args,**options,&)-instance-method">
+      <div class="signature">
+        
+        def <strong>pos</strong>(*args, **options, &)
+
+        <a class="method-permalink" href="#pos(*args,**options,&)-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/SamualLB/ncurses/blob/8e1bebaeaafdbf9a0f8e9ccf5df07c0c24171b69/src/ncurses.cr#L291" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="pos(*args,**options)-instance-method">
+      <div class="signature">
+        
+        def <strong>pos</strong>(*args, **options)
+
+        <a class="method-permalink" href="#pos(*args,**options)-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/SamualLB/ncurses/blob/8e1bebaeaafdbf9a0f8e9ccf5df07c0c24171b69/src/ncurses.cr#L291" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="pos_named(*args,**options)-instance-method">
+      <div class="signature">
+        
+        def <strong>pos_named</strong>(*args, **options)
+
+        <a class="method-permalink" href="#pos_named(*args,**options)-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/SamualLB/ncurses/blob/8e1bebaeaafdbf9a0f8e9ccf5df07c0c24171b69/src/ncurses.cr#L291" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="pos_named(*args,**options,&)-instance-method">
+      <div class="signature">
+        
+        def <strong>pos_named</strong>(*args, **options, &)
+
+        <a class="method-permalink" href="#pos_named(*args,**options,&)-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/SamualLB/ncurses/blob/8e1bebaeaafdbf9a0f8e9ccf5df07c0c24171b69/src/ncurses.cr#L291" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="position(*args,**options)-instance-method">
+      <div class="signature">
+        
+        def <strong>position</strong>(*args, **options)
+
+        <a class="method-permalink" href="#position(*args,**options)-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/SamualLB/ncurses/blob/8e1bebaeaafdbf9a0f8e9ccf5df07c0c24171b69/src/ncurses.cr#L291" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="position(*args,**options,&)-instance-method">
+      <div class="signature">
+        
+        def <strong>position</strong>(*args, **options, &)
+
+        <a class="method-permalink" href="#position(*args,**options,&)-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/SamualLB/ncurses/blob/8e1bebaeaafdbf9a0f8e9ccf5df07c0c24171b69/src/ncurses.cr#L291" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="position_named(*args,**options)-instance-method">
+      <div class="signature">
+        
+        def <strong>position_named</strong>(*args, **options)
+
+        <a class="method-permalink" href="#position_named(*args,**options)-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/SamualLB/ncurses/blob/8e1bebaeaafdbf9a0f8e9ccf5df07c0c24171b69/src/ncurses.cr#L291" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="position_named(*args,**options,&)-instance-method">
+      <div class="signature">
+        
+        def <strong>position_named</strong>(*args, **options, &)
+
+        <a class="method-permalink" href="#position_named(*args,**options,&)-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/SamualLB/ncurses/blob/8e1bebaeaafdbf9a0f8e9ccf5df07c0c24171b69/src/ncurses.cr#L291" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="print(*args,**options)-instance-method">
+      <div class="signature">
+        
+        def <strong>print</strong>(*args, **options)
+
+        <a class="method-permalink" href="#print(*args,**options)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Output</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/SamualLB/ncurses/blob/8e1bebaeaafdbf9a0f8e9ccf5df07c0c24171b69/src/ncurses.cr#L299" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="print(*args,**options,&)-instance-method">
+      <div class="signature">
+        
+        def <strong>print</strong>(*args, **options, &)
+
+        <a class="method-permalink" href="#print(*args,**options,&)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Output</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/SamualLB/ncurses/blob/8e1bebaeaafdbf9a0f8e9ccf5df07c0c24171b69/src/ncurses.cr#L299" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="raw(option)-instance-method">
+      <div class="signature">
+        
+        def <strong>raw</strong>(option)
+
+        <a class="method-permalink" href="#raw(option)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>If buffering should be disabled for input and signals</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/SamualLB/ncurses/blob/8e1bebaeaafdbf9a0f8e9ccf5df07c0c24171b69/src/ncurses.cr#L151" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="raw-instance-method">
+      <div class="signature">
+        
+        def <strong>raw</strong>
+
+        <a class="method-permalink" href="#raw-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Disable buffering of input and signals
+<code><a href="NCurses.html#cbreak-instance-method">#cbreak</a></code> but also passes signals</p>
+
+<p><span class="flag orange">TODO</span>  Implement signals?</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/SamualLB/ncurses/blob/8e1bebaeaafdbf9a0f8e9ccf5df07c0c24171b69/src/ncurses.cr#L140" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="refresh(*args,**options,&)-instance-method">
+      <div class="signature">
+        
+        def <strong>refresh</strong>(*args, **options, &)
+
+        <a class="method-permalink" href="#refresh(*args,**options,&)-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/SamualLB/ncurses/blob/8e1bebaeaafdbf9a0f8e9ccf5df07c0c24171b69/src/ncurses.cr#L292" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="refresh(*args,**options)-instance-method">
+      <div class="signature">
+        
+        def <strong>refresh</strong>(*args, **options)
+
+        <a class="method-permalink" href="#refresh(*args,**options)-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/SamualLB/ncurses/blob/8e1bebaeaafdbf9a0f8e9ccf5df07c0c24171b69/src/ncurses.cr#L292" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="reset_prog_mode-instance-method">
+      <div class="signature">
+        
+        def <strong>reset_prog_mode</strong>
+
+        <a class="method-permalink" href="#reset_prog_mode-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Restore the tty mode</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/SamualLB/ncurses/blob/8e1bebaeaafdbf9a0f8e9ccf5df07c0c24171b69/src/ncurses.cr#L69" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="row(*args,**options)-instance-method">
+      <div class="signature">
+        
+        def <strong>row</strong>(*args, **options)
+
+        <a class="method-permalink" href="#row(*args,**options)-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/SamualLB/ncurses/blob/8e1bebaeaafdbf9a0f8e9ccf5df07c0c24171b69/src/ncurses.cr#L291" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="row(*args,**options,&)-instance-method">
+      <div class="signature">
+        
+        def <strong>row</strong>(*args, **options, &)
+
+        <a class="method-permalink" href="#row(*args,**options,&)-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/SamualLB/ncurses/blob/8e1bebaeaafdbf9a0f8e9ccf5df07c0c24171b69/src/ncurses.cr#L291" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="scrollok(*args,**options)-instance-method">
+      <div class="signature">
+        
+        def <strong>scrollok</strong>(*args, **options)
+
+        <a class="method-permalink" href="#scrollok(*args,**options)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Output options</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/SamualLB/ncurses/blob/8e1bebaeaafdbf9a0f8e9ccf5df07c0c24171b69/src/ncurses.cr#L310" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="scrollok(*args,**options,&)-instance-method">
+      <div class="signature">
+        
+        def <strong>scrollok</strong>(*args, **options, &)
+
+        <a class="method-permalink" href="#scrollok(*args,**options,&)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Output options</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/SamualLB/ncurses/blob/8e1bebaeaafdbf9a0f8e9ccf5df07c0c24171b69/src/ncurses.cr#L310" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="set_attr(*args,**options,&)-instance-method">
+      <div class="signature">
+        
+        def <strong>set_attr</strong>(*args, **options, &)
+
+        <a class="method-permalink" href="#set_attr(*args,**options,&)-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/SamualLB/ncurses/blob/8e1bebaeaafdbf9a0f8e9ccf5df07c0c24171b69/src/ncurses.cr#L307" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="set_attr(*args,**options)-instance-method">
+      <div class="signature">
+        
+        def <strong>set_attr</strong>(*args, **options)
+
+        <a class="method-permalink" href="#set_attr(*args,**options)-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/SamualLB/ncurses/blob/8e1bebaeaafdbf9a0f8e9ccf5df07c0c24171b69/src/ncurses.cr#L307" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="set_attribute(*args,**options,&)-instance-method">
+      <div class="signature">
+        
+        def <strong>set_attribute</strong>(*args, **options, &)
+
+        <a class="method-permalink" href="#set_attribute(*args,**options,&)-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/SamualLB/ncurses/blob/8e1bebaeaafdbf9a0f8e9ccf5df07c0c24171b69/src/ncurses.cr#L307" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="set_attribute(*args,**options)-instance-method">
+      <div class="signature">
+        
+        def <strong>set_attribute</strong>(*args, **options)
+
+        <a class="method-permalink" href="#set_attribute(*args,**options)-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/SamualLB/ncurses/blob/8e1bebaeaafdbf9a0f8e9ccf5df07c0c24171b69/src/ncurses.cr#L307" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="set_background(*args,**options,&)-instance-method">
+      <div class="signature">
+        
+        def <strong>set_background</strong>(*args, **options, &)
+
+        <a class="method-permalink" href="#set_background(*args,**options,&)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Background</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/SamualLB/ncurses/blob/8e1bebaeaafdbf9a0f8e9ccf5df07c0c24171b69/src/ncurses.cr#L302" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="set_background(*args,**options)-instance-method">
+      <div class="signature">
+        
+        def <strong>set_background</strong>(*args, **options)
+
+        <a class="method-permalink" href="#set_background(*args,**options)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Background</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/SamualLB/ncurses/blob/8e1bebaeaafdbf9a0f8e9ccf5df07c0c24171b69/src/ncurses.cr#L302" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="set_color(*args,**options,&)-instance-method">
+      <div class="signature">
+        
+        def <strong>set_color</strong>(*args, **options, &)
+
+        <a class="method-permalink" href="#set_color(*args,**options,&)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Attribute</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/SamualLB/ncurses/blob/8e1bebaeaafdbf9a0f8e9ccf5df07c0c24171b69/src/ncurses.cr#L305" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="set_color(*args,**options)-instance-method">
+      <div class="signature">
+        
+        def <strong>set_color</strong>(*args, **options)
+
+        <a class="method-permalink" href="#set_color(*args,**options)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Attribute</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/SamualLB/ncurses/blob/8e1bebaeaafdbf9a0f8e9ccf5df07c0c24171b69/src/ncurses.cr#L305" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="set_cursor(visibility:Cursor)-instance-method">
+      <div class="signature">
+        
+        def <strong>set_cursor</strong>(visibility : <a href="NCurses/Cursor.html">Cursor</a>)
+
+        <a class="method-permalink" href="#set_cursor(visibility:Cursor)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Set the cursor state
+Use <code><a href="NCurses/Cursor.html">Cursor</a></code> enum
+Wrapper for <code>curs_set()</code></p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/SamualLB/ncurses/blob/8e1bebaeaafdbf9a0f8e9ccf5df07c0c24171b69/src/ncurses.cr#L59" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="set_pos(*args,**options)-instance-method">
+      <div class="signature">
+        
+        def <strong>set_pos</strong>(*args, **options)
+
+        <a class="method-permalink" href="#set_pos(*args,**options)-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/SamualLB/ncurses/blob/8e1bebaeaafdbf9a0f8e9ccf5df07c0c24171b69/src/ncurses.cr#L292" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="set_pos(*args,**options,&)-instance-method">
+      <div class="signature">
+        
+        def <strong>set_pos</strong>(*args, **options, &)
+
+        <a class="method-permalink" href="#set_pos(*args,**options,&)-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/SamualLB/ncurses/blob/8e1bebaeaafdbf9a0f8e9ccf5df07c0c24171b69/src/ncurses.cr#L292" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="setscrreg(*args,**options,&)-instance-method">
+      <div class="signature">
+        
+        def <strong>setscrreg</strong>(*args, **options, &)
+
+        <a class="method-permalink" href="#setscrreg(*args,**options,&)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Output options</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/SamualLB/ncurses/blob/8e1bebaeaafdbf9a0f8e9ccf5df07c0c24171b69/src/ncurses.cr#L310" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="setscrreg(*args,**options)-instance-method">
+      <div class="signature">
+        
+        def <strong>setscrreg</strong>(*args, **options)
+
+        <a class="method-permalink" href="#setscrreg(*args,**options)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Output options</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/SamualLB/ncurses/blob/8e1bebaeaafdbf9a0f8e9ccf5df07c0c24171b69/src/ncurses.cr#L310" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="start-instance-method">
+      <div class="signature">
+        
+        def <strong>start</strong>
+
+        <a class="method-permalink" href="#start-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Start curses mode
+Wrapper for <code>initscr()</code></p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/SamualLB/ncurses/blob/8e1bebaeaafdbf9a0f8e9ccf5df07c0c24171b69/src/ncurses.cr#L41" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="start_color-instance-method">
+      <div class="signature">
+        
+        def <strong>start_color</strong>
+
+        <a class="method-permalink" href="#start_color-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Start color support
+Wrapper for <code><a href="NCurses.html#start_color-instance-method">#start_color()</a></code></p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/SamualLB/ncurses/blob/8e1bebaeaafdbf9a0f8e9ccf5df07c0c24171b69/src/ncurses.cr#L211" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="stdscr-instance-method">
+      <div class="signature">
+        
+        def <strong>stdscr</strong>
+
+        <a class="method-permalink" href="#stdscr-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Get stdscr
+May remove due to delegateing</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/SamualLB/ncurses/blob/8e1bebaeaafdbf9a0f8e9ccf5df07c0c24171b69/src/ncurses.cr#L75" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="term=(screen)-instance-method">
+      <div class="signature">
+        
+        def <strong>term=</strong>(screen)
+
+        <a class="method-permalink" href="#term=(screen)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Unknown functionality
+Wrapper for <code>set_term()</code></p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/SamualLB/ncurses/blob/8e1bebaeaafdbf9a0f8e9ccf5df07c0c24171b69/src/ncurses.cr#L267" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="timeout(*args,**options,&)-instance-method">
+      <div class="signature">
+        
+        def <strong>timeout</strong>(*args, **options, &)
+
+        <a class="method-permalink" href="#timeout(*args,**options,&)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Input</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/SamualLB/ncurses/blob/8e1bebaeaafdbf9a0f8e9ccf5df07c0c24171b69/src/ncurses.cr#L295" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="timeout(*args,**options)-instance-method">
+      <div class="signature">
+        
+        def <strong>timeout</strong>(*args, **options)
+
+        <a class="method-permalink" href="#timeout(*args,**options)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Input</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/SamualLB/ncurses/blob/8e1bebaeaafdbf9a0f8e9ccf5df07c0c24171b69/src/ncurses.cr#L295" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="use_default_colors-instance-method">
+      <div class="signature">
+        
+        def <strong>use_default_colors</strong>
+
+        <a class="method-permalink" href="#use_default_colors-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/SamualLB/ncurses/blob/8e1bebaeaafdbf9a0f8e9ccf5df07c0c24171b69/src/ncurses.cr#L201" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="width(*args,**options)-instance-method">
+      <div class="signature">
+        
+        def <strong>width</strong>(*args, **options)
+
+        <a class="method-permalink" href="#width(*args,**options)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>General</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/SamualLB/ncurses/blob/8e1bebaeaafdbf9a0f8e9ccf5df07c0c24171b69/src/ncurses.cr#L289" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="width(*args,**options,&)-instance-method">
+      <div class="signature">
+        
+        def <strong>width</strong>(*args, **options, &)
+
+        <a class="method-permalink" href="#width(*args,**options,&)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>General</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/SamualLB/ncurses/blob/8e1bebaeaafdbf9a0f8e9ccf5df07c0c24171b69/src/ncurses.cr#L289" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="with_attr(*args,**options)-instance-method">
+      <div class="signature">
+        
+        def <strong>with_attr</strong>(*args, **options)
+
+        <a class="method-permalink" href="#with_attr(*args,**options)-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/SamualLB/ncurses/blob/8e1bebaeaafdbf9a0f8e9ccf5df07c0c24171b69/src/ncurses.cr#L306" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="with_attr(*args,**options,&)-instance-method">
+      <div class="signature">
+        
+        def <strong>with_attr</strong>(*args, **options, &)
+
+        <a class="method-permalink" href="#with_attr(*args,**options,&)-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/SamualLB/ncurses/blob/8e1bebaeaafdbf9a0f8e9ccf5df07c0c24171b69/src/ncurses.cr#L306" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="with_attribute(*args,**options)-instance-method">
+      <div class="signature">
+        
+        def <strong>with_attribute</strong>(*args, **options)
+
+        <a class="method-permalink" href="#with_attribute(*args,**options)-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/SamualLB/ncurses/blob/8e1bebaeaafdbf9a0f8e9ccf5df07c0c24171b69/src/ncurses.cr#L306" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="with_attribute(*args,**options,&)-instance-method">
+      <div class="signature">
+        
+        def <strong>with_attribute</strong>(*args, **options, &)
+
+        <a class="method-permalink" href="#with_attribute(*args,**options,&)-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/SamualLB/ncurses/blob/8e1bebaeaafdbf9a0f8e9ccf5df07c0c24171b69/src/ncurses.cr#L306" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="x(*args,**options)-instance-method">
+      <div class="signature">
+        
+        def <strong>x</strong>(*args, **options)
+
+        <a class="method-permalink" href="#x(*args,**options)-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/SamualLB/ncurses/blob/8e1bebaeaafdbf9a0f8e9ccf5df07c0c24171b69/src/ncurses.cr#L291" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="x(*args,**options,&)-instance-method">
+      <div class="signature">
+        
+        def <strong>x</strong>(*args, **options, &)
+
+        <a class="method-permalink" href="#x(*args,**options,&)-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/SamualLB/ncurses/blob/8e1bebaeaafdbf9a0f8e9ccf5df07c0c24171b69/src/ncurses.cr#L291" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="y(*args,**options)-instance-method">
+      <div class="signature">
+        
+        def <strong>y</strong>(*args, **options)
+
+        <a class="method-permalink" href="#y(*args,**options)-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/SamualLB/ncurses/blob/8e1bebaeaafdbf9a0f8e9ccf5df07c0c24171b69/src/ncurses.cr#L291" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="y(*args,**options,&)-instance-method">
+      <div class="signature">
+        
+        def <strong>y</strong>(*args, **options, &)
+
+        <a class="method-permalink" href="#y(*args,**options,&)-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/SamualLB/ncurses/blob/8e1bebaeaafdbf9a0f8e9ccf5df07c0c24171b69/src/ncurses.cr#L291" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+
+
+
+
+</div>
+
+</body>
+</html>
