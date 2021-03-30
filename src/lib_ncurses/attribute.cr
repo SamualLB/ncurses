@@ -1,5 +1,4 @@
 lib LibNCurses
-
   # Attributes that can be added to change text appearence
   enum Attribute : LibC::UInt
     # Reset all attributes

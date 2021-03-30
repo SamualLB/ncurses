@@ -77,7 +77,7 @@ module NCurses
     end
 
     # Returns cursor current x position
-    # 
+    #
     # Wrapper for `getcurx()`
     def x
       raise "getcurx error" if (out = LibNCurses.getcurx(self)) == ERR
@@ -165,9 +165,30 @@ module NCurses
 
     # Clear window
     #
+    # Wrapper for `werase()` (`erase()`)
+    def erase
+      raise "werase error" if LibNCurses.werase(self) == ERR
+    end
+
+    # Clear window, also causes repaint
+    #
     # Wrapper for `wclear()` (`clear()`)
     def clear
       raise "wclear error" if LibNCurses.wclear(self) == ERR
+    end
+
+    # Clear window from cursor position to the end of the current line
+    #
+    # Wrapper for `wclrtoeol()` (`clrtoeol()`)
+    def clear_to_eol
+      raise "wclrtoeol error" if LibNCurses.wclrtoeol(self) == ERR
+    end
+
+    # Clear window from cursor to the rest of the whole window
+    #
+    # Wrapper for `wclrtobot()` (`clrtoeol()`)
+    def clear_to_bot
+      raise "wclrtobot error" if LibNCurses.wclrtobot(self) == ERR
     end
 
     #
@@ -486,7 +507,6 @@ module NCurses
         LibNCurses.mvwchgat(self, y, x, length, attr, color_pair.to_i16, nil)
       end
     end
-
 
     #
     # ## Output options

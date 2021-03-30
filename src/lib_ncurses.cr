@@ -33,6 +33,8 @@ lib LibNCurses
   fun initscr : Window
   fun endwin : LibC::Int
   fun curs_set(visibility : LibC::Int) : LibC::Int
+  fun def_prog_mode
+  fun reset_prog_mode
 
   # General window functions
   fun newwin(height : LibC::Int, width : LibC::Int, row : LibC::Int, col : LibC::Int) : Window
@@ -44,7 +46,10 @@ lib LibNCurses
   fun getmaxx(window : Window) : LibC::Int
   fun wmove(window : Window, row : LibC::Int, col : LibC::Int) : LibC::Int
   fun wrefresh(window : Window) : LibC::Int
+  fun werase(window : Window) : LibC::Int
   fun wclear(window : Window) : LibC::Int
+  fun wclrtoeol(window : Window) : LibC::Int
+  fun wclrtobot(window : Window) : LibC::Int
 
   # Input option functions
   fun cbreak : LibC::Int
@@ -96,7 +101,7 @@ lib LibNCurses
   fun wattr_off(window : Window, attr : Attribute, unused : Void*) : LibC::Int
   fun wattr_on(window : Window, attr : Attribute, unused : Void*) : LibC::Int
   fun wattr_set(window : Window, attr : Attribute, color_pair : LibC::Short, unused : Void*) : LibC::Int
-  fun wchgat(window : Window, n : LibC::Int, attr : Attribute, color_pair : LibC::Short,  unused : Void*) : LibC::Int
+  fun wchgat(window : Window, n : LibC::Int, attr : Attribute, color_pair : LibC::Short, unused : Void*) : LibC::Int
   fun mvwchgat(window : Window, y : LibC::Int, x : LibC::Int, n : LibC::Int, attr : Attribute, color_pair : LibC::Short, unused : Void*) : LibC::Int
 
   # Legacy window attribute functions
@@ -105,6 +110,8 @@ lib LibNCurses
   fun wattrset(window : Window, attr : Attribute) : LibC::Int
 
   # Color functions
+  fun use_default_colors : LibC::Int
+  fun assume_default_colors(fg : LibC::Int, bg : LibC::Int) : LibC::Int
   fun start_color : LibC::Int
   fun has_colors : Bool
   fun can_change_color : Bool

@@ -60,6 +60,16 @@ module NCurses
     LibNCurses.curs_set(visibility) != ERR
   end
 
+  # Save the tty mode
+  def def_prog_mode
+    LibNCurses.def_prog_mode
+  end
+
+  # Restore the tty mode
+  def reset_prog_mode
+    LibNCurses.reset_prog_mode
+  end
+
   # Get stdscr
   # May remove due to delegateing
   def stdscr
@@ -167,7 +177,7 @@ module NCurses
   end
 
   # Should only be called if `#get_char` returned `Key::Mouse`
-  # 
+  #
   # Returns a `MouseEvent` containing the mouse state and coordinates
   # Wrapper for `getmouse()`
   def get_mouse
@@ -188,6 +198,14 @@ module NCurses
   # ## Color
   #
 
+  def use_default_colors
+    raise "use_default_colors error" if LibNCurses.use_default_colors == ERR
+  end
+
+  def assume_default_colors(fg, bg)
+    raise "assume_default_colors error" if LibNCurses.assume_default_colors(fg, bg) == ERR
+  end
+
   # Start color support
   # Wrapper for `start_color()`
   def start_color
@@ -206,10 +224,9 @@ module NCurses
     LibNCurses.can_change_color
   end
 
-
   # Change the RGB values of the color
   # Between 0 and 1000
-  # ```crystal
+  # ```
   # change_color Color::Red, 0, 0, 1000 # => Color::Red will now appear blue
   # ```
   def init_color(slot, red, green, blue)
@@ -224,7 +241,7 @@ module NCurses
   # Create a color pair to use
   # Pass an integer for id of the pair in the *slot*
   # Pass a `Color` for both the *foreground* and then *background*
-  # ```crystal
+  # ```
   # init_color_pair 5, Color::Red, Color::Blue # => Color pair 5 is not red on black
   # ```
   # Wrapper for `init_pair()`
@@ -284,7 +301,7 @@ module NCurses
   delegate max_y, height, lines, max_x, width, cols, to: stdscr
   delegate max_dimensions, max_dimensions_named, to: stdscr
   delegate x, col, y, row, pos, position, pos_named, position_named, to: stdscr
-  delegate move, set_pos, refresh, clear, to: stdscr
+  delegate move, set_pos, refresh, erase, clear, clear_to_eol, clear_to_bot, to: stdscr
 
   # Input
   delegate keypad, no_timeout, no_delay, timeout, to: stdscr
