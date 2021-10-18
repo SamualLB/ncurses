@@ -24,6 +24,8 @@ lib LibNCurses
     # KEY_BACKSPACE
     Backspace = 0o407
 
+    Erase = 0o177
+
     # F0 to F63
     {% for n in (0...64) %}
       F{{n}} = 0o410 + {{n}}
