@@ -245,7 +245,7 @@ module NCurses
   # init_color_pair 5, Color::Red, Color::Blue # => Color pair 5 is not red on black
   # ```
   # Wrapper for `init_pair()`
-  def init_color_pair(slot, foreground : Color, background : Color)
+  def init_color_pair(slot, foreground : (Color | UInt8), background : (Color| UInt8))
     raise "init_pair error" if LibNCurses.init_pair(slot.to_i16, foreground.to_i16, background.to_i16) == ERR
   end
 
