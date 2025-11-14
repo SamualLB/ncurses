@@ -66,7 +66,7 @@ lib LibNCurses
   fun wtimeout(window : Window, timeout : LibC::Int)
 
   # Input functions
-  fun wgetch(window : Window) : LibC::Int
+  fun wget_wch(window : Window, wch : LibC::UInt*) : LibC::Int
   fun flushinp : LibC::Int
 
   # Mouse functions
