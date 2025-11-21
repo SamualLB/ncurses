@@ -38,6 +38,8 @@ lib LibNCurses
 
   # General window functions
   fun newwin(height : LibC::Int, width : LibC::Int, row : LibC::Int, col : LibC::Int) : Window
+  fun derwin(window : Window, height : LibC::Int, width : LibC::Int, row : LibC::Int, col : LibC::Int) : Window
+  fun subwin(window : Window, height : LibC::Int, width : LibC::Int, row : LibC::Int, col : LibC::Int) : Window
   fun delwin(window : Window) : LibC::Int
   fun mvwin(window : Window, y : LibC::Int, x : LibC::Int) : LibC::Int
   fun getcury(window : Window) : LibC::Int

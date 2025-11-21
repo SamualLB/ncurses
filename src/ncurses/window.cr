@@ -14,6 +14,22 @@ module NCurses
       initialize(LibNCurses.newwin(height || max_height, width || max_width, y, x))
     end
 
+    # Creates a new subwindow with given size and position. The position is relative to the screen.
+    # The subwindow shares memory with the parent window, so changes and refreshes apply to both.
+    # Its main use case is avoiding to calculate offsets when printing.
+    #
+    # Wrapper for `subwin()`
+    def subwin(height, width, y, x)
+      Window.new(LibNCurses.subwin(self, height, width, y, x))
+    end
+
+    # Like `subwin`, but the position is relative to the parent window.
+    #
+    # Wrapper for `derwin()`
+    def derwin(height, width, y, x)
+      Window.new(LibNCurses.derwin(self, height, width, y, x))
+    end
+
     # Delete the window
     #
     # Wrapper for `delwin()`
