@@ -16,6 +16,7 @@ NCurses.init_color_pair(1, NCurses::Color::Red, NCurses::Color::Green)
 NCurses.init_color_pair(2, NCurses::Color::Blue, NCurses::Color::Black)
 NCurses.init_color_pair(3, NCurses::Color::Black, NCurses::Color::White)
 NCurses.init_color_pair(4, NCurses::Color::Cyan, NCurses::Color::Magenta)
+NCurses.init_color_pair(5, 208, 0)
 
 # Change color RGB values if terminal supports it
 if NCurses.can_change_color?
@@ -41,6 +42,11 @@ NCurses.set_color 4
 
 NCurses.print "\nThis should appear to be white on black\n"
 NCurses.print "But color pair 4 is cyan on magenta\n"
+
+NCurses.set_color 5
+
+NCurses.print "\nAnd you can pass raw X-term colors\n"
+NCurses.print "This is a orange text"
 
 NCurses.set_color
 
