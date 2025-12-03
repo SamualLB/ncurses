@@ -232,10 +232,16 @@ module NCurses
     #
     # Returned as `Key` if recognised, `Char` otherwise
     #
-    # Wrapper for `wgetch()` (`getch()`)
+    # Wrapper for `wget_wch()` (`get_wch()`)
     def get_char : Key | Char | Nil
-      return nil if (key = LibNCurses.wgetch(self)) == ERR
-      return Key.from_value?(key) || key.chr
+      case LibNCurses.wget_wch(self, out key)
+      when OK # key is a character
+        key.chr
+      when KEY_CODE_YES # key is a special key
+        Key.from_value?(key)
+      else # ERR or something else unexpected
+        nil
+      end
     end
 
     # Get a character input for main loop

@@ -16,8 +16,9 @@ module NCurses
   alias Color = LibNCurses::Color
 
   # Possible integer result values
-  ERR = -1
-  OK  =  0
+  ERR          = -1
+  OK           =  0
+  KEY_CODE_YES = 0o400
 
   BORDER_DEFAULT = 0.chr
 
