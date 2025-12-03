@@ -15,7 +15,9 @@ right.print "Right side!\n"
 right.print "Width: #{right.width}\n"
 right.print "Height: #{right.height}\n"
 
-left.print "\nPress q to quit\n"
+message = left.derwin(3, left.width, left.height - 3, 0)
+message.box
+message.print "Press q to quit", 1, 1
 
 left.refresh
 right.refresh
